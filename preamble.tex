@@ -1,0 +1,17 @@
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{marginnote}
+\usepackage{subfiles}
+
+\fancypagestyle{main}{
+    \fancyhf{}
+    \fancyhead[L]{\leftmark}
+    \fancyhead[R]{CHEM 30100}
+    \fancyfoot[R]{Labalme\ \thepage}
+}
+\fancypagestyle{plain}{
+    \fancyhead{}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+\reversemarginpar
