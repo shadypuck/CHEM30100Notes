@@ -1,7 +1,16 @@
 \usepackage[margin=1in]{geometry}
+\usepackage{csquotes}
 \usepackage{fancyhdr}
 \usepackage{marginnote}
-\usepackage{subfiles}
+\usepackage{enumitem}
+\usepackage{scrextend}
+\usepackage[bottom]{footmisc}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{amsmath,amssymb}
+\usepackage{mhchem}
+
+\MakeOuterQuote{"}
 
 \fancypagestyle{main}{
     \fancyhf{}
@@ -15,3 +24,12 @@
 }
 
 \reversemarginpar
+
+\setitemize[3]{label={\scriptsize$\blacksquare$}}
+
+\deffootnotemark{\textsuperscript{\textup{[}\thefootnotemark\textup{]}}}
+\deffootnote[1.8em]{0em}{0em}{\textsuperscript{\thefootnote}}
+
+\usetikzlibrary{shapes.geometric}
+
+\usepackage{subfiles}
