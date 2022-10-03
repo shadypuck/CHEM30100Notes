@@ -1,0 +1,164 @@
+\documentclass[../notes.tex]{subfiles}
+
+\pagestyle{main}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ (#1)}{}}
+\stepcounter{chapter}
+
+\begin{document}
+
+
+
+
+\chapter{Introduction to Representation Theory}
+\section{Matrix Representations of Symmetry Operations}
+\begin{itemize}
+    \item \marginnote{10/3:}Tools for identifying symmetry elements.
+    \begin{itemize}
+        \item Chem 3D (visualization).
+        \item \href{https://symotter.org/gallery}{Otterbein University symmetry gallery} (examples of molecules that satisfy all of the point groups).
+    \end{itemize}
+    \item Gives examples of molecules that satisfy the high-symmetry point groups.
+    \begin{itemize}
+        \item $C_{\infty v}$: \ce{CO}.
+        \item $D_{\infty h}$: \ce{CO2}.
+        \item $T_d$: \ce{CH4}.
+        \item $T_h$: \ce{[Co(NO2)6]^3+}.
+        \begin{itemize}
+            \item $T_h$ is $T_d$ with $\sigma_h$ symmetry.
+        \end{itemize}
+        \item $O_h$: \ce{[Co(NH3)6]^3+}
+        \item $I_h$: N/a.
+        \begin{itemize}
+            \item 120 symmetry elements in total; we will not be asked to identify all of these!
+        \end{itemize}
+        \item $K_h$: N/a.
+        \begin{itemize}
+            \item Symmetry of the sphere.
+        \end{itemize}
+        \item $T,O,I$ are subgroups of $T_h,O_h,I_h$, respectively, and only have proper (not improper) rotations. These are very rare point groups. An example of a molecule in the $T$ point group is \ce{[Ca(THF)6]^2+}.
+    \end{itemize}
+    \item Learn $T,O,I$ from Otterbein University example and ask questions!
+    \item Low symmetry: $C_1,C_i,C_s$.
+    \item The mirror plane in a $C_s$ molecule is denoted by $\sigma$ (no subscript).
+    \item \textbf{Vector}: A series of numbers which we write in a row or a column.
+    \item \textbf{Matrix}: Any rectangular array of numbers set between two brackets.
+    \item Basics of matrix multiplication: $A\cdot\vec{x}=\vec{y}$ given in terms of matrix multiplication, e.g., if $A$ is $n\times m$ and $\vec{x}\in\R^m$, then
+    \begin{equation*}
+        y_i = \sum_{j=1}^ma_{ij}x_j
+    \end{equation*}
+    for $i=1,\dots,n$.
+    \item Matrix representations:
+    \begin{itemize}
+        \item $E$: What matrix $A$ satisfies $A\cdot\vec{x}=\vec{x}$ for all $\vec{x}$? The $3\times 3$ matrix $I$ does.
+        \item $i$: What matrix $A$ satisfies $A\cdot\vec{x}=-\vec{x}$ for all $\vec{x}$? The $3\times 3$ matrix $-I$ does.
+        \item $\sigma_{xy}$: What matrix $A$ flips the sign of the $z$-coordinate of $\vec{x}$? The $3\times 3$ matrix $\diag(1,1,-1)$ does.
+        \item $C_2$: What matrix $A$ flips the sign of the $x,y$-coordinates of $\vec{x}$? The $3\times 3$ matrix $\diag(-1,-1,1)$ does.
+        \item $C_3$: Consider a $C_{3v}$ molecule.
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \footnotesize
+                \node [circle,draw,inner sep=1.5pt] at (90:1) {1}
+                    edge (0,0)
+                ;
+                \node [circle,draw,inner sep=1.5pt] at (-30:1) {2}
+                    edge (0,0)
+                ;
+                \node [circle,draw,inner sep=1.5pt] at (-150:1) {3}
+                    edge (0,0)
+                ;
+        
+                \node [inner sep=2pt] at (-90:1) {$\sigma_v$}
+                    edge [dashed] (0,0)
+                ;
+                \node [inner sep=2pt] at (30:1) {$\sigma_v'$}
+                    edge [dashed] (0,0)
+                ;
+                \node [inner sep=2pt] at (150:1) {$\sigma_v''$}
+                    edge [dashed] (0,0)
+                ;
+            \end{tikzpicture}
+            \caption{$C_3$ matrix representation setup.}
+            \label{fig:C3MatrixSetup}
+        \end{figure}
+        Instead of describing a rotation in $\R^3$ using radians, we can think of a rotation as a permutation of the numbered atoms. So in this example,
+        \begin{equation*}
+            \underbrace{
+                \begin{bmatrix}
+                    0 & 1 & 0\\
+                    0 & 0 & 1\\
+                    1 & 0 & 0\\
+                \end{bmatrix}
+            }_{C_3}
+            \begin{bmatrix}
+                1\\
+                2\\
+                3\\
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                2\\
+                3\\
+                1\\
+            \end{bmatrix}
+        \end{equation*}
+    \end{itemize}
+    \item We will only be asked for matrix representations of very simple things, e.g., these or \ang{90} or \ang{180} turns.
+    \item The above matrices form a mathematical group, which obeys the same multiplication table as the operations.
+    \begin{itemize}
+        \item For example,
+        \begin{equation*}
+            \underbrace{
+                \begin{bmatrix}
+                    -1 & 0 & 0\\
+                    0 & -1 & 0\\
+                    0 & 0 & 1\\
+                \end{bmatrix}
+            }_{C_2}
+            \underbrace{
+                \begin{bmatrix}
+                    1 & 0 & 0\\
+                    0 & 1 & 0\\
+                    0 & 0 & -1\\
+                \end{bmatrix}
+            }_{\sigma_h}
+            =
+            \underbrace{
+                \begin{bmatrix}
+                    -1 & 0 & 0\\
+                    0 & -1 & 0\\
+                    0 & 0 & -1\\
+                \end{bmatrix}
+            }_i
+        \end{equation*}
+    \end{itemize}
+    \item The matrix representations given above are not the "simplest" way of describing these symmetry operations.
+    \begin{itemize}
+        \item The simplest way is using the \textbf{character}.
+        \item We find the character using a \textbf{similarity transformation} to take our matrix representations to block-diagonalized forms and then compute the characters of the blocks from there.
+        \item Recall that analogous blocks multiply in a block-diagonal matrix.
+    \end{itemize}
+    \item \textbf{Character} (of a symmetry operation): The trace (sum of the diagonal elements) of the matrix representation of that operation. \emph{Denoted by} $\bm{\chi}$.
+    \item \textbf{Similarity transformation} (matrix): The matrix which, when conjugated with a matrix representation of a symmetry operation, yields the block-diagonalized form of that matrix. \emph{Denoted by} $\bm{R}$.
+    \begin{itemize}
+        \item We don't need to know how to compute these.
+    \end{itemize}
+    \item Similarity transformation example: The $C_3$ matrix representation given above is not block diagonal, but there exists a matrix $R$ (that we don't have to know how to find) such that
+    \begin{equation*}
+        RC_3R^{-1} =
+        \begin{bNiceArray}{c|cc}[margin]
+            1 & 0 & 0\\
+            \hline
+            0 & -\frac{1}{2} & \frac{\sqrt{3}}{2}\\
+            0 & -\frac{\sqrt{3}}{2} & -\frac{1}{2}
+        \end{bNiceArray}
+    \end{equation*}
+    \begin{itemize}
+        \item The characters of the blocks of the above matrix are 1 and $-1$, respectively. The character of the overall matrix is still 0.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+\end{document}

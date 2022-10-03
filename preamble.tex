@@ -5,10 +5,11 @@
 \usepackage{enumitem}
 \usepackage{scrextend}
 \usepackage[bottom]{footmisc}
+\usepackage{siunitx}
 \usepackage{tikz}
-\usepackage{subcaption}
+\usepackage{subcaption,float}
 \usepackage{amsmath,amssymb}
-\usepackage{bm}
+\usepackage{bm,nicematrix}
 \usepackage{mhchem}
 \usepackage[hidelinks]{hyperref}
 
@@ -33,5 +34,11 @@
 \deffootnote[1.8em]{0em}{0em}{\textsuperscript{\thefootnote}}
 
 \usetikzlibrary{shapes.geometric}
+
+\DeclareMathOperator{\diag}{diag}
+
+\NiceMatrixOptions{cell-space-limits=1pt}
+
+\newcommand{\R}{\mathbb{R}}
 
 \usepackage{subfiles}
