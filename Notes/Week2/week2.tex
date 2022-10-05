@@ -160,5 +160,257 @@
 
 
 
+\section{Characters and Irreducible Representations}
+\begin{itemize}
+    \item \marginnote{10/5:}The PSet has been posted --- remember that its graded for completion.
+    \begin{itemize}
+        \item Answer key will be posted the day it's due.
+        \item Submit via email or give her a printed copy/write it out on blank paper (preferred).
+    \end{itemize}
+    \item Review: \ce{NH3} is in the $C_{3v}$ point group.
+    \item Denote the bond vectors of \ce{NH3} by $d_1,d_2,d_3$. Let's use them as a basis of the representation $\Gamma$. Also label the hydrogen atoms 1-3.
+    \begin{table}[h!]
+        \centering
+        \small
+        \tabulinesep=1mm
+        \begin{tabu}{|p{2cm}|l|l|}
+            \hline
+            \textbf{Symmetry element} & \textbf{Matrix} & \textbf{Character}\\
+            \hline
+            $E$ & $
+                \begin{bmatrix}
+                    1 & 0 & 0\\
+                    0 & 1 & 0\\
+                    0 & 0 & 1\\
+                \end{bmatrix}
+                \begin{bmatrix}
+                    H_1\\
+                    H_2\\
+                    H_3\\
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                    H_1\\
+                    H_2\\
+                    H_3\\
+                \end{bmatrix}
+            $ & 3\\
+            \hline
+            $C_3$ & $
+                \begin{bmatrix}
+                    0 & 1 & 0\\
+                    0 & 0 & 1\\
+                    1 & 0 & 0\\
+                \end{bmatrix}
+                \begin{bmatrix}
+                    H_1\\
+                    H_2\\
+                    H_3\\
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                    H_2\\
+                    H_3\\
+                    H_1\\
+                \end{bmatrix}
+            $ & 0\\
+            \hline
+            ${C_3}^2$ & $
+                \begin{bmatrix}
+                    0 & 0 & 1\\
+                    1 & 0 & 0\\
+                    0 & 1 & 0\\
+                \end{bmatrix}
+                \begin{bmatrix}
+                    H_1\\
+                    H_2\\
+                    H_3\\
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                    H_3\\
+                    H_1\\
+                    H_2\\
+                \end{bmatrix}
+            $ & 0\\
+            \hline
+            $\sigma_v$ (along $d_1$) & $
+                \begin{bmatrix}
+                    1 & 0 & 0\\
+                    0 & 0 & 1\\
+                    0 & 1 & 0\\
+                \end{bmatrix}
+                \begin{bmatrix}
+                    H_1\\
+                    H_2\\
+                    H_3\\
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                    H_1\\
+                    H_3\\
+                    H_2\\
+                \end{bmatrix}
+            $ & 1\\
+            \hline
+            $\sigma_v'$ (along $d_2$) & $
+                \begin{bmatrix}
+                    0 & 0 & 1\\
+                    0 & 1 & 0\\
+                    1 & 0 & 0\\
+                \end{bmatrix}
+                \begin{bmatrix}
+                    H_1\\
+                    H_2\\
+                    H_3\\
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                    H_3\\
+                    H_2\\
+                    H_1\\
+                \end{bmatrix}
+            $ & 1\\
+            \hline
+            $\sigma_v$ (along $d_1$) & $
+                \begin{bmatrix}
+                    0 & 1 & 0\\
+                    1 & 0 & 0\\
+                    0 & 0 & 1\\
+                \end{bmatrix}
+                \begin{bmatrix}
+                    H_1\\
+                    H_2\\
+                    H_3\\
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                    H_2\\
+                    H_1\\
+                    H_3\\
+                \end{bmatrix}
+            $ & 1\\
+            \hline
+        \end{tabu}
+        \caption{\ce{NH3} symmetry operations, matrices, and characters.}
+        \label{tab:NH3symmetryCharacters}
+    \end{table}
+    \begin{itemize}
+        \item Draw out each symmetry operation, its effect on each H atom, and the matrix representation of each. What is the character for each matrix representation? See the above table.
+        \item The characters for each matrix divide the symmetry operations into three classes (the identity, rotation, and reflection classes).
+    \end{itemize}
+    \item If we use the Cartesian axes as our basis, we get the following transformation matrices.
+    \begin{align*}
+        E &=
+        \begin{bmatrix}
+            1 & 0 & 0\\
+            0 & 1 & 0\\
+            0 & 0 & 1\\
+        \end{bmatrix}&
+            C_3 &=
+            \begin{bNiceMatrix}
+                -\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0\\
+                \frac{\sqrt{3}}{2} & -\frac{1}{2} & 0\\
+                0 & 0 & 1\\
+            \end{bNiceMatrix}&
+                {C_3}^2 &=
+                \begin{bNiceMatrix}
+                    -\frac{1}{2} & \frac{\sqrt{3}}{2} & 0\\
+                    -\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0\\
+                    0 & 0 & 1\\
+                \end{bNiceMatrix}\\
+        \sigma_a &=
+        \begin{bmatrix}
+            -1 & 0 & 0\\
+            0 & 1 & 0\\
+            0 & 0 & 1\\
+        \end{bmatrix}&
+            \sigma_b &=
+            \begin{bNiceMatrix}
+                \frac{1}{2} & -\frac{\sqrt{3}}{2} & 0\\
+                -\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0\\
+                0 & 0 & 1\\
+            \end{bNiceMatrix}&
+                \sigma_c &=
+                \begin{bNiceMatrix}
+                    \frac{1}{2} & \frac{\sqrt{3}}{2} & 0\\
+                    \frac{\sqrt{3}}{2} & -\frac{1}{2} & 0\\
+                    0 & 0 & 1\\
+                \end{bNiceMatrix}
+    \end{align*}
+    \begin{itemize}
+        \item All of these are block-diagonal, so there must be some similarity transformation that gets us from the matrices in Table \ref{tab:NH3symmetryCharacters} to these matrices.
+        \item Notice that the character is preserved under similarity transformation.
+    \end{itemize}
+    \item The matrix representations in $\vec{e}$ have blocks, which we can call the 2D block and the 1D block.
+    \item Building a character table with different representations.
+    \begin{table}[h!]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{c|ccc}
+            $C_{3v}$ & $E$ & $2C_3$ & $3\sigma_v$\\
+            \hline
+            $\Gamma_e$ & 3 & 0 & 1\\
+            $\Gamma_{2D}$ & 2 & $-1$ & 0\\
+            $\Gamma_{1D}$ & 1 & 1 & 1\\
+        \end{tabular}
+        \caption{Some representations of $C_{3v}$.}
+        \label{tab:C3vReps}
+    \end{table}
+    \begin{itemize}
+        \item $\Gamma_e$ is the representation corresponding to the full $3\times 3$ matrices.
+        \item $\Gamma_{2D}$ is the representation corresponding to the 2D blocks.
+        \item $\Gamma_{1D}$ is the representation corresponding to the 1D blocks.
+        \item The latter two are called the irreducible representations; the first one is called a reducible representations. In fact,
+        \begin{equation*}
+            \Gamma_e = \Gamma_{2D}+\Gamma_{1D}
+        \end{equation*}
+    \end{itemize}
+    \item Every point group has a specific number of irreducible representations (IRRs); are $\Gamma_{2D},\Gamma_{1D}$ it?
+    \begin{itemize}
+        \item No --- we will use the rules to find the others.
+    \end{itemize}
+    \item IRRs have 4 rules.
+    \begin{enumerate}
+        \item The number of IRRs: The number of non-equivalent IRRs is equal to the number of classes in the group.
+        \item Dimensionality of IRRs: The sum of the squares of the dimensions $\ell$ of IRRs in a class is equal to the order of the group.
+        \begin{equation*}
+            \sum_i\ell_i^2 = \sum\chi_i^2(\text{class}) = h
+        \end{equation*}
+        \item Characters of IRRs: The sum of the squares of the characters under any IRR equals the order of the group.
+        \begin{equation*}
+            \sum_Rg(R)\chi_i^2(R) = h
+        \end{equation*}
+        \item Orthogonality rule: The sum of the products of characters under any two irreducible representations is equal to zero.
+        \begin{equation*}
+            \sum_Rg(R)\chi_i(R)\chi_j(R) = 0
+        \end{equation*}
+    \end{enumerate}
+    \item Examples of the rules in $C_{3v}$.
+    \begin{itemize}
+        \item Rule 1: $C_{3v}$ has three classes, so it must have there must be one more IRR than listed in Table \ref{tab:C3vReps}.
+        \item Rule 2: We must have that
+        \begin{equation*}
+            1^2+2^2+\ell_3^2 = 6
+        \end{equation*}
+        \item Rule 3: For $\Gamma_{2D}$, for example,
+        \begin{equation*}
+            (1)(2)^2+2(-1)^2+3(0)^2 = 6
+        \end{equation*}
+        \item Rule 4: With $\Gamma_{1D},\Gamma_{2D}$, for example,
+        \begin{equation*}
+            (1)(1)(2)+(2)(1)(-1)+(3)(1)(0) = 0
+        \end{equation*}
+    \end{itemize}
+    \item Finding the last representation of $C_{3v}$.
+    \begin{itemize}
+        \item General procedure: Apply rule 1, then 2, then 4. Check with 3.
+        \item For example, we can find that the last $\Gamma=(1,1,-1)$.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
