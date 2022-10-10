@@ -1,0 +1,79 @@
+\documentclass[../notes.tex]{subfiles}
+
+\pagestyle{main}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ (#1)}{}}
+\setcounter{chapter}{2}
+
+\begin{document}
+
+
+
+
+\chapter{Applications of Representation Theory}
+\section{Reducible Representations and Direct Products}
+\begin{itemize}
+    \item \marginnote{10/10:}PSet is due at the beginning of next class. Email or submit in paper. Show your work!
+    \item Since molecules have more than one point, we need to work with the characters of reducible representations. In particular, when applying group theory to chemical problems, we need to find the IRRs whose sum is the reducible representation.
+    \item \textbf{Reduction formula}: The formula which takes a $\Gamma_\text{red}$ and decomposes it into a sum of $\Gamma_\text{IRR}$s. \emph{Given by}
+    \begin{equation*}
+        n(\Gamma_A) = \frac{1}{h}\sum_ig(R)\chi_\text{IRR}(R)\chi_\text{RR}(R)
+    \end{equation*}
+    \begin{itemize}
+        \item $n(\Gamma_A)$ is the number of times the IRR $A$ occurs in $\Gamma_\text{red}$.
+        \item $h$ is the order of the group.
+        \item $g(R)$ is the order of the class under the symmetry operation $R$.
+        \item $\chi_\text{IRR}(R)$ is the character of the IRR under the symmetry operation $R$.
+        \item $\chi_\text{RR}(R)$ is the character of the reducible representation under the symmetry operation $R$.
+    \end{itemize}
+    \item Recall $\Gamma_\text{red}=(3,0,1)$ in $C_{3v}$ from Lecture 2.2.
+    \begin{itemize}
+        \item The number of times each IRR appears is, according to the reduction formula:
+        \begin{alignat*}{4}
+            n(A_1) &= \frac{1}{6}(1\cdot 1\cdot 3+2\cdot{}&1&\cdot 0+3\cdot{}&1&\cdot 1) &&= 1\\
+            n(A_2) &= \frac{1}{6}(1\cdot 1\cdot 3+2\cdot{}&1&\cdot 0+3\cdot{}&-1&\cdot 1) &&= 0\\
+            n(E) &= \frac{1}{6}(1\cdot 2\cdot 3+2\cdot{}&-1&\cdot 0+3\cdot{}&0&\cdot 1) &&= 1
+        \end{alignat*}
+    \end{itemize}
+    \item Simple cases (like this and the next one) we can often do by inspection.
+    \item Example: $\Gamma_\text{RR}=(6,0,0)$.
+    \begin{itemize}
+        \item Decompose it into $A_1+A_2+2E$.
+    \end{itemize}
+    \item \textbf{Direct product} (of two representations): The (reducible or irreducible) representation obtained by multiplying the characters of the two representations which correspond under each operation. \emph{Denoted by} $\bm{M\times N}$, where $M,N$ are Mulliken symbols.
+    \item Examples:
+    \begin{itemize}
+        \item $A_1\times E=E$.
+        \item $A_2\times E=E$.
+        \item $E\times E=A_1+A_2+E$.
+        \item $A_2\times A_2=A_1$.
+    \end{itemize}
+    \item We now dive into how to use the symmetry properties of a collection of orbitals to determine the states that arise by populating them with electrons. To do this for a given basis set of valence atomic orbitals, we need to ask what set of IRRs they fall into.
+    \item Procedure.
+    \begin{enumerate}
+        \item Generate the characters of this representation by examining the trace of the relevant transform matricies.
+        \begin{itemize}
+            \item $+1$ on the diagonal if a particular basis function is left unchanged during the symmetry operation.
+            \item $0$ on the diagonal if the basis function is transformed to another function.
+            \item $-1$ on the diagonal if the function is converted into minus itself.
+            \item Indeed, only basis set elements that do not move contribute to the trace (i.e., character) of the representation.
+        \end{itemize}
+        \item Check that the dimension is greater than the largest dimension permissible in the point group. If so, we need to reduce to IRRs. This is an important step to construct SALCs.
+    \end{enumerate}
+    \item Example: Consider the set of $\ce{H}_{1s}$ orbitals of \ce{NH3} as the representation.
+    \begin{itemize}
+        \item $\Gamma_{3\ce{H}_{1s}}=(3,0,1)$ since all 3 orbitals stay under $E$, all orbitals move under $2C_3$, and 1 orbital stays under $3\sigma_v$.
+        \item Decompose into $A_1+E$.
+        \item Therefore, the $1s$ orbital of \ce{H} within $C_{3v}$ of \ce{NH3} transforms in $a_1+e$ symmetry.
+        \item Note that we use lowercase Mulliken symbols for atomic/molecular orbitals and vibrational modes and uppercase Mulliken symbols for electronic states.
+        \item This $a_1+e$ symmetry for the $\ce{H}_{1s}$ group orbitals implies that there are 3 SALC orbitals: 1 of $a_1$ symmetry and 2 of $e$ symmetry.
+    \end{itemize}
+    \item Example: \ce{H2O}.
+    \begin{itemize}
+        \item $\Gamma=(2,0,0,2)=A_1+B_2$.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+\end{document}
