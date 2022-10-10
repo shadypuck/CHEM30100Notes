@@ -412,5 +412,115 @@
 
 
 
+\section{Character Tables and Mulliken Symbols}
+\begin{itemize}
+    \item \marginnote{10/7:}The algebraic rules discussed last lecture are sufficient to derive a character table. They are summarized in the following procedure.
+    \begin{enumerate}
+        \item Determine the number of classes in order to find the number of irreducible representations.
+        \item All groups have a totally symmetric irreducible representation.
+        \item Determine the dimensionality of the irreducible representations.
+        \item Apply the orthogonality rule.
+        \item Verify using the sum of square of characters rule.
+    \end{enumerate}
+    \item Example: Deriving the $C_{3v}$ character table using the above strategy.
+    \begin{table}[h!]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{c|ccc|l|l}
+            $C_{3v}$ & $E$ & $2C_3$ & $3\sigma_v$ & linear & quadratic\\
+            \hline
+            $A_1$ & 1 & 1 & 1 & $z$ & $z^2$\\
+            $A_2$ & 1 & 1 & $-1$ & $R_z$ & \\
+            $E$ & 2 & $-1$ & 0 & $(x,y),(R_x,R_y)$ & $(x^2-y^2,xy),(xz,yz)$\\
+        \end{tabular}
+        \caption{$C_{3v}$ character table.}
+        \label{tab:charTableC3v}
+    \end{table}
+    \begin{itemize}
+        \item There are three classes; hence, we will have $\Gamma_1,\Gamma_2,\Gamma_3$.
+        \begin{itemize}
+            \item See below for an explanation of their labels.
+        \end{itemize}
+        \item Let $\Gamma_1=(1,1,1)$ be the totally symmetric irreducible representation.
+        \item If we want the sum of the squares of the dimensionalities to be natural numbers which add to $h=6$, then we must choose $\ell_2=1$ and $\ell_3=2$.
+        \item Applying the orthogonality rule, we can find the remaining four values in the table (those in the lower-right block) by inspection.
+        \item We may, indeed, confirm using the sum of the squares rule.
+        \item Also see below for an explanation of the Cartesian coordinates on the right-hand side.
+    \end{itemize}
+    \item It will be beneficial to have a standard method for naming our irreducible representations.
+    \item \textbf{Mulliken symbol}: The designation of an irreducible representation assigned according to the following procedure. \emph{Given by}
+    \begin{enumerate}
+        \item All 1D representations are $A$ or $B$. 2D is $E$. 3D is $T$.
+        \item Distinguishing $A$ and $B$.
+        \begin{enumerate}
+            \item $\chi(C_n)=+1\quad\Longrightarrow\quad A$.
+            \item $\chi(C_n)=-1\quad\Longrightarrow\quad B$.
+        \end{enumerate}
+        \item Numerical subscripts: For groups that contain a secondary $C_2$ axis (or in its absence, $\sigma_v$).
+        \begin{enumerate}
+            \item $\chi(C_2\text{ or }\sigma_v)=+1\quad\Longrightarrow\quad\text{Subscript }1$.
+            \item $\chi(C_2\text{ or }\sigma_v)=-1\quad\Longrightarrow\quad\text{Subscript }2$.
+        \end{enumerate}
+        \item Alphabetical subscripts: For groups that contain $i$.
+        \begin{enumerate}
+            \item $\chi(i)=+1\quad\Longrightarrow\quad\text{Subscript }g$.
+            \item $\chi(i)=-1\quad\Longrightarrow\quad\text{Subscript }u$.
+        \end{enumerate}
+        \item Prime subscripts: For groups that contain $\sigma_h$.
+        \begin{enumerate}
+            \item $\chi(\sigma_h)=+1\quad\Longrightarrow\quad\text{Superscript }'$.
+            \item $\chi(\sigma_h)=-1\quad\Longrightarrow\quad\text{Superscript }''$.
+        \end{enumerate}
+    \end{enumerate}
+    \item \textbf{Symmetric} (IRR wrt. a symmetry operation): An IRR for which the character of the symmetry operation in question is $+1$.
+    \item \textbf{Unsymmetric} (IRR wrt. a symmetry operation): An IRR for which the character of the symmetry operation in question is $-1$. \emph{Also known as} \textbf{antisymmetric}.
+    \item Based on the above rules, we can conclude that for $C_{3v}$, $\Gamma_1=A_1$, $\Gamma_2=A_2$, and $\Gamma_3=E$.
+    \item The last two elements we need to construct the $C_{3v}$ character table are the Cartesian coordinates. These are easy to derive for $z$-axis elements and groups that contain $x$- and $y$-axis rotations (e.g., $C_2,C_4$). If $n$ is odd, these latter ones will be given to you.
+    \begin{itemize}
+        \item There are two types of linear bases to consider: $x,y,z$ and $R_x,R_y,R_z$. The former corresponds to $p$ orbitals. The latter corresponds to rotations about one of the Cartesian axes.
+        \item There is one type of quadratic base to consider: $z^2,x^2-y^2,xy,xz,yz$. These correspond to $d$ orbitals.
+        \item Wuttig draws out the effect of each symmetry operation in $C_{3v}$ on $p_z$, $d_{z^2}$, and $R_z$. She concludes for the first two that they are totally symmetric with respect to the operations; hence, they are $A_1$. She also concludes with respect to the last one that it is symmetric to the identity and to rotation, but unsymmetric to reflection about the $z$-axis; hence, it is $A_2$.
+        \item The others are filled in toward us.
+    \end{itemize}
+    \item Summary: Anatomy of a character table.
+    \begin{enumerate}
+        \item Point group.
+        \item Irreducible representations, as denoted by Mulliken symbols.
+        \item Classes of symmetry operations.
+        \item Characters of irreducible representations.
+        \item Linear basis: Axes and rotations (basis functions for the irreducible representations).
+        \begin{enumerate}
+            \item $p$ orbitals: Denoted as $z,x,y$.
+            \item Rotations around $z,x,y$: Denoted as $R_z,R_x,R_y$.
+        \end{enumerate}
+        \item Quadratic basis (basis functions for the irreducible representations).
+        \begin{enumerate}
+            \item $d$ orbitals: Denoted as $z^2,x^2-y^2,xy,xz,yz$.
+        \end{enumerate}
+    \end{enumerate}
+    \item Example: Filling in the $C_{2v}$ character table.
+    \begin{table}[H]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{c|cccc|l|l}
+            $C_{2v}$ & $E$ & $C_2$ & $\sigma_v(xz)$ & $\sigma_v'(yz)$ & linear & quadratic\\
+            \hline
+            $A_1$ & 1 & 1 & 1 & 1 & $z$ & $x^2,y^2,z^2$\\
+            $A_2$ & 1 & 1 & $-1$ & $-1$ & $R_z$ & $xy$\\
+            $B_1$ & 1 & $-1$ & 1 & $-1$ & $x,R_y$ & $xz$\\
+            $B_2$ & 1 & $-1$ & $-1$ & 1 & $y,R_x$ & $yz$\\
+        \end{tabular}
+        \caption{$C_{2v}$ character table.}
+        \label{tab:charTableC2v}
+    \end{table}
+    \begin{itemize}
+        \item Special case where the two $\sigma$ have different characters: With respect to determining which of the bottom two representations is $B_1$ and which is $B_2$, we must pick a $\sigma_v$ to use as a reference and stick with it.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
