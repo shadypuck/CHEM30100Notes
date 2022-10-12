@@ -75,5 +75,174 @@
 
 
 
+\section{Projection Operations and SALCs}
+\begin{itemize}
+    \item \marginnote{10/12:}PSet 2 is posted and due 10/21.
+    \begin{itemize}
+        \item Go over questions on the HW in the review classes prior to exams.
+    \end{itemize}
+    \item \textbf{Symmetry-Adapted Linear Combination}: An orthonormal linear combination of one or more sets of orthonormal functions (which are either atomic orbitals or internal coordinates of a molecule) taken in such a way that the combinations form bases for irreducible representations of the symmetry group of the molecule. \emph{Also known as} \textbf{SALC}.
+    \item Last time, we investigated the SALCs of \ce{NH3}. We found them by decomposing a reducible representation of the $\ce{H}_{1s}$ basis set to its irreducible representations and naming them via the character table.
+    \item Goal: What do the SALCs of \ce{NH3} look like?
+    \begin{itemize}
+        \item We know that we need 3 SALCs, 1 of $a_1$ symmetry and 2 of $e$ symmetry.
+        \item To achieve the goal, we apply the \textbf{projection operator} to each irreducible representation.
+    \end{itemize}
+    \item \textbf{Projection operator} (on an IRR): The operator defined as follows, which acts on IRRs. \emph{Denoted by} $\bm{\hat{P}}$. \emph{Given by}
+    \begin{equation*}
+        \hat{P}(\Gamma_i) = \frac{\ell_i}{h}\sum_R\chi_i(R)\hat{R}
+    \end{equation*}
+    \begin{itemize}
+        \item $\ell_i$ is the dimension(ality) of the IRR.
+        \item $\Gamma_i$ is the IRR.
+        \item $\hat{R}$ is the symmetry operation to be applied to the basis.
+        \item $\chi_i(R)$ is the character of the given symmetry operation for $\Gamma_i$.
+        \item In other words, we need to evaluate what happens to the $\ce{H}_{1s}$ orbitals under each symmetry operation.
+    \end{itemize}
+    \item It follows that we need the character table to evaluate what happens to the $\ce{H}_{1s}$ orbitals for each symmetry operation.
+    \begin{itemize}
+        \item Note that for the projection operator, we do \emph{not} do this by class (i.e., we do need to apply \emph{every single} symmetry operation)\footnote{Notice that the order of the class is not present in the projection operator!}.
+        \item Focus on one orbital in particular, and see to which orbital each symmetry operation takes it.
+    \end{itemize}
+    \item \ce{NH3} example.
+    \begin{itemize}
+        \item We have
+        \begin{align*}
+            E:x_1\mapsto x_1&&
+            C_3:x_1\mapsto x_2&&
+            {C_3}^2:x_1\mapsto x_3&&
+            \sigma_v:x_1\mapsto x_1&&
+            \sigma_v':x_1\mapsto x_3&&
+            \sigma_v'':x_1\mapsto x_2
+        \end{align*}
+        \item We can do the same for where $x_2,x_3$ go.
+        \item It follows that
+        \begin{equation*}
+            \hat{P}(A_1)_{x_1} = 1x_1+1x_2+1x_3+1x_1+1x_3+1x_2
+            = 2(x_1+x_2+x_3)
+            \approx x_1+x_2+x_3
+        \end{equation*}
+        \begin{itemize}
+            \item This implies that under the totally symmetric representation, all orbitals are the same, as we might expect. Note that the constant factor of 2 does not affect the functional form and therefore does not affect the symmetry properties.
+            \item We don't carry through $\ell_i/h$ because it's a constant??
+            \item Note that
+            \begin{equation*}
+                \hat{P}(A_1)_{x_2} = \hat{P}(A_1)_{x_3} = \hat{P}(A_1)_{x_1}
+            \end{equation*}
+        \end{itemize}
+        \item As another example,
+        \begin{equation*}
+            \hat{P}(E)_{x_1} = 2x_1-x_2-x_3+0x_1+0x_3+0x_2
+            = 2x_1-x_2-x_3
+        \end{equation*}
+        \item Similarly,
+        \begin{align*}
+            \hat{P}(E)_{x_2} &= 2x_2-x_3-x_1\\
+            \hat{P}(E)_{x_3} &= 2x_3-x_1-x_2
+        \end{align*}
+        \item Note that all of these functions must be orthonormal.
+        \begin{itemize}
+            \item We have three functions, but we only need 2 in $e$! Thus, we employ the orthonormal rule to figure it out.
+            \item We have that the first and second, and first and third are not orthogonal:
+            \begin{align*}
+                (\Psi_{E,x_1},\Psi_{E,x_2}) &= (2)(-1)+(2)(-1)+(-1)(-1) = 3 \neq 0\\
+                (\Psi_{E,x_1},\Psi_{E,x_3}) &= (2)(-1)+(-1)(-1)+(-1)(2) = 3 \neq 0
+            \end{align*}
+            \item What we can do is take a linear combination of 2 and 3 so that it's orthogonal to 1.
+            \item Let's try
+            \begin{equation*}
+                \Psi_{E,\text{new}} = \Psi_{E,x_2}-\Psi_{E,x_3}
+                = 3x_2-3x_3
+                \approx x_2-x_3
+            \end{equation*}
+            \item Indeed,
+            \begin{equation*}
+                (\Psi_{E,x_1},\Psi_{E,\text{new}}) = (2)(0)+(-1)(1)+(-1)(-1) = 0
+            \end{equation*}
+            as desired.
+            \item Note that adding does not get us something orthogonal.
+        \end{itemize}
+        \item Normalize the SALCs.
+        \begin{itemize}
+            \item At this point, we have that
+            \begin{align*}
+                \Psi_{A_1\text{ SALC}} &= x_1+x_2+x_3&
+                \Psi_{E\text{ SALC}} &= 2x_1-x_2-x_3&
+                \Psi_{E\text{ SALC}} &= x_2-x_3
+            \end{align*}
+            \item Normalization means adjusting the normalization constant $N$ such that
+            \begin{equation*}
+                \int[N(x_1+x_2+x_3)]^2 = 1
+            \end{equation*}
+            \item More simply, we multiply each of the above by 1 over the square root of the sum of the squares of the extant coefficients. So
+            \begin{align*}
+                \Psi_{A_1\text{ SALC}} &= \frac{1}{\sqrt{1^2+1^2+1^2}}(x_1+x_2+x_3)&
+                \Psi_{E\text{ SALC}} &= \frac{1}{\sqrt{2^2+(-1)^2+(-1)^2}}(2x_1-x_2-x_3)\\
+                &= \frac{1}{\sqrt{3}}(x_1+x_2+x_3)&
+                &= \frac{1}{\sqrt{6}}(2x_1-x_2-x_3)
+            \end{align*}
+            \begin{align*}
+                \Psi_{E\text{ SALC}} &= \frac{1}{\sqrt{0^2+1^2+(-1)^2}}(x_2-x_3)\\
+                &= \frac{1}{\sqrt{2}}(x_2-x_3)
+            \end{align*}
+        \end{itemize}
+        \item Lastly, we can draw the orbitals.
+        \begin{figure}[h!]
+            \centering
+            \begin{subfigure}[b]{0.25\linewidth}
+                \centering
+                \begin{tikzpicture}
+                    \draw
+                        (0,0) -- (1,-0.9) coordinate (x1)
+                        (0,0) -- (0,-1.2) coordinate (x2)
+                        (0,0) -- (-1,-0.9) coordinate (x3)
+                    ;
+        
+                    \filldraw [semithick,fill=grz] (x1) circle (3mm);
+                    \filldraw [semithick,fill=grz] (x2) circle (3mm);
+                    \filldraw [semithick,fill=grz] (x3) circle (3mm);
+                \end{tikzpicture}
+                \caption{$\Psi_{a_1}$.}
+                \label{fig:NH3SALCa}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.25\linewidth}
+                \centering
+                \begin{tikzpicture}
+                    \draw
+                        (0,0) -- (1,-0.9) coordinate (x1)
+                        (0,0) -- (0,-1.2) coordinate (x2)
+                        (0,0) -- (-1,-0.9) coordinate (x3)
+                    ;
+        
+                    \filldraw [semithick,fill=grz]   (x1) circle (4.24mm);
+                    \filldraw [semithick,fill=white] (x2) circle (2.12mm);
+                    \filldraw [semithick,fill=white] (x3) circle (2.12mm);
+                \end{tikzpicture}
+                \caption{$\Psi_{e_a}$.}
+                \label{fig:NH3SALCb}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.25\linewidth}
+                \centering
+                \begin{tikzpicture}
+                    \draw
+                        (0,0) -- (1,-0.9) coordinate (x1)
+                        (0,0) -- (0,-1.2) coordinate (x2)
+                        (0,0) -- (-1,-0.9) coordinate (x3)
+                    ;
+        
+                    \filldraw [semithick,fill=grz]   (x2) circle (3.67mm);
+                    \filldraw [semithick,fill=white] (x3) circle (3.67mm);
+                \end{tikzpicture}
+                \caption{$\Psi_{e_b}$.}
+                \label{fig:NH3SALCc}
+            \end{subfigure}
+            \caption{\ce{NH3} SALCs.}
+            \label{fig:NH3SALC}
+        \end{figure}
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
