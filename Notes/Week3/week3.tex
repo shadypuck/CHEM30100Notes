@@ -244,5 +244,183 @@
 
 
 
+\section{Vibrational Modes and Symmetry}
+\begin{itemize}
+    \item \marginnote{10/14:}Purposes of the basis set $\to$ RRs $\to$ IRRs $\to$ SALCs workflow.
+    \begin{enumerate}
+        \item Helps us understand the symmetry properties of molecular vibrations (we are going to look at this first).
+        \item Helps us understand MO diagrams (we will look at this after Exam 1).
+    \end{enumerate}
+    \item Symmetry properties of molecular vibrations: Any vibrational motion of a molecule can be decomposed in a combination of normal modes, and all normal modes form the basis of an irreducible representation of the point group of the molecule.
+    \item How many normal modes do we have for a given molecule?
+    \begin{itemize}
+        \item $N$ atoms.
+        \item $3N$ degrees of freedom.
+        \item 3 translations.
+        \item 3 rotations (2 for linear molecules).
+        \item $3N-6$ (resp. $3N-5$) vibrations (i.e., normal modes).
+    \end{itemize}
+    \item How to determine normal modes.
+    \begin{enumerate}
+        \item Determine the point group.
+        \item Consider the motion of atoms independently.
+        \item Use the Cartesian displacement method, reduce $\Gamma_\text{Cartesian}$ to IRRs, and compare with the character table to determine which can be accounted for by translation $(x,y,z)$ and rotation $(R_x,R_y,R_z)$.
+        \item Use the stretching and/or bending vectors as basis sets and use $\hat{P}$ to determine what the normal modes look like.
+    \end{enumerate}
+    \item Example: \ce{H2O}.
+    \begin{enumerate}
+        \item $C_{2v}$.
+        \item 3 degrees of freedom for each atom (atom $i$ can move in the $x_i,y_i,z_i$ direction for $i=1,2,3$).
+        \item Multiple steps:
+        \begin{enumerate}
+            \item Find $\Gamma_\text{unmoved}=(3,1,1,3)$.
+            \item Find $\Gamma_{xyz}$: From the relevant character table, $\Gamma_{xyz}=A_1+B_1+B_2=(3,-1,1,1)$.
+            \item Find $\Gamma_\text{Cartesian}=\Gamma_\text{unmoved}\times\Gamma_{xyz}=(9,-1,1,3)$.
+            \item Apply the reduction formula: $\Gamma_\text{Cartesian}=3A_1+A_2+2B_1+3B_2$.
+            \item Notice that $A_1$ corresponds to the $z$-translation, $A_2$ corresponds to the $z$-rotation, $B_1$ corresponds to the $x$-translation and $y$-rotation, and $B_2$ corresponds to the $y$-translation and $x$-rotation. If we want to determine the vibrational modes of symmetry, we need to subtract out the modes corresponding to translations and rotations of the full molecule. Thus,
+            \begin{equation*}
+                \Gamma_\text{vibs} = 3A_1+A_2+2B_1+3B_2-(A_1+A_2+2B_1+2B_2)
+                = 2A_1+B_2
+            \end{equation*}
+        \end{enumerate}
+        \item Multiple steps:
+        \begin{enumerate}
+            \item \underline{Stretching IRR(s)}: Label the bond vectors $r_1,r_2$. Find their representation.
+            \begin{equation*}
+                \Gamma_1 = (2,0,0,2)
+                = A_1+B_2
+            \end{equation*}
+            \begin{itemize}
+                \item Since $\Gamma_1$ decomposes into two IRRs, this basis set accounts for 2/3 of the normal vibrational modes.
+                \item To get the last, we'll need another basis set, but we'll do that later.
+            \end{itemize}
+            \item \underline{Stretching SALC(s)}: Apply the projection operator to these normal modes.
+            \begin{align*}
+                \hat{P}(A_1)_{r_1} &= 2(r_1+r_2) \approx r_1+r_2\\
+                \hat{P}(B_2)_{r_1} &= 2(r_1-r_2) \approx r_1-r_2
+            \end{align*}
+            \item \underline{Bending IRR(s)}: Label the bending basis (angle between $r_1,r_2$) $\Delta\theta$. Find its representation.
+            \begin{equation*}
+                \Gamma_2 = (1,1,1,1)
+                = A_1
+            \end{equation*}
+            \item \underline{Bending SALC(s)}: Apply the projection operator to this normal mode.
+            \begin{equation*}
+                \hat{P}(A_1)_{\Delta\theta} = 4\Delta\theta \approx \Delta\theta
+            \end{equation*}
+            \item \underline{Visualize the normal modes}: $r_1+r_2$ corresponds to a symmetric stretch $\nu_s$, $r_1-r_2$ corresponds to an asymmetric stretch $\nu_a$, and $\Delta\theta$ corresponds to a bend $\delta$.
+            \begin{figure}[h!]
+                \centering
+                \footnotesize
+                \begin{subfigure}[b]{0.2\linewidth}
+                    \centering
+                    \chemfig[bond style={white}]{@{H1}H-[:37.75]@{O}O-[:-37.75]@{H2}H}
+                    \chemmove{
+                        \draw [latex-,shorten <=2pt,shorten >=2pt] (H1) -- (O);
+                        \draw [latex-,shorten <=2pt,shorten >=2pt] (H2) -- (O);
+                    }
+                    \caption{$a_1$ stretch: $\nu_s$.}
+                    \label{fig:H2Ovibsa}
+                \end{subfigure}
+                \begin{subfigure}[b]{0.2\linewidth}
+                    \centering
+                    \chemfig[bond style={white}]{@{H1}H-[:37.75]@{O}O-[:-37.75]@{H2}H}
+                    \chemmove{
+                        \draw [latex-,shorten <=2pt,shorten >=2pt] (H1) -- (O);
+                        \draw [-latex,shorten <=2pt,shorten >=2pt] (H2) -- (O);
+                    }
+                    \caption{$b_2$ stretch: $\nu_a$.}
+                    \label{fig:H2Ovibsb}
+                \end{subfigure}
+                \begin{subfigure}[b]{0.2\linewidth}
+                    \centering
+                    \chemfig{@{H1}H-[:37.75]@{O}O-[:-37.75]@{H2}H}
+                    \chemmove{
+                        \pic [draw,{latex[flex]}-{latex[flex]},shorten <=2pt,shorten >=2pt] {angle=H1--O--H2};
+                    }
+                    \caption{$a_1$ stretch: $\delta$.}
+                    \label{fig:H2Ovibsc}
+                \end{subfigure}
+                \caption{\ce{H2O} vibrational modes.}
+                \label{fig:H2Ovibs}
+            \end{figure}
+            \item \underline{Quantum mechanically calculate the stretching frequencies}: For \ce{H2O}, $\nu_s=\SI{3657}{\per\centi\meter}$, $\nu_a=\SI{3756}{\per\centi\meter}$, and $\delta=\SI{1595}{\per\centi\meter}$.
+        \end{enumerate}
+    \end{enumerate}
+    \item Example: \ce{PH3} stretching modes.
+    \begin{itemize}
+        \item $C_{3v}$.
+        \item $\Gamma_\nu=(3,0,1)=a_1+e$.
+        \item Projecting:
+        \begin{align*}
+            \hat{P}(A_1)_{r_1} &\approx r_1+r_2+r_3&
+            \hat{P}(E)_{r_1} &\approx 2r_1-r_2-r_3&
+            \hat{P}(E)_{r_2-r_3} &\approx r_2-r_3
+        \end{align*}
+        \item Drawing:
+        \begin{figure}[h!]
+            \centering
+            \footnotesize
+            \begin{subfigure}[b]{0.2\linewidth}
+                \centering
+                \chemfig[bond style={white}]{@{P}P(-[:-30]@{H1}H)(<[:-110]@{H2}H)(<:[:-150]@{H3}H)}
+                \chemmove{
+                    \draw [latex-,shorten <=2pt,shorten >=2pt] (H1) -- (P);
+                    \draw [latex-,shorten <=2pt,shorten >=2pt] (H2) -- (P);
+                    \draw [latex-,shorten <=2pt,shorten >=2pt] (H3) -- (P);
+                }
+                \caption{$a_1$ stretch.}
+                \label{fig:PH3vibsa}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \centering
+                \chemfig[bond style={white}]{@{P}P(-[:-30,2]@{H1}H)(<[:-110]@{H2}H)(<:[:-150]@{H3}H)}
+                \chemmove{
+                    \draw [latex-,shorten <=2pt,shorten >=2pt] (H1) -- (P);
+                    \draw [-latex,shorten <=2pt,shorten >=2pt] (H2) -- (P);
+                    \draw [-latex,shorten <=2pt,shorten >=2pt] (H3) -- (P);
+                }
+                \caption{$e$ stretch (1).}
+                \label{fig:PH3vibsb}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \centering
+                \chemfig[bond style={white}]{@{P}P(-[:-30,,,,black]@{H1}H)(<[:-110]@{H2}H)(<:[:-150]@{H3}H)}
+                \chemmove{
+                    \draw [-latex,shorten <=2pt,shorten >=2pt] (H2) -- (P);
+                    \draw [latex-,shorten <=2pt,shorten >=2pt] (H3) -- (P);
+                }
+                \caption{$e$ stretch (2).}
+                \label{fig:PH3vibsc}
+            \end{subfigure}
+            \caption{\ce{PH3} vibrational modes.}
+            \label{fig:PH3vibs}
+        \end{figure}
+    \end{itemize}
+    \item Note that we don't need $\Gamma_{3N}$ to derive $\Gamma_\nu$! We would only need it for $\Gamma_\delta$, unless Wuttig gives us a bending basis with which to work.
+    \item Some observation on orthogonal projections.
+    \begin{itemize}
+        \item Suppose we want to derive $3r_2-3r_3$. Since $\hat{P}$ is a linear operator, we can equally well take the difference $\hat{P}(E)_{r_2}-\hat{P}(E)_{r_3}$ and project out $r_2-r_3$ via $\hat{P}_{r_2-r_3}$ to start.
+        \item Moreover, I suspect that the projection operator is unitary (i.e., maps orthogonal vectors to orthogonal vectors). At least in this case, notice that $r_1$ and $r_2-r_3$ are very much orthogonal (see Figure \ref{fig:orthoStretch}), just like their projections.
+        \begin{figure}[h!]
+            \centering
+            \footnotesize
+            \begin{tikzpicture}
+                \draw [-latex] (0,0) coordinate (O) -- (90:1) coordinate (1) node[above]{$r_1$};
+                \draw [-latex] (0,0) -- (-30:1) node[below right=-1.5pt]{$r_2$};
+                \draw [-latex] (0,0) -- (-150:1) node[below left=-1.5pt]{$r_3$};
+                \draw [-latex] (-30:1) -- node[near end,below]{$-r_3$} ++(30:1) coordinate (A);
+                \draw [-latex] (0,0) -- node[pos=0.6,above]{$r_2-r_3$} (A);
+        
+                \pic [draw,angle radius=2mm] {right angle=A--O--1};
+            \end{tikzpicture}
+            \caption{Orthogonal stretching basis.}
+            \label{fig:orthoStretch}
+        \end{figure}
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
