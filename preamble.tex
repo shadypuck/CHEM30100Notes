@@ -7,10 +7,10 @@
 \usepackage[bottom]{footmisc}
 \usepackage{siunitx}
 \usepackage{tabu}
-\usepackage{tikz}
+\usepackage{tikz,graphicx}
 \usepackage{subcaption,float}
 \usepackage{amsmath,amssymb}
-\usepackage{bm,nicematrix}
+\usepackage{bm,nicematrix,physics}
 \usepackage{mhchem,chemfig}
 \usepackage[hidelinks]{hyperref}
 
@@ -33,6 +33,8 @@
 
 \deffootnotemark{\textsuperscript{\textup{[}\thefootnotemark\textup{]}}}
 \deffootnote[1.8em]{0em}{0em}{\textsuperscript{\thefootnote}}
+
+\sisetup{list-units=single}
 
 \usetikzlibrary{shapes.geometric,angles,bending}
 \colorlet{grz}{green!25!cyan!40!black!20}

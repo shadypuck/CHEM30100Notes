@@ -1,0 +1,135 @@
+\documentclass[../notes.tex]{subfiles}
+
+\pagestyle{main}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ (#1)}{}}
+\setcounter{chapter}{3}
+
+\begin{document}
+
+
+
+
+\chapter{Spectroscopy}
+\section{IR Selection Rules and Stretching Mode Analysis}
+\begin{itemize}
+    \item \marginnote{10/17:}Fill out the Google Form to indicate topics we want Wuttig to cover during the review session.
+    \item The most common experiments we do to determine normal modes are IR and Raman experiments.
+    \begin{itemize}
+        \item Vibration modes can be IR and/or Raman active.
+        \item IR spectroscopy probes direct absorption of IR light to excite vibrational modes.
+        \item We will first determine the IR selection rules.
+    \end{itemize}
+    \item IR selection rules:
+    \begin{itemize}
+        \item We want $\Delta v=\pm 1$.
+        \item The transition moment integral is for transitions $v\to v'$; it is written as
+        \begin{equation*}
+            M_{vv'} = \int_{-\infty}^\infty\Psi^*(v')\mu\Psi(v)\dd{x}
+        \end{equation*}
+        where $\mu$ is the electric dipole moment and $[M_{vv'}]^2$ is the probability of the transition.
+    \end{itemize}
+    \item If $\mu$ were a constant, then
+    \begin{equation*}
+        M_{vv'} = \mu\int_{-\infty}^\infty\Psi^*(v')\Psi(v)\dd{x} = 0
+    \end{equation*}
+    since $\Psi^*(v')$ and $\Psi^*(v)$ are orthogonal functions.
+    \begin{itemize}
+        \item Therefore, $\mu$ cannot be a constant; it needs to be a function of $x$ and needs to change during the vibration for the transition to be allowed.
+    \end{itemize}
+    \item A more general form of $[M_{vv'}]^2$ is
+    \begin{equation*}
+        [M_{vv'}]^2 = \int_\text{all space}\Psi^*(v')\hat{\mu}\Psi(v)\dd\tau
+    \end{equation*}
+    \begin{itemize}
+        \item In order for the above integral to not evaluate to zero, the direct product of the excited state wave function, transition dipole moment, and ground state wave function must contain the totally symmetric IRR. Symbolically,
+        \begin{equation*}
+            \Gamma_\text{IRR}(\Psi(v'))\times\Gamma_\text{IRR}(\hat{\mu})\times\Gamma_\text{IRR}(\Psi(v))
+        \end{equation*}
+        decomposes into a sum of IRRs including $A_1$.
+    \end{itemize}
+    \item Bottom line: A vibration will be IR active if it causes a change in the electric dipole moment of a molecule. A fundamental mode will be IR active if the normal mode which is excited belongs to the same representation as any one or several of the Cartesian coordinates.
+    \item What modes are IR active for water?
+    \begin{itemize}
+        \item Recall that the vibrational modes for \ce{H2O} are $a_1$ corresponding to $\nu_a$, $b_2$ corresponding to $\nu_{as}$, and $a_1$ corresponding to $\delta$.
+        \begin{itemize}
+            \item Looking at the character table, we notice that both $a_1,b_2$ transform as a linear function ($z,y$, respectively), so all modes are IR active.
+            \item More specifically, let's look at $b_2$. If $b_2$ transforms as a linear function, it \emph{is} true that it is IR active. Here's why: If $b_2$ transforms as a linear function, then it will be a component of $\hat{\mu}$. In this case, when we take the direct product $\Gamma_{v'}\times\hat{\mu}$, one term we will evaluate is $b_2\times b_2$. But by the second of the three important theorems, the direct product of any representation times itself will contain the totally symmetric irreducible representation, which is required for IR visibility as per the third of the three important theorems.
+        \end{itemize}
+        \item Show by direct product analysis that these IR modes are allowed.
+        \begin{itemize}
+            \item The first transition ($\nu_a$) goes from $a_1\to a_1$ (the ground state is relaxed, hence $a_1$, and the excited state is $\Gamma_\text{vibs}$ for $\nu_a$, which is $a_1$). It follows that
+            \begin{equation*}
+                \Psi^*(v')\hat{\mu}\Psi(v) \sim\footnote{$\sim$ denotes "transforms as."} a_1
+                \begin{pmatrix}
+                    a_1\\
+                    b_1\\
+                    b_2\\
+                \end{pmatrix}
+                a_1 =
+                \begin{pmatrix}
+                    a_1\\
+                    b_1\\
+                    b_2\\
+                \end{pmatrix}
+            \end{equation*}
+            Since the result of our calculation contains the totally symmetric representation (in its first entry), we know that $v_a$ is allowed.
+            \item The asymmetric stretch has ground $a_1$ and excited state $b_2$. $\hat{\mu}$ is the same as before.
+            \begin{equation*}
+                \Psi^*(v')\hat{\mu}\Psi(v) \sim b_2
+                \begin{pmatrix}
+                    a_1\\
+                    b_1\\
+                    b_2\\
+                \end{pmatrix}
+                a_1 =
+                \begin{pmatrix}
+                    b_2\\
+                    a_2\\
+                    a_1\\
+                \end{pmatrix}
+            \end{equation*}
+            Since it still contains the all-symmetric wavefunction, it's allowed.
+        \end{itemize}
+    \end{itemize}
+    \item Example:
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{../ExtFiles/ML3CO3a.png}
+            \caption{\emph{mer} isomer.}
+            \label{fig:ML3CO3a}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{../ExtFiles/ML3CO3b.png}
+            \caption{\emph{fac} isomer.}
+            \label{fig:ML3CO3b}
+        \end{subfigure}
+        \caption{Isomers of an octahedral \ce{ML3(CO)3} complex.}
+        \label{fig:ML3CO3}
+    \end{figure}
+    \begin{enumerate}
+        \item Determine the number, symmetries, and IR activities of the carbonyl stretching modes for the two isomers of an octahedral \ce{ML3(CO)3} complex.
+        \begin{itemize}
+            \item Since we are asked to determine the \emph{carbonyl stretching} modes, we choose as our basis set the three vectors which run parallel to the \ce{CO} bonds in both cases.
+            \item The point group of the \emph{mer} isomer is $C_{2v}$; the point group of the \emph{fac} isomer is $C_{3v}$.
+            \item With this information, the rest of the question is fairly straightforward.
+        \end{itemize}
+        \item The IR spectrum of the compound \ce{Mo(CO)3[P(OCH3)3]3} exhibits bands at \qtylist{1993;1919;1890}{\per\centi\meter}. The IR spectrum of compound \ce{Cr(CO)3(CHCH3)3} exhibits bands at \qtylist{1942;1860}{\per\centi\meter}. Based on your answer from part (1), how would you assign the \emph{fac} vs. \emph{mer} structure of these two complexes?
+        \begin{itemize}
+            \item From part (1), determine which structure gave rise to three nondegenerate stretching modes, and which gave rise to two.
+        \end{itemize}
+    \end{enumerate}
+    \item This example shows that we can determine the stretching modes for just some functional groups.
+    \item Be careful with what the basis set is!
+    \item Example: Structures for \ce{OsO4N}.
+    \begin{itemize}
+        \item This molecule has four reasonable structures, having symmetry $C_{2v}$, $C_{3v}$, $C_{4v}$, and $C_s$. It is a great example! Especially when paired with preceding molecules using some subset of these character tables.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+\end{document}
