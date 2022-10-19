@@ -131,5 +131,140 @@
 
 
 
+\section{Raman Selection Rules and Normal Mode Analysis}
+\begin{itemize}
+    \item \marginnote{10/19:}PSet 2 is due at the beginning of class on Friday.
+    \item Raman and IR are complementary, and together they can distinguish geometric possibilities of an unknown molecule.
+    \item \textbf{Raman spectroscopy}: A type of spectroscopy which probes inelastic scattering of light where the loss in energy corresponds to a vibrational frequency (\textbf{Stokes shift}).
+    \item In Raman, you go to \textbf{virtual energy states}.
+    \item \textbf{Virtual energy state}: The coupling of a photon with a high energy state.
+    \item \textbf{Rayleigh scattering}: The amount of energy put in is the amount of energy you get out. \emph{Also known as} \textbf{elastic scattering}.
+    \begin{itemize}
+        \item Doesn't give us a change, so we filter this out.
+    \end{itemize}
+    \item \textbf{Stokes Raman scattering}: The photon out has less energy than the photon in; some energy was scattered.
+    \begin{itemize}
+        \item We excite from the ground state to a virtual energy state, and then fall back down but not all the way to the ground state, i.e., the electron remains in an excited state even after emitting its photon.
+    \end{itemize}
+    \item \textbf{Anti-Stokes Raman scattering}: The photon out has more energy than the photon in; we start at a higher energy state and then fall back to ground.
+    \begin{itemize}
+        \item We excite from an excited state to a virtual energy state, and the fall back down all the way to the ground state.
+    \end{itemize}
+    \item A vibrational mode will be Raman active if the polarizability of the molecule changes during the vibration. A fundamental transition will be Raman active (i.e., will give rise to a Raman shift) if the normal mode involved belongs to the same representation as one or more of the components of the polarizability tensor of the molecule.
+    \item Transition probability in Raman:
+    \begin{equation*}
+        M_w^2 = \left[ \int_{-\infty}^\infty\Psi_{v'}^*\hat{\alpha}\Phi_v\dd\tau \right]^2
+    \end{equation*}
+    \begin{itemize}
+        \item Polarizability describes the shape of the electron cloud and can be described by a tensor.
+        \begin{equation*}
+            \begin{bmatrix}
+                \mu_x\\
+                \mu_y\\
+                \mu_z\\
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                \alpha_{xx} & \alpha_{xy} & \alpha_{xz}\\
+                \alpha_{yx} & \alpha_{yy} & \alpha_{yz}\\
+                \alpha_{zx} & \alpha_{zy} & \alpha_{zz}\\
+            \end{bmatrix}
+            \begin{bmatrix}
+                E_x\\
+                E_y\\
+                E_z\\
+            \end{bmatrix}
+        \end{equation*}
+        \item The matrix above is the polarizability tensor, and the right vector above describes the electric field.
+        \item Three $\alpha$ values are redundant: The matrix above is symmetric, so
+        \begin{align*}
+            \alpha_{xz} &= \alpha_{zx}&
+            \alpha_{yz} &= \alpha_{zy}&
+            \alpha_{yx} &= \alpha_{xy}
+        \end{align*}
+        \item Thus, $\hat{\alpha}$ has six different components.
+        \item If you do the math, you learn that the transition is allowed if the symmetric IRR is in the direct product and the normal mode is a quadratic function.
+    \end{itemize}
+    \item Recall: Linear for IR, quadratic for Raman.
+    \item Example: The nine modes of vibration, two pairs of which are degenerate, are derived below for \ce{XeF4}. Show that the $b_{1g}$ fundamental transition is allowed for Raman but forbidden for infrared.
+    \begin{equation*}
+        \Gamma_\text{vibs} = a_{1g}+b_{1g}+b_{2g}+a_{2g}+a_{2u}+b_{2u}+2e_u
+    \end{equation*}
+    \begin{itemize}
+        \item Checking the $D_{4h}$ character table, we see that the two linear representations are $a_{2u}$ and $e_u$. Thus,
+        \begin{equation*}
+            \Psi^*_{v'}\hat{\mu}\Psi_v \sim b_{1g}
+            \begin{pmatrix}
+                a_{2u}\\
+                e_u\\
+            \end{pmatrix}
+            a_{1g} =
+            \begin{pmatrix}
+                b_{2u}\\
+                e_u\\
+            \end{pmatrix}
+        \end{equation*}
+        Thus, since $a_{1g}$ doesn't appear, the IR transition is not allowed.
+        \item Checking the $D_{4h}$ character table, we see that the four quadratic representations are $a_{1g}$, $b_{1g}$, $b_{2g}$, and $e_g$. Thus,
+        \begin{equation*}
+            \Psi^*_{v'}\hat{\mu}\Psi_v \sim b_{1g}
+            \begin{pmatrix}
+                a_{1g}\\
+                b_{1g}\\
+                b_{2g}\\
+                e_g\\
+            \end{pmatrix}
+            a_{1g} =
+            \begin{pmatrix}
+                b_{1g}\\
+                a_{1g}\\
+                a_{2g}\\
+                e_g\\
+            \end{pmatrix}
+        \end{equation*}
+        Thus, since $a_{1g}$ appears, the Raman transition is allowed.
+    \end{itemize}
+    \item \textbf{Fundamental transition}: A transition starting from the ground state.
+    \begin{itemize}
+        \item $\Psi_v$ is always the totally symmetric IRR for a fundamental transition.
+        \item The wording "$b_{1g}$ fundamental transition" in the previous example means "the transition form $a_{1g}$ to $b_{1g}$."
+        \item Essentially, we're not dealing with overtones, not starting from an excited state, no coupling, nothing fancy.
+        \item We will briefly talk about overtones later.
+    \end{itemize}
+    \item Example: Determine the symmetries and activities of the normal modes of vibration for the cyclopropenyl cation. Use all atoms ($N=6$), i.e., use the Cartesion displacement method.
+    \begin{itemize}
+        \item Point group: $D_{3h}$.
+        \item $\Gamma_{xyz}=(3,0,-1,1,-2,1)$.
+        \item $\Gamma_\text{unmoved}=(6,0,2,6,0,2)$.
+        \item $\Gamma_{3N}=(18,0,-2,6,0,2)=2A_1'+2A_2'+4E'+2A_2'+2E'$.
+        \item $\Gamma_\text{vibs}=2A_1'+A_2'+3E'+A_2''+E''$.
+        \item Operators:
+        \begin{align*}
+            \hat{\mu} &=
+            \begin{pmatrix}
+                e'\\
+                a_2''\\
+            \end{pmatrix}&
+            \hat{\alpha} &=
+            \begin{pmatrix}
+                a_1'\\
+                e'\\
+                e''\\
+            \end{pmatrix}
+        \end{align*}
+        \item $a_1'$ is Raman active, $e'$ is both, $a_2''$ is IR active, and $e''$ is both.
+    \end{itemize}
+    \item You only need uppercase Mulliken symbols for character tables and Tanabe-Sugano diagrams.
+    \item \textbf{Rule of mutual exclusion}: No normal modes can be both infrared and Raman active in a molecule that possesses a center of symmetry.
+    \item Question: Spectrum analysis. What symmetry element must be present?
+    \begin{itemize}
+        \item Observation: Lack of coincidental IR and Raman peaks in the spectra of benzene.
+        \item Thus, no linear bases or quadratic bases overlap. The linear must all be $-1$ and the quadratic must all be 1.
+        \item Thus, an inversion $i$ is present.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
