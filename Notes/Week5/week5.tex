@@ -1,0 +1,112 @@
+\documentclass[../notes.tex]{subfiles}
+
+\pagestyle{main}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ (#1)}{}}
+\setcounter{chapter}{4}
+
+\begin{document}
+
+
+
+
+\chapter{Exam and Intro to MO Theory}
+\section{First Exam Review}
+\begin{itemize}
+    \item \marginnote{10/17:}Arrive by 9:25 AM on Wednesday.
+    \item Probably four problems.
+    \begin{itemize}
+        \item Won't be doing IRRs for $T_d$ point groups or anything really complicated like that.
+    \end{itemize}
+    \item All character tables we need to solve the questions will be provided.
+    \item The questions are independent; if we can't solve problem 1, we'll still be able to take a shot at problem 2.
+    \item Question: Assigning Cartesian coordinates or $R_{xyz}$ to the Mulliken symbols.
+    \begin{itemize}
+        \item Example: Assign $R_z$ and $x^2-y^2$ in $D_4$.
+        \item Draw the $d_{x^2-y^2}$ orbital and $R_z$ vector in 3D space.
+        \item Subject the drawings to each symmetry operation.
+        \begin{itemize}
+            \item For $E,C_4,C_2,C_2',C_2''$, $d_{x^2-y^2}$ gets sent to itself, it's inverse, itself, itself, and it's inverse. Thus, $\Gamma=(1,-1,1,1,-1)=B_1$.
+            \item Likewise, we have for $R_z$ that $\Gamma=(1,1,1,-1,-1)=A_2$.
+            \item $\Gamma_{p_y}=(1,0,\dots)$. Once you get to $\chi(C_4)=0$, you know that it must be $E$. For $C_2'$, $p_x\mapsto 1$ and $p_y\mapsto -1$ or vice versa, so we sum these two to get 0. Since $p_x,p_y$ both have $\chi(C_4)=0$, they must be degenerate and equal to $E$.
+        \end{itemize}
+        \item On Wednesday, you don't need to draw out every image, but you need some justification, e.g., "I did a \ang{90} turn."
+    \end{itemize}
+    \item Memorize Mulliken symbol rules!
+    \item Question: Problem C on PSet 2.
+    \begin{itemize}
+        \item Ignore all of the text about qubits.
+        \item First step: Figure out what the basis is (it's the outer plane vectors, i.e., the arrows).
+        \item Point group: $D_{4h}$.
+        \item We need to find $\Gamma_\text{out-of-plane}$, a reducible representation! We're finding a RR for all of the arrows at once (not projecting one into the others), and then decomposing it into IRRs and hoping that one of them is $a_{2u}$.
+        \item We get
+        \begin{center}
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{c|cccccccccc}
+                $D_{4h}$ & $E$ & $2C_4$ & $C_2$ & $2C_2'$ & $2C_2''$ & $i$ & $2S_1$ & $\sigma_h$ & $2\sigma_v$ & $2\sigma_d$\\
+                \hline
+                $\Gamma$ & 4 & 0 & 0 & $-2$ & 0 & 0 & 0 & $-4$ & 2 & 0
+            \end{tabular}
+        \end{center}
+        \item We can reduce this down to
+        \begin{equation*}
+            \Gamma = a_{2u}+b_{2u}+e_g
+        \end{equation*}
+        to identify $a_{2u}$.
+        \item Similarly, in $C_{4v}$, we can reduce $\Gamma=(4,0,0,2,0)=a_1+b_1+e$ to identify $a_1$.
+    \end{itemize}
+    \item Review PSets and answers! I keep missing easy things. Really break down a procedure to attack the different types of problems.
+    \item Question: Assign symmetries based off of IR spectra.
+    \begin{itemize}
+        \item Example: Vibrational spectroscopy has played a role in supporting the structure of the ion shown below. Raman spectroscopy of the tetramethylammonium salt of this ion shows a single absorption in the region expected for \ce{I=O} stretching vibrations at \SI{789}{\per\centi\meter}. Is a single Raman band consistent with the proposed trans orientation of the oxygen atoms? Rationalize your answer.
+        \item Approach: In $D_{5h}$, create an IRR with the two \ce{I=O} bond vectors as your basis. Thus,
+        \begin{center}
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{c|cccccccc}
+                $D_{5h}$ & $E$ & $2C_5$ & $2{C_5}^2$ & $5C_2'$ & $\sigma_h$ & $2S_5$ & $2{S_5}^3$ & $5\sigma_v$\\
+                \hline
+                $\Gamma$ & 2 & 2 & 2 & 0 & 0 & 0 & 0 & 2
+            \end{tabular}
+        \end{center}
+        \item We have that $\Gamma=a_1'+a_2''$. Since only one of these ($a_1'$) is Raman active, a single Raman band is consistent with this structure.
+    \end{itemize}
+    \item Question: Finding vibrational modes.
+    \begin{itemize}
+        \item Example: What are the normal modes of \emph{trans}-\ce{N2F2}.
+        \item Not linear, so we expect $3N-6=6$ normal modes to deal with.
+        \item We begin doing the Cartesian displacement method.
+        \begin{center}
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{c|cccc}
+                $C_{2h}$ & $E$ & $C_2(z)$ & $i$ & $\sigma_h$\\
+                \hline
+                $\Gamma_\text{unm}$ & 4 & 0 & 0 & 4\\
+                $\Gamma_{xyz}$ & 3 & -- & -- & 1\\
+                \hline
+                $\Gamma_{3N}$ & 12 & 0 & 0 & 4\\
+            \end{tabular}
+        \end{center}
+        \begin{itemize}
+            \item Note that we use dashes in two entries of $\Gamma_{xyz}$ because since there are zeroes above and we are multiplying, it does not matter what these values are (they will end up being zero in the direct product, regardless).
+        \end{itemize}
+        \item We can reduce to $\Gamma_{3N}=4A_g+2B_g+2A_u+4B_u$. Subtracting out $\Gamma_\text{rot}=A_g+2B_g$ and $\Gamma_{xyz}=A_u+2B_u$, we end up with $\Gamma_\text{vib}=3A_g+A_u+2B_u$.
+        \item Let's go in depth. The spectroscopic activities are:
+        \begin{itemize}
+            \item $A_u+2B_u$ are IR active.
+            \item $3A_g$ is Raman active.
+        \end{itemize}
+        \item Let's go even more in depth.
+        \begin{itemize}
+            \item $A_u$ is the only vibration that has a $-1$ in $\sigma_h$, i.e., it is the only one that vibrates out-of-plane.
+            \item If $\chi(\sigma_h)=+1$, then the vibration is symmetric with respect to $\sigma_h$. This must mean that the molecules are entirely confined to the plane. If $\chi(\sigma_h)=-1$, then we have an out of plane vibration (e.g., \ce{F} atoms going above and below the plane in equal and opposite amounts --- there is a motion that can be inverted). If one \ce{F} atom goes twice as far, this is probably $E$ (think about what would be required for the projection operator).
+            \item If you get pictures of normal modes (hint hint!!), you can retroactively get Mulliken symbols by observing the symmetry with respect to the observations.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+
+
+
+\end{document}
