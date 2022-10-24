@@ -102,7 +102,7 @@
         \end{subfigure}
         \begin{subfigure}[b]{0.2\linewidth}
             \centering
-            \includegraphics[width=0.8\linewidth]{../ExtFiles/ML3CO3b.png}
+            \includegraphics[width=0.63\linewidth]{../ExtFiles/ML3CO3b.png}
             \caption{\emph{fac} isomer.}
             \label{fig:ML3CO3b}
         \end{subfigure}
@@ -261,6 +261,223 @@
         \item Observation: Lack of coincidental IR and Raman peaks in the spectra of benzene.
         \item Thus, no linear bases or quadratic bases overlap. The linear must all be $-1$ and the quadratic must all be 1.
         \item Thus, an inversion $i$ is present.
+    \end{itemize}
+\end{itemize}
+
+
+
+\section{Special Spectroscopic Bands}
+\begin{itemize}
+    \item \marginnote{10/21:}Calculators that aren't connected to the internet are permitted. Arrive by 9:25. Think of it as a quiz more than an exam --- there's only so much you can do in 50 minutes.
+    \item \textbf{Polarization}: When electric fields are restricted to a specific direction by filtration.
+    \item Recall \ce{H2O} and its vibrational modes $\nu_1,\nu_2,\nu_3$, which are symmetric stretch, bending, and asymmetric stretch, respectively. Consider the \emph{hypothetical} case where we can "hold" water molecules such that they are oriented on the Cartesian plane.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \begin{tikzpicture}[
+                every node/.style={black}
+            ]
+                \small
+                \draw (0,2.1) -- node[rotate=90,above]{Transmission} (0,0) -- node[below]{\si{\per\centi\meter}} (5,0);
+    
+                \footnotesize
+                \draw [rex,thick] (0.1,2)
+                    -- ++(0.3,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.5,-1.5) node[below]{$b_2$}
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.5,1.5)
+                    -- ++(0.5,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.3,-0.8) node[below]{$a_1$}
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.3,0.8)
+                    -- ++(1,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.3,-0.8) node[below]{$a_1$}
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.3,0.8)
+                    -- ++(0.8,0)
+                ;
+            \end{tikzpicture}
+            \caption{Unpolarized.}
+            \label{fig:H2O-IRPola}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \begin{tikzpicture}[
+                every node/.style={black}
+            ]
+                \small
+                \draw (0,2.1) -- node[rotate=90,above]{Transmission} (0,0) -- node[below]{\si{\per\centi\meter}} (5,0);
+    
+                \footnotesize
+                \draw [rex,thick] (0.1,2)
+                    -- ++(0.3,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.5,0)
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.5,0)
+                    -- ++(0.5,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.3,-0.8) node[below]{$a_1$}
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.3,0.8)
+                    -- ++(1,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.3,-0.8) node[below]{$a_1$}
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.3,0.8)
+                    -- ++(0.8,0)
+                ;
+            \end{tikzpicture}
+            \caption{$z$-polarized.}
+            \label{fig:H2O-IRPolb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \begin{tikzpicture}[
+                every node/.style={black}
+            ]
+                \small
+                \draw (0,2.1) -- node[rotate=90,above]{Transmission} (0,0) -- node[below]{\si{\per\centi\meter}} (5,0);
+    
+                \footnotesize
+                \draw [rex,thick] (0.1,2)
+                    -- ++(0.3,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.5,0)
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.5,0)
+                    -- ++(0.5,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.3,0)
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.3,0)
+                    -- ++(1,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.3,0)
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.3,0)
+                    -- ++(0.8,0)
+                ;
+            \end{tikzpicture}
+            \caption{$x$-polarized.}
+            \label{fig:H2O-IRPolc}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \begin{tikzpicture}[
+                every node/.style={black}
+            ]
+                \small
+                \draw (0,2.1) -- node[rotate=90,above]{Transmission} (0,0) -- node[below]{\si{\per\centi\meter}} (5,0);
+    
+                \footnotesize
+                \draw [rex,thick] (0.1,2)
+                    -- ++(0.3,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.5,-1.5) node[below]{$b_2$}
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.5,1.5)
+                    -- ++(0.5,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.3,0)
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.3,0)
+                    -- ++(1,0)
+                    to [out=0,in=180,out looseness=0.7,in looseness=0.5] ++(0.3,0)
+                    to [out=0,in=180,out looseness=0.5,in looseness=0.7] ++(0.3,0)
+                    -- ++(0.8,0)
+                ;
+            \end{tikzpicture}
+            \caption{$y$-polarized.}
+            \label{fig:H2O-IRPold}
+        \end{subfigure}
+        \caption{Polarized IR spectra of \ce{H2O}.}
+        \label{fig:H2O-IRPol}
+    \end{figure}
+    \begin{itemize}
+        \item The unpolarized IR spectrum would be the result of what we predicted last time.
+        \item The $z$-polarized spectrum: $\nu_1,\nu_2$ are $a_1$ and hence transform with the same symmetry as $z$. You filter out the $b_2$ for a $z$-polarized spectrum.
+        \item $y$-polarized gives you just $b_2$.
+        \item $x$-polarized gives you nothing.
+    \end{itemize}
+    \item Linear functions give you the right answer, but you can also rationalize from the vectors.
+    \begin{itemize}
+        \item For example, drawing out the vectors for $\nu_1$ in \ce{H2O}, you see that the major dipole moment is in the $z$-direction. Same for $\nu_2$. However, for $\nu_3$, the major dipole moment is in the $y$-direction.
+        \item What we're polarizing here is the incoming IR radiation. If all molecules were held with the correct orientation and then we shot $z$-polarized light at them, only vibrations in the $z$ direction would get excited ($x,y$ are equally and oppositely cancelled).
+    \end{itemize}
+    \item Polarization is most commonly used in Raman spectroscopy.
+    \item Experimental setup.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{../ExtFiles/ramanPola.png}
+            \caption{Parallel scattering.}
+            \label{fig:ramanPola}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{../ExtFiles/ramanPolb.png}
+            \caption{Perpendicular scattering.}
+            \label{fig:ramanPolb}
+        \end{subfigure}
+        \caption{Raman polarization setup.}
+        \label{fig:ramanPol}
+    \end{figure}
+    \begin{itemize}
+        \item We place the sample solution at the origin of our coordinate system, shoot $xz$-polarized light down one axis, and measure the polarization of the emitted radiation down a perpendicular axis.
+        \item From this setup, we can determine the extent to which the molecules that absorb plane-polarized light emit light in the same plane or in a perpendicular plane.
+    \end{itemize}
+    \item \textbf{Depolarization ratio}: The following quantity, where $I_\perp$ is the intensity of the scattered light polarized in the plane perpendicular to the incident light and $I_\parallel$ is the intensity of the scattered light in the same plane as the incident light. \emph{Denoted by} $\bm{\rho}$. \emph{Given by}
+    \begin{equation*}
+        \rho = \frac{I_\perp}{I_\parallel}
+    \end{equation*}
+    \item Depolarized (unpolarized) bands will exhibit $\rho\approx 3/4$. In contrast, polarized bands will exhibit $\rho$ values between 0 and $3/4$.
+    \begin{itemize}
+        \item Polarized bands appear from vibrations that are totally symmetric.
+        \item The more highly symmetric the molecule, the closer $\rho$ is to zero (polarization is high).
+    \end{itemize}
+    \item Example: For each IR transition of the cyclopropenyl cation, determine the direction of the adsorption. Determine which Raman active fundamentals of the compound are polarized or depolarized.
+    \begin{itemize}
+        \item IR: The polarization of the $e'$ adsorption is $(x,y)$ and the direction of polarization of $a_2''$ is $z$.
+        \begin{itemize}
+            \item What does the degenerate polarization of $e'$ mean?? Does it mean that either $x$- or $y$-polarized light will excite this transition?
+        \end{itemize}
+        \item Raman: $a_1'$ is your most polarized Raman active mode. $e'$ and $e''$ are polarized but not as much.
+    \end{itemize}
+    \item Most IR spectra show more bands than we predict for fundamentals. These are \textbf{overtones}, \textbf{combination bands}, and \textbf{hot bands}.
+    \item \textbf{Overtone}: A band that occurs when a mode is excited beyond $v=1$ by a single photon.
+    \emph{picture}
+    \begin{itemize}
+        \item Example: If our three normal modes are $\Psi_1(0)\Psi_2(0)\Psi_3(0)$ and we excite one of them such that it goes to a third state $\Psi_1(0)\Psi_2(3)\Psi_3(0)$. This is the \textbf{second overtone} of the normal mode $\nu_2$. We are taking $v=0$ to $v=3$ here.
+        \item The energy of this transition would be approximately 3 times the fundamental $v_0\to v_1$.
+    \end{itemize}
+    \item \textbf{Combination band}: A band that occurs when more than one vibration is excited by one photon. \emph{Also known as} \textbf{combo band}.
+    \begin{itemize}
+        \item Example:
+        \begin{equation*}
+            \Psi_1(0)\Psi_2(0)\Psi_3(0) \to \Psi_1(1)\Psi_2(1)\Psi_3(0)
+        \end{equation*}
+        \item Example:
+        \begin{equation*}
+            \Psi_1(0)\Psi_2(0)\Psi_3(0) \to \Psi_1(2)\Psi_2(0)\Psi_3(1)
+        \end{equation*}
+        \begin{itemize}
+            \item I.e., you can throw in overtones, too.
+        \end{itemize}
+        \item What this means for the energy: Energy of the combination band transition is the sum of the energies of the individual transitions.
+        \begin{itemize}
+            \item Energy for example 1: $v_1+v_2$.
+            \item Energy for example 2: $2v_1+v_3$.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Hot band}: A band that occurs when an already excited vibration is further excited.
+    \begin{itemize}
+        \item Example:
+        \begin{equation*}
+            \Psi_1(0)\Psi_2(1)\Psi_3(0) \to \Psi_1(0)\Psi_2(2)\Psi_3(0)
+        \end{equation*}
+        \item The probability of this event depends on the temperature because it relies on the thermal population of an already excited state.
+        \item The population increases as a function of temperature.
+        \item Thermal population of the initial state is low, but it increases with temperature and hence is called a \emph{hot} band.
+    \end{itemize}
+    \item The selection rules for predicting whether an overtone, combo band, or hot band is possible use the same direct product math.
+    \begin{itemize}
+        \item We won't cover this in depth, though.
+    \end{itemize}
+    \item \textbf{Fermi resonance}: The mixing of two states, which can have two effects:
+    \begin{enumerate}
+        \item The overtone can gain intensity from the nearby fundamental of the same symmetry.
+        \item Both energy levels are shifted away from each other.
+    \end{enumerate}
+    \item Predicting when Fermi resonance occurs is hard; it is done only after ruling out the possibility of an overtone, combo band, or hot band as accounting for your data.
+    \item Example: \ce{CO2}.
+    \begin{itemize}
+        \item Since there are four normal modes, you might predict four IR bands.
+        \item The $\delta_d$ bending modes have $E=\SI{667}{\per\centi\meter}$. You'd predict their first overtone to have $E=\SI{1334}{\per\centi\meter}$. However, this mode has a similar symmetry to the symmetric stretch $\nu_s$ at $E=\SI{1337}{\per\centi\meter}$. Thus, they will mix via Fermi resonance, producing two really strong bands at \SI{1388}{\per\centi\meter} and \SI{1286}{\per\centi\meter}.
+        \item According to Wuttig, it is purely a coincidence that energies in this example are similar; states don't only mix when their energies are similar.
     \end{itemize}
 \end{itemize}
 
