@@ -2,6 +2,7 @@
 \usepackage{csquotes}
 \usepackage{fancyhdr}
 \usepackage{marginnote}
+\usepackage[style=apa]{biblatex}
 \usepackage{enumitem}
 \usepackage{scrextend}
 \usepackage[bottom]{footmisc}
@@ -29,6 +30,9 @@
 
 \reversemarginpar
 
+\addbibresource{../main.bib}
+\DefineBibliographyStrings{english}{bibliography={References}}
+
 \setitemize[3]{label={\scriptsize$\blacksquare$}}
 
 \deffootnotemark{\textsuperscript{\textup{[}\thefootnotemark\textup{]}}}
@@ -36,9 +40,12 @@
 
 \sisetup{list-units=single}
 
-\usetikzlibrary{shapes.geometric,angles,bending}
+\usetikzlibrary{shapes.geometric,angles,bending,calc}
+\colorlet{grx}{green!25!cyan!40!black!95}
+\colorlet{gry}{green!25!cyan!40!black!50}
 \colorlet{grz}{green!25!cyan!40!black!20}
 \colorlet{rex}{red!80!black!90!orange!80}
+\colorlet{rey}{red!80!black!90!orange!40}
 
 \DeclareMathOperator{\diag}{diag}
 

@@ -110,8 +110,190 @@
 
 \section{Midterm Thoughts}
 \begin{itemize}
-    \item Generating a RR based on a basis set tells us the symmetry of something (vibrations, stretches, orbitals, ...). Projecting out an IRR on a basis gives us a specific example of something (an actual molecular orbital, vibrational mode, ...).
+    \item \marginnote{10/26:}Generating a RR based on a basis set tells us the symmetry of something (vibrations, stretches, orbitals, ...). Projecting out an IRR on a basis gives us a specific example of something (an actual molecular orbital, vibrational mode, ...).
     \item Determining the depolarization ratio. Determine which Mulliken symbols are the \emph{most} symmetric, i.e., symmetric to the most elements. For example, $A_2$ is more symmetric than $B_2$ because it is antisymmetric to 1 element instead of 2 elements.
+\end{itemize}
+
+
+
+\section{MO Theory: Fundamental Concepts and Diatomics}
+\begin{itemize}
+    \item \marginnote{10/28:}The name of the game for the second half of the course is \emph{electronic} spectroscopy.
+    \begin{itemize}
+        \item The first half was \emph{vibrational} spectroscopy.
+    \end{itemize}
+    \item \textbf{Molecular orbital theory}: A theory of orbitals that posits that they are in general spread over the entirety of the molecule, so considerations of molecular symmetry properties are useful in this theory. \emph{Also known as} \textbf{MO theory}.
+    \item \textbf{Linear combination of atomic orbitals}: An approximation employed to reduce the notion of an MO to a practical form. \emph{Also known as} \textbf{LCAO}.
+    \begin{itemize}
+        \item Each MO is written as a linear combination of atomic orbitals on the various atoms.
+        \item The fact that this is an \emph{approximation} is very important to note.
+        \item We use a simple basis set (e.g., the atomic orbitals) and let our molecular orbital be a linear combination of them.
+        \item For \ce{H2} for example, our LCAO is $\Psi=c_1\phi_1+c_2\phi_2$, where $\phi_1$ denotes the atomic orbital on \ce{H1} and $\phi_2$ denotes the atomic orbital on \ce{H2}.
+    \end{itemize}
+    \item We obtain an expression for the energy $E$ by applying the Hamiltonian $\hat{H}$ on our guess function (use the LCAO) and integrating over all space.
+    \begin{equation*}
+        \langle E\rangle = \frac{\int_{-\infty}^\infty\Psi^*\hat{H}\Psi\dd\tau}{\int_{-\infty}^\infty\Psi^*\Psi\dd\tau}
+        = \frac{\int_{-\infty}^\infty(c_1\phi_1+c_2\phi_2)\hat{H}(c_1\phi_1+c_2\phi_2)\dd\tau}{\int_{-\infty}^\infty(c_1\phi_1+c_2\phi_2)\dd\tau}
+    \end{equation*}
+    \begin{itemize}
+        \item Denote the numerator in the rightmost term above by $N$ and the corresponding denominator by $D$.
+        \item Then
+        \begin{equation*}
+            N = c_1^2\underbrace{\int\phi_1\hat{H}\phi_1\dd\tau}_{H_{11}}+c_1c_2\underbrace{\int\phi_1\hat{H}\phi_2\dd\tau}_{H_{12}}+c_2c_1\underbrace{\int\phi_2\hat{H}\phi_1\dd\tau}_{H_{21}}+c_2^2\underbrace{\int\phi_2\hat{H}\phi_2\dd\tau}_{H_{22}}
+        \end{equation*}
+        \begin{itemize}
+            \item $H_{11}$ is the energy of the electron in orbital 1.
+            \item $H_{12}$ and $H_{21}$ are the \textbf{resonance integrals}.
+            \item $H_{22}$ is the energy of the electron in orbital 2.
+        \end{itemize}
+        \item It follows that
+        \begin{equation*}
+            N = c_1^2H_{11}+c_1c_2H_{12}+c_2c_1H_{21}+c_2^2H_{22}
+        \end{equation*}
+        \item Additionally,
+        \begin{equation*}
+            D = c_1^2\underbrace{\int\phi_1\phi_1\dd\tau}_1+c_1c_2\underbrace{\int\phi_1\phi_2\dd\tau}_S+c_2c_1\underbrace{\int\phi_2\phi_1\dd\tau}_S+c_2^2\underbrace{\int\phi_2\phi_2\dd\tau}_1
+        \end{equation*}
+        \begin{itemize}
+            \item The left- and rightmost integrals above evaluate to 1 because the AOs are normalized.
+            \item The middle two integrals above are the \textbf{overlap integral}.
+        \end{itemize}
+        \item It follows that
+        \begin{equation*}
+            D = c_1^2+2c_1c_2S+c_2^2
+        \end{equation*}
+        \item Using our above results and the \textbf{secular determinant} (which we will not cover in this course since the focus is not on quantum mechanics), we find that
+        \begin{equation*}
+            E = \frac{H\pm H_{12}}{1\pm S}
+        \end{equation*}
+    \end{itemize}
+    \item \textbf{Resonance integral}: An integral describing the strength of the bonding interaction due to the overlap of AOs in the MO.
+    \item \textbf{Overlap integral}: An integral that measures the effectiveness of the overlap.
+    \begin{itemize}
+        \item Dependent on the type of bond. In particular, it is dependent on two factors.
+        \begin{enumerate}
+            \item Spatial overlap ($\sigma>\pi>\delta$ bonds).
+            \item Energy overlap (based on \textbf{Valence Orbital Ionization Energies} [given in electron volts]).
+            \begin{itemize}
+                \item As a first approximation, oribtals separated by greater than 1 Rydberg ($R_H=\SI{13.6}{\electronvolt}$) do \emph{not} overlap significantly\footnote{This is related to Talapin's arbitrary \SI{10}{\electronvolt}!}.
+            \end{itemize}
+        \end{enumerate}
+    \end{itemize}
+    \item \textbf{Valence Orbital Ionization Energy}: Exactly like it sounds. \emph{Also known as} \textbf{VOIE}.
+    \item This result leads to \ce{H2}'s MOs. Ignoring overlap (i.e., taking $S=0$) we have the following orbital diagram.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{tikzpicture}[
+            every node/.style=black
+        ]
+            \draw [gry,ultra thick]
+                (-2,0) coordinate (H1) -- node{\Large$\upharpoonleft$} node[below=2mm]{\ce{H}} ++(-0.5,0)
+                (2,0) coordinate (H2) -- node{\Large$\upharpoonleft$} node[below=2mm]{\ce{H}} ++(0.5,0)
+            ;
+            \draw [ultra thick]
+                (-0.25,1) coordinate (Hs2l) -- ++(0.5,0) coordinate (Hs2r)
+                (-0.25,-1) coordinate (Hsl) -- node{\Large$\upharpoonleft$\hspace{-1mm}$\downharpoonright$} ++(0.5,0) coordinate (Hsr)
+            ;
+    
+            \draw [grx,thick,densely dashed]
+                (H1) -- (Hsl)
+                (H1) -- (Hs2l)
+                (H2) -- (Hsr)
+                (H2) -- (Hs2r)
+                (H1) -- (H2)
+            ;
+    
+            \draw [semithick,latex-latex,shorten <=2pt,shorten >=2pt] ($(H1)!0.5!(H2)$) -- node[right]{$H_{12}$} ($(Hs2l)!0.5!(Hs2r)$);
+    
+            \draw [semithick,-latex] (-3,-1.5) -- node[left]{$E$} ++(0,3);
+            \path (-3.5,0) -- (3.5,0);
+        \end{tikzpicture}
+        \caption{\ce{H2} MO diagram.}
+        \label{fig:MOsH2}
+    \end{figure}
+    \item \textbf{Bond order}: The following quantity. \emph{Denoted by} \textbf{B.O.}. \emph{Given by}
+    \begin{equation*}
+        \text{B.O.} = \frac{\text{\# electrons in bonding orbitals}-\text{\# electrons in antibonding orbitals}}{2}
+    \end{equation*}
+    \begin{itemize}
+        \item For \ce{H2}, $\text{B.O.}=1$.
+    \end{itemize}
+    \item Now we do \ce{He2}.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{tikzpicture}[
+            every node/.style=black
+        ]
+            \draw [gry,ultra thick]
+                (-2,0) coordinate (He1) -- node{\Large$\upharpoonleft$\hspace{-1mm}$\downharpoonright$} node[below=2mm]{\ce{He}} ++(-0.5,0)
+                (2,0) coordinate (He2) -- node{\Large$\upharpoonleft$\hspace{-1mm}$\downharpoonright$} node[below=2mm]{\ce{He}} ++(0.5,0)
+            ;
+            \draw [ultra thick]
+                (-0.25,1.5) coordinate (Hes2l) -- node{\Large$\upharpoonleft$\hspace{-1mm}$\downharpoonright$} ++(0.5,0) coordinate (Hes2r)
+                (-0.25,-1.5) coordinate (Hesl) -- node{\Large$\upharpoonleft$\hspace{-1mm}$\downharpoonright$} ++(0.5,0) coordinate (Hesr)
+            ;
+            \draw [rey,ultra thick]
+                (-0.25,2.2) coordinate (Hes2la) -- node{\Large$\upharpoonleft$\hspace{-1mm}$\downharpoonright$} ++(0.5,0) coordinate (Hes2ra)
+                (-0.25,-0.8) coordinate (Hesla) -- node{\Large$\upharpoonleft$\hspace{-1mm}$\downharpoonright$} ++(0.5,0) coordinate (Hesra)
+            ;
+    
+            \draw [grx,thick,densely dashed]
+                (He1) -- (Hesl)
+                (He1) -- (Hes2l)
+                (He2) -- (Hesr)
+                (He2) -- (Hes2r)
+            ;
+            \draw [rex,thick,densely dashed]
+                (He1) -- (Hesla)
+                (He1) -- (Hes2la)
+                (He2) -- (Hesra)
+                (He2) -- (Hes2ra)
+            ;
+    
+            \draw [semithick,-latex] (-3,-2) -- node[left]{$E$} (-3,2.7);
+            \path (-3.5,0) -- (3.5,0);
+        \end{tikzpicture}
+        \caption{\ce{He2} MO diagram.}
+        \label{fig:MOsHe2}
+    \end{figure}
+    \begin{itemize}
+        \item Here, we get
+        \begin{align*}
+            E_+ &= \frac{H+H_{12}}{1+S}&
+            E_- &= \frac{H-H_{12}}{1-S}
+        \end{align*}
+        \item The bond order is zero.
+        \item No consideration of $S$ leads to the green diagram.
+        \item If we assume $S\neq 0$, then we get the red diagram. Note that the antibonding is more destabilized than the bonding is stabilized. This is key!
+    \end{itemize}
+    \item Investigation of the diatomics of the 2nd row main group elements.
+    \begin{itemize}
+        \item The dividing line between \ce{N2} and \ce{O2}: \ce{O2} and heavier have the "normal" filling order, while \ce{N2} and below have significant mixing.
+        \item When mixing is significant, $\sigma,\sigma^*$ for the 2s orbitals both go down in energy, i.e., become more bonding; $\sigma,\sigma^*$ for the 2p orbitals both go up in energy, i.e., become more antibonding.
+    \end{itemize}
+    \item Fundamentals when generating molecular orbitals.
+    \begin{enumerate}
+        \item When generating molecular orbitals, starting with a given number of atomic orbitals, we must generate the same number of molecular orbitals.
+        \item Molecular orbitals must have the same symmetries as the atomic orbitals of which they are composed.
+        \item Molecular orbitals should be within 1 Rydberg to mix.
+    \end{enumerate}
+    \item Strategy for MOs of heterodiatomics:
+    \begin{enumerate}
+        \item Determine VOIEs.
+        \item Determine symmetry equivalence.
+        \item Draw correlations.
+        \item Look for potential $s$-$p$-$d$ mixing.
+        \item Fill electrons, determine BO.
+    \end{enumerate}
+    \item \ce{HF} example.
+    \begin{itemize}
+        \item See Figure III.10 and the associated discussion from \textcite{bib:CHEM20100Notes}.
+        \item No consideration of point groups necessary.
+        \item We know we can only mix in $\sigma$ interactions (i.e., s with 2pz), not $\pi$ interactions with px or py.
+    \end{itemize}
+    \item Review QMech notes and come up with questions!
 \end{itemize}
 
 
