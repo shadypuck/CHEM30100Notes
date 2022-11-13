@@ -51,7 +51,7 @@
             \caption{$D_{2h}$ character table.}
             \label{tab:charTableD2h}
         \end{table}
-        \item $xyz$ coordinates are chosen as per Figure \ref{fig:CO2xyz}.
+        \item $xyz$ coordinates are chosen as per Figure \ref{fig:xyzCO2}.
         \begin{figure}[h!]
             \centering
             \footnotesize
@@ -67,9 +67,9 @@
                 \path (-1.1,-0.75) rectangle (1.85,1);
             \end{tikzpicture}
             \caption{\ce{CO2} $xyz$ coordinates.}
-            \label{fig:CO2xyz}
+            \label{fig:xyzCO2}
         \end{figure}
-        \item The two oxygen atoms are peripheral; their valence orbitals are $2s$, $2p_x$, $2p_y$, and $2p_z$. Thus, we have from the $D_{2h}$ character table and Figure \ref{fig:CO2xyz} that
+        \item The two oxygen atoms are peripheral; their valence orbitals are $2s$, $2p_x$, $2p_y$, and $2p_z$. Thus, we have from the $D_{2h}$ character table and Figure \ref{fig:xyzCO2} that
         \begin{table}[h!]
             \centering
             \small
@@ -167,6 +167,514 @@
         \item Takeaway: The MOs we get from first principles do not take into account all of the interactions that the computer can.
         \item Note that in Figure \ref{fig:calculatedMOsCO2}, the electron density at each contour surface is \SI[per-mode=symbol]{0.0675}{electrons\per\cubic\angstrom} for one-electron wave functions. This value was chosen merely for satisfactory visual display of the orbitals.
     \end{itemize}
+\end{itemize}
+
+
+
+\section{Group Orbitals for Nonlinear Molecules}
+\begin{itemize}
+    \item \marginnote{11/2:}Last time: Making MOs for combinations that have two linear "outer atoms" like \ce{CO2}.
+    \item Today: Making MOs for cases in which we can't just add and subtract two valence orbitals to visualize the group orbitals.
+    \item Strategy: Make group orbitals for "central atoms" and "peripheral atoms" and combine.
+    \item Example: MO diagram for ethylene.
+    \begin{enumerate}
+        \item Point group: $D_{2h}$.
+        \item $xyz$ coordinates (and numbering for the projection operator).
+        \begin{figure}[h!]
+            \centering
+            \begin{tikzpicture}
+                \footnotesize
+                \node {
+                    \chemfig{C_1(-[:120]H_1)(-[:-120]H_3)=C_2(-[:60]H_2)(-[:-60]H_4)}
+                };
+        
+                \draw [-latex] (2,0,0) -- ++(0.7,0,0) node[right]{$x$};
+                \draw [-latex] (2,0,0) -- ++(0,0.7,0) node[above]{$y$};
+                \draw [-latex] (2,0,0) -- ++(0,0,0.7) node[below left=-2pt]{$z$};
+            \end{tikzpicture}
+            \caption{\ce{C2H4} $xyz$ coordinates.}
+            \label{fig:xyzC2H4}
+        \end{figure}
+        \item Representations.
+        \begin{table}[h!]
+            \centering
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{c|cccccccc}
+                $D_{2h}$ & $E$ & $C_2(z)$ & $C_2(y)$ & $C_2(x)$ & $i$ & $\sigma(xy)$ & $\sigma(xz)$ & $\sigma(yz)$\\
+                \hline
+                $\Gamma_{\ce{H}(1s)}$ & 4 & 0 & 0 & 0 & 0 & 4 & 0 & 0\\
+                $\Gamma_{\ce{C}(2s)}$ & 2 & 0 & 0 & 2 & 0 & 2 & 2 & 0\\
+                $\Gamma_{\ce{C}(2p_x)}$ & 2 & 0 & 0 & 2 & 0 & 2 & 2 & 0\\
+                $\Gamma_{\ce{C}(2p_y)}$ & 2 & 0 & 0 & $-2$ & 0 & 2 & $-2$ & 0\\
+                $\Gamma_{\ce{C}(2p_z)}$ & 2 & 0 & 0 & $-2$ & 0 & $-2$ & 2 & 0\\
+            \end{tabular}
+            \caption{Representations for the valence orbitals of \ce{C2H4}.}
+            \label{tab:C2H4RR}
+        \end{table}
+        \item Reductions.
+        \begin{align*}
+            \Gamma_{\ce{H}(1s)} &= a_g+b_{1g}+b_{2u}+b_{3u}\\
+            \Gamma_{\ce{C}(2s)} &= a_g+b_{3u}\\
+            \Gamma_{\ce{C}(2p_x)} &= a_g+b_{3u}\\
+            \Gamma_{\ce{C}(2p_y)} &= b_{1g}+b_{2u}\\
+            \Gamma_{\ce{C}(2p_z)} &= b_{2g}+b_{1u}
+        \end{align*}
+    \end{enumerate}
+    \item Let's get a handle on what some of these orbitals look like using the projection operator.
+    \begin{itemize}
+        \item Let's see how \ce{H1} and $\ce{C}_{2p_y(1)}$ transform.
+        \begin{table}[H]
+            \centering
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{c|cccccccc}
+                $D_{2h}$ & $E$ & $C_2(z)$ & $C_2(y)$ & $C_2(x)$ & $i$ & $\sigma(xy)$ & $\sigma(xz)$ & $\sigma(yz)$\\
+                \hline
+                \ce{H1} & \ce{H1} & \ce{H4} & \ce{H2} & \ce{H3} & \ce{H4} & \ce{H1} & \ce{H3} & \ce{H2}\\
+                $\ce{C}_{2p_y(1)}$ & $\ce{C}_{2p_y(1)}$ & $-\ce{C}_{2p_y(2)}$ & $\ce{C}_{2p_y(2)}$ & $-\ce{C}_{2p_y(1)}$ & $-\ce{C}_{2p_y(2)}$ & $\ce{C}_{2p_y(1)}$ & $-\ce{C}_{2p_y(1)}$ & $\ce{C}_{2p_y(2)}$\\
+            \end{tabular}
+            \caption{How selected \ce{C2H4} orbitals transform under the $D_{2h}$ symmetry operations operators.}
+            \label{tab:C2H4P}
+        \end{table}
+        \item We will visualize how these transform under $b_{2u}$. For \ce{H1}, we get
+        \begin{align*}
+            \hat{P}(\ce{H}_{1s})_{b_{2u}} &= \ce{H1}-\ce{H4}+\ce{H2}-\ce{H3}-\ce{H4}+\ce{H1}-\ce{H3}+\ce{H2}\\
+            &= 2\ce{H1}-2\ce{H4}+2\ce{H2}-2\ce{H3}\\
+            &\approx \ce{H1}-\ce{H4}+\ce{H2}-\ce{H3}
+        \end{align*}
+        and for $\ce{C}_{2p_y(1)}$, we get
+        \begin{align*}
+            \hat{P}(\ce{C}_{2p_y(1)})_{b_{2u}} &= \ce{C}_{2p_y(1)}+\ce{C}_{2p_y(2)}+\ce{C}_{2p_y(2)}+\ce{C}_{2p_y(1)}+\ce{C}_{2p_y(2)}+\ce{C}_{2p_y(1)}+\ce{C}_{2p_y(1)}+\ce{C}_{2p_y(2)}\\
+            &= 4(\ce{C}_{2p_y(1)}+\ce{C}_{2p_y(2)})\\
+            &\approx \ce{C}_{2p_y(1)}+\ce{C}_{2p_y(2)}
+        \end{align*}
+        \item Thus, individually, these group orbitals may be visualized as follows.
+        \begin{figure}[h!]
+            \centering
+            \begin{subfigure}[b]{0.3\linewidth}
+                \centering
+                \begin{tikzpicture}
+                    \footnotesize
+                    \draw
+                        (-1.5em,0) coordinate (C1) -- ++(3em,0) coordinate (C2)
+                        (-1.5em,0) ++(120:3em) coordinate (H1) -- (-1.5em,0) -- ++(-120:3em) coordinate (H3)
+                        (1.5em,0) ++(60:3em) coordinate (H2) -- (1.5em,0) -- ++(-60:3em) coordinate (H4)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (H1) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (H2) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H3) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H4) circle (2.6mm);
+                \end{tikzpicture}
+                \caption{Peripheral atoms.}
+                \label{fig:SALCC2H4b2ua}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.3\linewidth}
+                \centering
+                \begin{tikzpicture}
+                    \footnotesize
+                    \draw
+                        (-1.5em,0) coordinate (C1) -- ++(3em,0) coordinate (C2)
+                        (-1.5em,0) ++(120:3em) coordinate (H1) -- (-1.5em,0) -- ++(-120:3em) coordinate (H3)
+                        (1.5em,0) ++(60:3em) coordinate (H2) -- (1.5em,0) -- ++(-60:3em) coordinate (H4)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (C1)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=white] (C2)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C1)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C2)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                \end{tikzpicture}
+                \caption{Central atoms.}
+                \label{fig:SALCC2H4b2ub}
+            \end{subfigure}
+            \caption{\ce{C2H4} $b_{2u}$ SALCs.}
+            \label{fig:SALCC2H4b2u}
+        \end{figure}
+        \item Now we take two orthogonal linear combinations of the two to get our MOs.
+        \begin{figure}[h!]
+            \centering
+            \footnotesize
+            \begin{tikzpicture}[
+                every node/.style=black
+            ]
+                \draw [gry,ultra thick]
+                    (-2,0) coordinate (H) -- node[below]{$\ce{H}(1s)$} ++(-1.7,0)
+                    (2,-1) coordinate (C) -- node[below]{$\ce{C}(2p)$} ++(1.7,0)
+                ;
+                \draw [ultra thick]
+                    (-0.85,1) coordinate (MO2l) -- ++(1.7,0) coordinate (MO2r)
+                    (-0.85,-2) coordinate (MO1l) -- ++(1.7,0) coordinate (MO1r)
+                ;
+        
+                \draw [grx,thick,densely dashed]
+                    (H) -- (MO2l)
+                    (H) -- (MO1l)
+                    (C) -- (MO2r)
+                    (C) -- (MO1r)
+                ;
+        
+                \begin{scope}[xshift=-2.85cm,yshift=0.8cm,scale=0.6]
+                    \draw
+                        (-1.5em,0) coordinate (C1) -- ++(3em,0) coordinate (C2)
+                        (-1.5em,0) ++(120:3em) coordinate (H1) -- (-1.5em,0) -- ++(-120:3em) coordinate (H3)
+                        (1.5em,0) ++(60:3em) coordinate (H2) -- (1.5em,0) -- ++(-60:3em) coordinate (H4)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (H1) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (H2) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H3) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H4) circle (2.6mm);
+                \end{scope}
+                \begin{scope}[xshift=2.85cm,yshift=-0.36cm,scale=0.6]
+                    \draw
+                        (-1.5em,0) coordinate (C1) -- ++(3em,0) coordinate (C2)
+                        (-1.5em,0) ++(120:3em) coordinate (H1) -- (-1.5em,0) -- ++(-120:3em) coordinate (H3)
+                        (1.5em,0) ++(60:3em) coordinate (H2) -- (1.5em,0) -- ++(-60:3em) coordinate (H4)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (C1)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=white] (C2)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C1)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C2)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                \end{scope}
+                \begin{scope}[xshift=0cm,yshift=1.8cm,scale=0.6]
+                    \draw
+                        (-1.5em,0) coordinate (C1) -- ++(3em,0) coordinate (C2)
+                        (-1.5em,0) ++(120:3em) coordinate (H1) -- (-1.5em,0) -- ++(-120:3em) coordinate (H3)
+                        (1.5em,0) ++(60:3em) coordinate (H2) -- (1.5em,0) -- ++(-60:3em) coordinate (H4)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (H1) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (H2) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H3) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H4) circle (2.6mm);
+        
+                    \filldraw [semithick,fill=grz] (C1)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C2)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=white] (C1)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=white] (C2)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                \end{scope}
+                \begin{scope}[xshift=0cm,yshift=-1.2cm,scale=0.6]
+                    \draw
+                        (-1.5em,0) coordinate (C1) -- ++(3em,0) coordinate (C2)
+                        (-1.5em,0) ++(120:3em) coordinate (H1) -- (-1.5em,0) -- ++(-120:3em) coordinate (H3)
+                        (1.5em,0) ++(60:3em) coordinate (H2) -- (1.5em,0) -- ++(-60:3em) coordinate (H4)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (H1) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (H2) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H3) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H4) circle (2.6mm);
+        
+                    \filldraw [semithick,fill=white] (C1)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=white] (C2)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C1)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C2)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                \end{scope}
+            \end{tikzpicture}
+            \caption{\ce{C2H4} $b_{2u}$ MOs.}
+            \label{fig:MOsC2H4b2u}
+        \end{figure}
+        \begin{itemize}
+            \item Note that we label the MOs by comparing to the computed orbitals in Figure \ref{fig:calculatedMOsC2H4}.
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.45\linewidth]{../ExtFiles/calculatedMOsC2H4.png}
+                \caption{Quantum-mechanically calculated MOs for \ce{C2H4}.}
+                \label{fig:calculatedMOsC2H4}
+            \end{figure}
+        \end{itemize}
+    \end{itemize}
+    \item What about how we make MOs for group orbitals that transform with $e$ symmetry?
+    \item Example: Methyl cation.
+    \begin{enumerate}
+        \item Point group: $D_{3h}$.
+        \begin{table}[h!]
+            \centering
+            \includegraphics[width=0.8\linewidth]{../ExtFiles/charTableD3h.png}
+            \caption{$D_{3h}$ character table.}
+            \label{tab:charTableD3h}
+        \end{table}
+        \item $xyz$ coordinates.
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \footnotesize
+                \node {
+                    \chemfig{\charge{45:3pt=$\oplus$}{C}(-[:120]H_2)(-H_1)(-[:-120]H_3)}
+                };
+        
+                \draw [-latex] (2,0,0) -- ++(0.7,0,0) node[right]{$x$};
+                \draw [-latex] (2,0,0) -- ++(0,0.7,0) node[above]{$y$};
+                \draw [-latex] (2,0,0) -- ++(0,0,0.7) node[below left=-2pt]{$z$};
+            \end{tikzpicture}
+            \caption{\ce{CH3+} $xyz$ coordinates.}
+            \label{fig:xyzCH3}
+        \end{figure}
+        \item Representations.
+        \begin{table}[H]
+            \centering
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{c|cccccc}
+                $D_{3h}$ & $E$ & $2C_3$ & $3C_2$ & $\sigma_h$ & $2S_3$ & $3\sigma_v$\\
+                \hline
+                $\Gamma_{\ce{H}(1s)}$ & 3 & 0 & 1 & 3 & 0 & 1\\
+                $\Gamma_{\ce{C}(2s)}$ & 1 & 1 & 1 & 1 & 1 & 1\\
+                $\Gamma_{\ce{C}(2p_x,2p_y)}$ & 2 & $-1$ & 0 & 2 & $-1$ & 0\\
+                $\Gamma_{\ce{C}(2p_z)}$ & 1 & 1 & $-1$ & $-1$ & $-1$ & 1\\
+            \end{tabular}
+            \caption{Representations for the valence orbitals of \ce{CH3+}.}
+            \label{tab:CH3RR}
+        \end{table}
+        \item Reductions.
+        \begin{align*}
+            \Gamma_{\ce{H}(1s)} &= a_1'+e'\\
+            \Gamma_{\ce{C}(2s)} &= a_1'\\
+            \Gamma_{\ce{C}(2p_x,2p_y)} &= e'\\
+            \Gamma_{\ce{C}(2p_z)} &= a_2''
+        \end{align*}
+    \end{enumerate}
+    \item The projection operator is only necessary for what group orbitals look like.
+    \begin{itemize}
+        \item How hydrogen orbitals transforms.
+        \begin{table}[h!]
+            \centering
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{c|cccccccccccc}
+                $D_{3h}$ & $E$ & $C_3$ & $C_3^2$ & $C_2$ & $C_2'$ & $C_2''$ & $\sigma_h$ & $S_3$ & $S_3^{-1}$ & $\sigma_v$ & $\sigma_v'$ & $\sigma_v''$\\
+                \hline
+                \ce{H1} & \ce{H1} & \ce{H2} & \ce{H3} & \ce{H1} & \ce{H3} & \ce{H2} & \ce{H1} & \ce{H2} & \ce{H3} & \ce{H1} & \ce{H2} & \ce{H3}\\
+                \ce{H2} & \ce{H2} & \ce{H3} & \ce{H1} & \ce{H2} & \ce{H1} & \ce{H3} & \ce{H2} & \ce{H3} & \ce{H1} & \ce{H2} & \ce{H3} & \ce{H1}\\
+                \ce{H3} & \ce{H3} & \ce{H1} & \ce{H2} & \ce{H3} & \ce{H2} & \ce{H1} & \ce{H3} & \ce{H1} & \ce{H2} & \ce{H3} & \ce{H1} & \ce{H2}\\
+            \end{tabular}
+            \caption{How selected \ce{CH3+} orbitals transform under the $D_{3h}$ symmetry operations operators.}
+            \label{tab:CH3P}
+        \end{table}
+        \item Transformations under $e'$.
+        \begin{align*}
+            \hat{P}(\ce{H1})_{e'} &\approx 2\ce{H1}-\ce{H2}-\ce{H3}\\
+            \hat{P}(\ce{H2})_{e'} &\approx 2\ce{H2}-\ce{H3}-\ce{H1}\\
+            \hat{P}(\ce{H3})_{e'} &\approx 2\ce{H3}-\ce{H1}-\ce{H2}
+        \end{align*}
+        \item We take the first and subtract the second two to get $\ce{H2}-\ce{H3}$ as our second orthogonal orbital.
+        \item To draw MOs, we either pair $\ce{C}_{2p_x}$ with $2\ce{H1}-\ce{H2}-\ce{H3}$ and $\ce{C}_{2p_y}$ with $\ce{H2}-\ce{H3}$ or vice versa.
+        \begin{figure}[h!]
+            \centering
+            \footnotesize
+            \begin{tikzpicture}[
+                every node/.style=black
+            ]
+                \draw [gry,ultra thick]
+                    (-3,0) coordinate (H) -- ++(-1.7,0) ++(-0.1,0) node[below,xshift=-0.5mm]{$\ce{H}(1s)$} -- ++(-1.7,0)
+                    (3,-1) coordinate (C) -- node[below]{$\ce{C}(2p_x)$} ++(1.7,0) ++(0.1,0) -- node[below]{$\ce{C}(2p_y)$} ++(1.7,0)
+                ;
+                \draw [ultra thick]
+                    (-1.75,1) coordinate (MO2l) -- ++(1.7,0) ++(0.1,0) -- ++(1.7,0) coordinate (MO2r)
+                    (-1.75,-2) coordinate (MO1l) -- ++(1.7,0) ++(0.1,0) -- ++(1.7,0) coordinate (MO1r)
+                ;
+        
+                \draw [grx,thick,densely dashed]
+                    (H) -- (MO2l)
+                    (H) -- (MO1l)
+                    (C) -- (MO2r)
+                    (C) -- (MO1r)
+                ;
+        
+                \begin{scope}[xshift=-5.65cm,yshift=0.8cm,scale=0.6,xshift=-0.75em,xshift=1.3mm,yshift=0.92mm]
+                    \draw
+                        (0,0) coordinate (C) -- ++(120:3em)  coordinate (H2)
+                        (0,0)                -- ++(0:3em)    coordinate (H1)
+                        (0,0)                -- ++(-120:3em) coordinate (H3)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (H2) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H3) circle (2.6mm);
+                \end{scope}
+                \begin{scope}[xshift=-3.85cm,yshift=0.8cm,scale=0.6,xshift=-0.75em,xshift=-0.92mm]
+                    \draw
+                        (0,0) coordinate (C) -- ++(120:3em)  coordinate (H2)
+                        (0,0)                -- ++(0:3em)    coordinate (H1)
+                        (0,0)                -- ++(-120:3em) coordinate (H3)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (H1) circle (3.67mm);
+                    \filldraw [semithick,fill=grz] (H2) circle (1.84mm);
+                    \filldraw [semithick,fill=grz] (H3) circle (1.84mm);
+                \end{scope}
+                \begin{scope}[xshift=3.85cm,yshift=-0.2cm,scale=0.6,xshift=-0.75em,yshift=-0.92mm]
+                    \draw
+                        (0,0) coordinate (C) -- ++(120:3em)  coordinate (H2)
+                        (0,0)                -- ++(0:3em)    coordinate (H1)
+                        (0,0)                -- ++(-120:3em) coordinate (H3)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (C)
+                        to[out=90,in=90,out looseness=0.5] ++(0.65,0)
+                        to[out=-90,in=-90,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C)
+                        to[out=90,in=90,out looseness=0.5] ++(-0.65,0)
+                        to[out=-90,in=-90,in looseness=0.5] cycle
+                    ;
+                \end{scope}
+                \begin{scope}[xshift=5.65cm,yshift=-0.2cm,scale=0.6,xshift=-0.75em,yshift=-0.92mm]
+                    \draw
+                        (0,0) coordinate (C) -- ++(120:3em)  coordinate (H2)
+                        (0,0)                -- ++(0:3em)    coordinate (H1)
+                        (0,0)                -- ++(-120:3em) coordinate (H3)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (C)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                \end{scope}
+                \begin{scope}[xshift=-0.9cm,yshift=1.8cm,scale=0.6,xshift=-0.75em,xshift=1.3mm,yshift=0.92mm]
+                    \draw
+                        (0,0) coordinate (C) -- ++(120:3em)  coordinate (H2)
+                        (0,0)                -- ++(0:3em)    coordinate (H1)
+                        (0,0)                -- ++(-120:3em) coordinate (H3)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (H2) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H3) circle (2.6mm);
+        
+                    \filldraw [semithick,fill=grz] (C)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=white] (C)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                \end{scope}
+                \begin{scope}[xshift=0.9cm,yshift=1.8cm,scale=0.6,xshift=-0.75em,xshift=-0.92mm]
+                    \draw
+                        (0,0) coordinate (C) -- ++(120:3em)  coordinate (H2)
+                        (0,0)                -- ++(0:3em)    coordinate (H1)
+                        (0,0)                -- ++(-120:3em) coordinate (H3)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (H1) circle (3.67mm);
+                    \filldraw [semithick,fill=grz] (H2) circle (1.84mm);
+                    \filldraw [semithick,fill=grz] (H3) circle (1.84mm);
+        
+                    \filldraw [semithick,fill=grz] (C)
+                        to[out=90,in=90,out looseness=0.5] ++(0.65,0)
+                        to[out=-90,in=-90,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=white] (C)
+                        to[out=90,in=90,out looseness=0.5] ++(-0.65,0)
+                        to[out=-90,in=-90,in looseness=0.5] cycle
+                    ;
+                \end{scope}
+                \begin{scope}[xshift=-0.9cm,yshift=-1.2cm,scale=0.6,xshift=-0.75em,xshift=1.3mm,yshift=0.92mm]
+                    \draw
+                        (0,0) coordinate (C) -- ++(120:3em)  coordinate (H2)
+                        (0,0)                -- ++(0:3em)    coordinate (H1)
+                        (0,0)                -- ++(-120:3em) coordinate (H3)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (H2) circle (2.6mm);
+                    \filldraw [semithick,fill=grz] (H3) circle (2.6mm);
+        
+                    \filldraw [semithick,fill=white] (C)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C)
+                        to[out=0,in=0,out looseness=0.5] ++(0,-0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                \end{scope}
+                \begin{scope}[xshift=0.9cm,yshift=-1.2cm,scale=0.6,xshift=-0.75em,xshift=-0.92mm]
+                    \draw
+                        (0,0) coordinate (C) -- ++(120:3em)  coordinate (H2)
+                        (0,0)                -- ++(0:3em)    coordinate (H1)
+                        (0,0)                -- ++(-120:3em) coordinate (H3)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (H1) circle (3.67mm);
+                    \filldraw [semithick,fill=grz] (H2) circle (1.84mm);
+                    \filldraw [semithick,fill=grz] (H3) circle (1.84mm);
+        
+                    \filldraw [semithick,fill=white] (C)
+                        to[out=90,in=90,out looseness=0.5] ++(0.65,0)
+                        to[out=-90,in=-90,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz] (C)
+                        to[out=90,in=90,out looseness=0.5] ++(-0.65,0)
+                        to[out=-90,in=-90,in looseness=0.5] cycle
+                    ;
+                \end{scope}
+            \end{tikzpicture}
+            \caption{\ce{CH3+} $e'$ MOs.}
+            \label{fig:MOsCH3e}
+        \end{figure}
+        \begin{itemize}
+            \item Note that the two bonding and the two antibonding MOs here are pairwise degenerate.
+        \end{itemize}
+    \end{itemize}
+    \item Should we label the MOs via PES as in CHEM 201?
+    \begin{itemize}
+        \item Yes.
+    \end{itemize}
+    \item Finding energies from SALCs?
 \end{itemize}
 
 
