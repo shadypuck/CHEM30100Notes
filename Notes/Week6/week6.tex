@@ -679,5 +679,323 @@
 
 
 
+\section{Photoelectron Spectroscopy and MO Diagrams of Coordination Complexes}
+\begin{itemize}
+    \item \marginnote{11/4:}The problem set is deceptively hard; get started early!
+    \item Today: Experimental verification of molecular orbitals.
+    \item \textbf{Photoelectron spectroscopy}: A widely used technique that allows us to obtain information about the energies of the electrons in orbitals.
+    \item Key equation.
+    \begin{equation*}
+        \text{BE} = h\nu-\text{KE}
+    \end{equation*}
+    \begin{itemize}
+        \item $\text{BE}$ is the binding energy of the expelled electron.
+        \item $h\nu$ is the incident photon energy.
+        \item $\text{KE}$ is the kinetic energy of the expelled electron.
+    \end{itemize}
+    \item Fine structure in PES comes from the interaction of the electronic levels with the vibrational levels. This yields multiple peaks for a single given electronic transition.
+    \item Example: How many peaks in the PES should we expect for each occupied MO of ethylene? Label each peak with the relevant valence molecular orbitals for ethylene.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[
+            every node/.style=black
+        ]
+            \small
+            \draw (0,3) -- node[rotate=90,above]{Counts per Second} (0,0) -- node[below=3mm]{IE (\si{\electronvolt})} (6,0);
+    
+            \footnotesize
+            \foreach \x in {0.3,0.6,...,5.7} {
+                \draw (\x,0) -- ++(0,0.1);
+            }
+            \node [below] at (0.9,0) {25};
+            \node [below] at (2.4,0) {20};
+            \node [below] at (3.9,0) {15};
+            \node [below] at (5.4,0) {10};
+    
+            \draw [rex,thick] (0,0.3)
+                -- ++(1,0)
+                to[out=0,in=180] ++(0.4,0.2) node[above]{$1a_g$}
+                to[out=0,in=180] ++(0.2,-0.2)
+                -- ++(0.7,0)
+                to[out=0,in=-150] ++(0.2,0.3)
+                to[out=30,in=180,in looseness=0.7] ++(0.2,0.2) node[above]{$1b_{3u}$}
+                to[out=0,in=180,out looseness=0.7] ++(0.2,-0.5)
+                -- ++(0.1,0)
+                to[out=0,in=180,in looseness=0.2] ++(0.6,1) node[above,xshift=-2mm]{$1b_{2u}$}
+                to[out=0,in=180,out looseness=0.2] ++(0.2,-0.3)
+                to[out=0,in=-130,out looseness=0.1] ++(0.1,0.2)
+                to[out=50,in=180,in looseness=0.2] ++(0.1,0.2) node[above]{$2a_g$}
+                to[out=0,in=135] ++(0.1,-0.1)
+                to[out=-45,in=180,out looseness=0.2,in looseness=0.2] ++(0.1,-0.8)
+                to[out=0,in=180,out looseness=0.8,in looseness=0.1] ++(0.3,0.8) node[above,xshift=1mm]{$1b_{1g}$}
+                to[out=0,in=135] ++(0.1,-0.1)
+                to[out=-45,in=160,out looseness=0.2,in looseness=0.2] ++(0.1,-0.9)
+                to[out=-20,in=180,out looseness=0.6,in looseness=0.03] ++(0.5,2.3) node[above]{$1b_{1u}$}
+                to[out=0,in=180,out looseness=0.03,in looseness=0.3] ++(0.2,-2.3)
+            ;
+        \end{tikzpicture}
+        \caption{Photoelectron spectrum of \ce{C2H4}.}
+        \label{fig:PESC2H4}
+    \end{figure}
+    \begin{itemize}
+        \item 1 peak for each occupied MO.
+        \item Highest IE corresponds to the most core orbital. Decreases in energy as we get to higher energy orbitals.
+        \item When Wuttig says in the homework that she wants us to draw a qualitative photoelectron spectrum, this is what she means.
+    \end{itemize}
+    \item We now translate the principals of MO diagrams we've developed to understand bonding and structure in coordination complexes. We abbreviate the metal as M and the ligand as L.
+    \item Basis sets are denoted by $\phi$.
+    \item Basis sets.
+    \begin{itemize}
+        \item M: $(n+1)p$, $(n+1)s$, and $nd$.
+        \item L: $\sigma\to\sigma$ interactions, $\pi\to\pi$ interactions, and $\pi^*\to\pi^*$ interactions.
+    \end{itemize}
+    \item Today: The $\sigma\to\sigma$ case only.
+    \item A few general rules for M-L bonding (these are essentially a rephrasing of those we have developed for the MOs of the organic species we have discussed this far).
+    \begin{enumerate}
+        \item M-L atomic orbital mixing is proportional to the overlap of the M and L orbitals.
+        \begin{enumerate}
+            \item But only orbitals of correct symmetry can mix.
+            \item $\sigma$ interactions typically give rise to larger interaction energies than $\pi$ interactions which, in turn, typically give rise to larger interaction energies than $\delta$ interactions. This is because we have more directional bonding as we move from $\sigma\to\pi\to\delta$.
+        \end{enumerate}
+        \item M-L atomic orbital mixing is inversely proportional to energy difference of mixing orbitals.
+        \item The order of the $E_{\ce{L}}$ and $E_{\ce{M}}$ energy levels almost always is the following.
+        \begin{equation*}
+            \sigma(\ce{L}) < \pi(\ce{L})
+            < nd
+            < (n+1)s
+            < (n+1)p
+        \end{equation*}
+        \begin{enumerate}
+            \item Energy ordering origin: Metal/main group VOIEs and ligand electronic spectra.
+        \end{enumerate}
+    \end{enumerate}
+    \item Impact of VOIE as you move later in the periodic table.
+    \begin{itemize}
+        \item Metals.
+        \begin{itemize}
+            \item More covalency with L.
+            \item Less d-s-p mixing.
+        \end{itemize}
+        \item Common ligands.
+        \begin{itemize}
+            \item More mixing with lone pairs compared to bonding orbitals.
+        \end{itemize}
+    \end{itemize}
+    \item Conclusions from examining VOIEs.
+    \begin{enumerate}
+        \item The $s$ orbitals are generally too low in energy to participate in bonding.
+        \item The filled $p$ orbitals are the frontier orbitals, and they have VOIEs that place them below metal orbitals.
+        \item For ligands, since the frontier orbitals comprise $s$ and $p$ orbitals, filled ligand orbitals have energies $E$ that are stabilized relative to metal orbitals.
+    \end{enumerate}
+    \item Symmetry.
+    \item We will now build the $\sigma$-only MO diagram for the important \ce{ML6} octahedral case.
+    \begin{enumerate}
+        \item Point group: $O_h$.
+        \begin{table}[H]
+            \centering
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{l|cccccccccc|l|l}
+                $O_h$ & $E$ & $8C_3$ & $6C_2$ & $6C_4$ & $3C_2(={C_4}^2)$ & $i$ & $6S_4$ & $8S_6$ & $3\sigma_h$ & $6\sigma_d$ & linear & quadratic\\
+                \hline
+                $A_{1g}$ & $1$ & $1$  & $1$  & $1$  & $1$  & $1$  & $1$  & $1$  & $1$  & $1$  & & $x^2+y^2+z^2$\\
+                $A_{2g}$ & $1$ & $1$  & $-1$ & $-1$ & $1$  & $1$  & $-1$ & $1$  & $1$  & $-1$ & & \\
+                $E_g$    & $2$ & $-1$ & $0$  & $0$  & $2$  & $2$  & $0$  & $-1$ & $2$  & $0$  & & $(2z^2-x^2-y^2,x^2-y^2)$\\
+                $T_{1g}$ & $3$ & $0$  & $-1$ & $1$  & $-1$ & $3$  & $1$  & $0$  & $-1$ & $-1$ & $(R_x,R_y,R_z)$ & \\
+                $T_{2g}$ & $3$ & $0$  & $1$  & $-1$ & $-1$ & $3$  & $-1$ & $0$  & $-1$ & $1$  & & $(xy,xz,yz)$\\
+                $A_{1u}$ & $1$ & $1$  & $1$  & $1$  & $1$  & $-1$ & $-1$ & $-1$ & $-1$ & $-1$ & & \\
+                $A_{2u}$ & $1$ & $1$  & $-1$ & $-1$ & $1$  & $-1$ & $1$  & $-1$ & $-1$ & $1$  & & \\
+                $E_u$    & $2$ & $-1$ & $0$  & $0$  & $2$  & $-2$ & $0$  & $1$  & $-2$ & $0$  & & \\
+                $T_{1u}$ & $3$ & $0$  & $-1$ & $1$  & $-1$ & $-3$ & $-1$ & $0$  & $1$  & $1$  & $(x,y,z)$ & \\
+                $T_{2u}$ & $3$ & $0$  & $1$  & $-1$ & $-1$ & $-3$ & $1$  & $0$  & $1$  & $-1$ & & \\
+            \end{tabular}
+            \caption{Character table for the $O_h$ point group.}
+            \label{tab:charTableOh}
+        \end{table}
+        \item A coordinate system is not particularly necessary here since the molecule is symmetric along every Cartesian axis.
+        \item Reducible representation for the $\sigma$ orbitals.
+        \begin{table}[H]
+            \centering
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{c|cccccccccc}
+                $O_h$ & $E$ & $8C_3$ & $6C_2$ & $6C_4$ & $3C_2$ & $i$ & $6S_4$ & $8S_6$ & $3\sigma_h$ & $6\sigma_d$\\
+                \hline
+                $\Gamma_\sigma$ & 6 & 0 & 0 & 2 & 2 & 0 & 0 & 0 & 4 & 2\\
+            \end{tabular}
+            \caption{Representation for the $\sigma$ orbitals of \ce{ML6}.}
+            \label{tab:ML6RR}
+        \end{table}
+        \item Reduction.
+        \begin{equation*}
+            \Gamma_\sigma = a_{1g}+e_g+t_{1u}
+        \end{equation*}
+        \item Symmetries of the metal atomic orbitals (from Table \ref{tab:charTableOh}).
+        \begin{align*}
+            s &\sim a_{1g}&
+            p_x,p_y,p_z &\sim t_{1u}&
+            d_{z^2},d_{x^2-y^2} &\sim e_g&
+            d_{xz},d_{yz},d_{xy} &\sim t_{2g}
+        \end{align*}
+        \item What the SALCs end up looking like.
+        \begin{figure}[h!]
+            \centering
+            \begin{subfigure}[b]{0.24\linewidth}
+                \centering
+                \begin{tikzpicture}
+                    \footnotesize
+                    \draw
+                        (0,0) coordinate (M) -- ++(90:4em)   coordinate (L1)
+                        (0,0)                -- ++(-160:4em) coordinate (L2)
+                        (0,0)                -- ++(-20:4em)  coordinate (L3)
+                        (0,0)                -- ++(20:4em)   coordinate (L4)
+                        (0,0)                -- ++(160:4em)  coordinate (L5)
+                        (0,0)                -- ++(-90:4em)  coordinate (L6)
+                    ;
+        
+                    \filldraw [semithick,fill=white] (M)  circle (2.6mm);
+                    \filldraw [semithick,fill=white] (L1) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (L2) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (L3) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (L4) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (L5) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (L6) circle (2.6mm);
+        
+                    \path [semithick] (L6) circle (3.67mm);
+                \end{tikzpicture}
+                \caption{$a_{1g}$ bonding.}
+                \label{fig:SALCML6a}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.24\linewidth}
+                \centering
+                \begin{tikzpicture}
+                    \footnotesize
+                    \draw
+                        (0,0) coordinate (M) -- ++(90:4em)   coordinate (L1)
+                        (0,0)                -- ++(-160:4em) coordinate (L2)
+                        (0,0)                -- ++(-20:4em)  coordinate (L3)
+                        (0,0)                -- ++(20:4em)   coordinate (L4)
+                        (0,0)                -- ++(160:4em)  coordinate (L5)
+                        (0,0)                -- ++(-90:4em)  coordinate (L6)
+                    ;
+        
+                    \filldraw [semithick,fill=white,rotate=-70] (M)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz,rotate=110] (M)
+                        to[out=0,in=0,out looseness=0.5] ++(0,0.65)
+                        to[out=180,in=180,in looseness=0.5] cycle
+                    ;
+        
+                    \filldraw [semithick,fill=grz]   (L2) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (L4) circle (2.6mm);
+        
+                    \path [semithick] (L6) circle (3.67mm);
+                \end{tikzpicture}
+                \caption{$t_{1u}$ bonding.}
+                \label{fig:SALCML6b}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.24\linewidth}
+                \centering
+                \begin{tikzpicture}
+                    \footnotesize
+                    \draw
+                        (0,0) coordinate (M) -- ++(90:4em)   coordinate (L1)
+                        (0,0)                -- ++(-160:4em) coordinate (L2)
+                        (0,0)                -- ++(-20:4em)  coordinate (L3)
+                        (0,0)                -- ++(20:4em)   coordinate (L4)
+                        (0,0)                -- ++(160:4em)  coordinate (L5)
+                        (0,0)                -- ++(-90:4em)  coordinate (L6)
+                    ;
+        
+                    \filldraw [semithick,fill=white,scale=0.7] plot [domain=0.63:2.51,smooth,variable=\thta] ({\thta r}:{0.5*2.5^0.5*(3*sin(\thta r)^2-1)});
+                    \filldraw [semithick,fill=white,scale=0.7] plot [domain=3.75:5.67,smooth,variable=\thta] ({\thta r}:{0.5*2.5^0.5*(3*sin(\thta r)^2-1)});
+                    \filldraw [semithick,fill=grz,scale=0.7] (-0.4,0,0) arc[start angle=120,end angle=60,x radius=0.8cm,y radius=0.9cm] arc[start angle=-60,end angle=-120,x radius=0.8cm,y radius=0.9cm];
+                    \filldraw [semithick,fill=white,scale=0.7] ({0.73 r}:{0.5*2.5^0.5*(3*sin(0.73 r)^2-1)}) to[out=-125,in=-55] ({2.41 r}:{0.5*2.5^0.5*(3*sin(2.41 r)^2-1)});
+        
+                    \filldraw [semithick,fill=white] (L1) circle (3.67mm);
+                    \filldraw [semithick,fill=grz]   (L2) circle (1.84mm);
+                    \filldraw [semithick,fill=grz]   (L3) circle (1.84mm);
+                    \filldraw [semithick,fill=grz]   (L4) circle (1.84mm);
+                    \filldraw [semithick,fill=grz]   (L5) circle (1.84mm);
+                    \filldraw [semithick,fill=white] (L6) circle (3.67mm);
+                \end{tikzpicture}
+                \caption{$e_g$ bonding.}
+                \label{fig:SALCML6c}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.24\linewidth}
+                \centering
+                \begin{tikzpicture}
+                    \footnotesize
+                    \draw
+                        (0,0) coordinate (M) -- ++(90:4em)   coordinate (L1)
+                        (0,0)                -- ++(-160:4em) coordinate (L2)
+                        (0,0)                -- ++(-20:4em)  coordinate (L3)
+                        (0,0)                -- ++(20:4em)   coordinate (L4)
+                        (0,0)                -- ++(160:4em)  coordinate (L5)
+                        (0,0)                -- ++(-90:4em)  coordinate (L6)
+                    ;
+        
+                    \filldraw [semithick,fill=white,rotate=-70] (M)
+                        to[out=0,in=0,out looseness=0.5,in looseness=1.5] ++(0,0.65)
+                        to[out=180,in=180,out looseness=1.5,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz,rotate=70] (M)
+                        to[out=0,in=0,out looseness=0.5,in looseness=1.5] ++(0,0.65)
+                        to[out=180,in=180,out looseness=1.5,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=white,rotate=110] (M)
+                        to[out=0,in=0,out looseness=0.5,in looseness=1.5] ++(0,0.65)
+                        to[out=180,in=180,out looseness=1.5,in looseness=0.5] cycle
+                    ;
+                    \filldraw [semithick,fill=grz,rotate=-110] (M)
+                        to[out=0,in=0,out looseness=0.5,in looseness=1.5] ++(0,0.65)
+                        to[out=180,in=180,out looseness=1.5,in looseness=0.5] cycle
+                    ;
+        
+                    \filldraw [semithick,fill=white] (L2) circle (2.6mm);
+                    \filldraw [semithick,fill=grz]   (L3) circle (2.6mm);
+                    \filldraw [semithick,fill=white] (L4) circle (2.6mm);
+                    \filldraw [semithick,fill=grz]   (L5) circle (2.6mm);
+        
+                    \path [semithick] (L6) circle (3.67mm);
+                \end{tikzpicture}
+                \caption{$e_g$ bonding.}
+                \label{fig:SALCML6d}
+            \end{subfigure}
+            \caption{\ce{ML6} SALCs.}
+            \label{fig:SALCML6}
+        \end{figure}
+        \begin{itemize}
+            \item Note that the $t_{2g}$ set will end up being nonbonding.
+            \item Wuttig did not explicitly compute these; she took a shortcut of guessing their shape inspired by the symmetry of the central orbital and assured us that the guess is what you get from the projection operator.
+            \item Doing the SALC for the $d_{z^2}$ $e_g$ set gives you twice the electron density for the $z$-axis regions as for the $xy$-plane regions.
+        \end{itemize}
+        \item Now we can make sense of the full $\sigma$-only MO diagram (see Figure \ref{fig:MOsML6}).
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.6\linewidth]{../ExtFiles/MOsML6.png}
+            \caption{\ce{ML6} MO diagram.}
+            \label{fig:MOsML6}
+        \end{figure}
+        \begin{itemize}
+            \item In particular, we want to be able to determine what all of the MOs on the diagram look like.
+        \end{itemize}
+    \end{enumerate}
+    \item $\pi$-donating ligands.
+    \begin{itemize}
+        \item Typical $\pi$-donating ligands include halides (\ce{X}), amides (\ce{CONH2}), sulfides (\ce{S^2-}), and oxides (\ce{O^2-}).
+        \item Pictures of $\sigma$- and $\pi$-donation (see Figure VI.4 of \textcite{bib:CHEM20100Notes}).
+    \end{itemize}
+    \item $\pi$-accepting ligands.
+    \begin{itemize}
+        \item Typical $\pi$-accepting ligands include \ce{CO}, \ce{NO+}, \ce{CN-}, \ce{CNR}, and \ce{PPh3}.
+        \item Pictures of $\sigma$-donation and $\pi$ acceptance (see Figure VI.4 of \textcite{bib:CHEM20100Notes}).
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
