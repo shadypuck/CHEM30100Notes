@@ -395,5 +395,232 @@
 
 
 
+\section{Descent in Symmetry}
+\begin{itemize}
+    \item \marginnote{11/9:}Goal: Consequences of distortion and descent in symmetry on the MOs of coordination complexes.
+    \item \textbf{Homoleptic}: A coordination complex, the ligands of which are all identical.
+    \item \textbf{Heteroleptic}: A coordination complex containing at least two distinct ligands.
+    \item Most interesting chemistry occurs for heteroleptics, so we should consider their MOs, too.
+    \item But how do we construct such molecular orbitals? Use a Descent in Symmetry Analysis.
+    \begin{itemize}
+        \item Similar to the Jahn-Teller distortion and tetragonal compression discussed in Lecture 16, but now we're taking this a step further by fully removing ligands. We then investigate the effects of this on orbital energetics.
+    \end{itemize}
+    \item How do the symmetries of the $d$ orbitals compare from \ce{Co(CN)6} to the hypothetical "chopped off \ce{Co(CN)5} complex," i.e., $C_{4v}$ fragment?
+    \begin{itemize}
+        \item We rip a cyano group off of the axial position and will substitute a bromo group later.
+        \item Changing from $O_h$ to $C_{4v}$ involves a change in the symmetries of the orbitals, as follows.
+        \begin{table}[h!]
+            \centering
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabular}{c|c|c}
+                 & $O_h$ & $C_{4v}$\\
+                \hline
+                $d_{x^2-y^2}$ & $e_g$ & $b_1$\\
+                $d_{z^2}$ & $e_g$ & $a_1$\\
+                $d_{xz}$ & $t_{2g}$ & $e$\\
+                $d_{yz}$ & $t_{2g}$ & $e$\\
+                $d_{xy}$ & $t_{2g}$ & $b_2$\\
+            \end{tabular}
+            \caption{$d$-orbital symmetries in $O_h$ vs. $C_{4v}$.}
+            \label{tab:dOrbOhC4v}
+        \end{table}
+        \item Taking a $\pi$-acceptor off of the $z$-axis won't affect $d_{x^2-y^2}$; we just change the label from $e_g\mapsto b_1$.
+        \item Since $d_{z^2}$ now has a less productive $\sigma$-bonding interaction, the \ce{M}-\ce{L\sigma^*} $d_{z^2}$ orbital decreases in energy (and changes to $a_1$).
+        \item As with $d_{x^2-y^2}$, $d_{xy}$ doesn't change except in symmetry.
+        \item Analogously to $d_{z^2}$, $d_{xz}$ and $d_{yz}$ now increase in energy because we lose the stabilizing effect of the $\pi^*$ ligand acceptance.
+    \end{itemize}
+    \item Now what happens when we add \ce{Br-} back in?
+    \begin{itemize}
+        \item \ce{Br-} is a $\pi$-donor!
+        \item Quantitatively, we need to find the symmetry of the \ce{Br-} atomic orbitals and mix them with the MOs of the fragment.
+        \item Since $p_z$ has $a_1$ symmetry, it can interact with the $d_{z^2}$ orbital of \ce{Co}. Thus, it will be \ce{M}-\ce{L\sigma^*} with respect to the metal, and \ce{M}-\ce{L\sigma} with respect to the \ce{Br-}.
+        \item $p_x,p_y$ have $e$ symmetry. Thus, they can interact with $d_{xz},d_{yz}$ of the metal via \ce{M}-\ce{L\pi^*} interactions, raising the $e$ set higher.
+    \end{itemize}
+    \item Key point: Bonding character is mixed in heteroleptics because MOs have multiple parentage. Let's build the MO for the target complex now.
+    \begin{itemize}
+        \item The $a_1$ and $e$ sets of the \ce{Co(CN)5} fragment are both raised in energy.
+        \item We see multiple parentage in the $e$ set, for instance, where we have \ce{M}-\ce{L\pi} interactions with cyano ligands and \ce{M}-\ce{L\pi^*} interactions with the bromo ligand.
+        \begin{itemize}
+            \item Cyano ligands act as stabilizing $\pi$-acceptors on $d_{xz},d_{yz}$.
+            \item Bromo ligands act as destabilizing $\pi$-donors on $d_{xz},d_{yz}$.
+        \end{itemize}
+        \item We fill in 6 $d$ electrons for \ce{[Co(CN)5Br]^3-} because such a structure implies \ce{Co^3+}, which has 6 $d$ electrons.
+    \end{itemize}
+    \item Example: \ce{NbCl5O}.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \footnotesize
+            \begin{scope}
+                \draw [ultra thick]
+                    (-0.55,1) -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (1egr)
+                    (-0.85,0) -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (1t2gr)
+                ;
+                \node [left] at (-0.85,1) {\ce{M}-\ce{L\sigma^*} $e_g$};
+                \node [left] at (-0.85,0) {\ce{M}-\ce{L\pi^*} $t_{2g}$};
+            \end{scope}
+            \begin{scope}[xshift=3cm]
+                \draw [ultra thick]
+                    (-0.25,1) coordinate (2b1l)   -- ++(0.5,0) coordinate (2b1r)
+                    (-0.25,0.7) coordinate (2a1l) -- ++(0.5,0) coordinate (2a1r)
+                    (-0.25,0) coordinate (2b2l)   -- ++(0.5,0) coordinate (2b2r)
+                    (-0.55,-0.3) coordinate (2el) -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (2er)
+                ;
+                \node [above] at (0,1) {$b_1$};
+                \node [below] at (0,0.7) {$a_1$};
+                \node [above] at (0,0) {$b_2$};
+                \node [below] at (0,-0.3) {$e$};
+            \end{scope}
+            \begin{scope}[xshift=6cm]
+                \draw [ultra thick]
+                    (-0.25,1) coordinate (3b1l)   -- ++(0.5,0)
+                    (-0.25,0.8) coordinate (3a1l) -- ++(0.5,0)
+                    (-0.25,0) coordinate (3b2l)   -- ++(0.5,0)
+                    (-0.55,-0.2) coordinate (3el) -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0)
+                ;
+                \node [right] at (0.55,1.05) {$b_1$};
+                \node [right] at (0.55,0.75) {$a_1$};
+                \node [right] at (0.55,0.05) {$b_2$};
+                \node [right] at (0.55,-0.25) {$e$};
+            \end{scope}
+            \draw [grx,thick,densely dashed]
+                (1egr)  -- (2b1l)
+                (1egr)  -- (2a1l)
+                (1t2gr) -- (2b2l)
+                (1t2gr) -- (2el)
+                (2b1r)  -- (3b1l)
+                (2a1r)  -- (3a1l)
+                (2b2r)  -- (3b2l)
+                (2er)   -- (3el)
+            ;
+        \end{tikzpicture}
+        \caption{\ce{NbCl5O} $d$ orbitals derivation.}
+        \label{fig:dOrbsNbCl5O}
+    \end{figure}
+    \begin{itemize}
+        \item Remove a $\pi$-donor; add back another $\pi$-donor.
+        \item Thus, we drop the $e$ and $a_1$ sets, and then raise them back up (but not all the way to degeneracy).
+    \end{itemize}
+    \item The \ce{M}-\ce{L\sigma^*} notation denotes molecular orbital \textbf{parentage}!
+    \item Further descents in symmetry: Two ligands gone means $D_{4h}$; three ligands gone means $C_{2v}$.
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+            text height=1.5ex,text depth=0.25ex
+        ]
+            \footnotesize
+            \begin{scope}
+                \draw [ultra thick]
+                    (-0.55,2) -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (1egr)
+                    (-0.85,0) -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (1t2gr)
+                ;
+                \node [left] at (-0.85,2) {\ce{M}-\ce{L\sigma^*} $e_g$};
+                \node [left] at (-0.85,0) {nb $t_{2g}$};
+    
+                \node at (0,-1) {\small$O_h$};
+    
+                \draw
+                    (0,4) -- ++(20:0.5)
+                    (0,4) -- ++(90:0.5)
+                    (0,4) -- ++(160:0.5)
+                    (0,4) -- ++(-160:0.5)
+                    (0,4) -- ++(-90:0.5)
+                    (0,4) -- ++(-20:0.5)
+                ;
+            \end{scope}
+            \begin{scope}[xshift=3cm]
+                \draw [ultra thick]
+                    (-0.25,2)     coordinate (2b1l) -- ++(0.5,0) coordinate (2b1r)
+                    (-0.25,1.7)   coordinate (2a1l) -- ++(0.5,0) coordinate (2a1r)
+                    (-0.55,0.05)  coordinate (2el)  -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (2er)
+                    (-0.25,-0.05) coordinate (2b2l) -- ++(0.5,0) coordinate (2b2r)
+                ;
+                \node [above] at (0,2) {$b_1$};
+                \node [below] at (0,1.7) {$a_1$};
+                \node [above] at (0,0.05) {$e$};
+                \node [below] at (0,-0.05) {$b_2$};
+    
+                \node at (0,-1) {\small$C_{4v}$};
+    
+                \draw
+                    (0,4) -- ++(20:0.5)
+                    (0,4) -- ++(160:0.5)
+                    (0,4) -- ++(-160:0.5)
+                    (0,4) -- ++(-90:0.5)
+                    (0,4) -- ++(-20:0.5)
+                ;
+            \end{scope}
+            \begin{scope}[xshift=6cm]
+                \draw [ultra thick]
+                    (-0.25,2)     coordinate (3b1gl) -- ++(0.5,0) coordinate (3b1gr)
+                    (-0.25,1.4)   coordinate (3a1gl) -- ++(0.5,0) coordinate (3a1gr)
+                    (-0.55,0.05)  coordinate (3egl)  -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (3egr)
+                    (-0.25,-0.05) coordinate (3b2gl) -- ++(0.5,0) coordinate (3b2gr)
+                ;
+                \node [above] at (0,2) {$b_{1g}$};
+                \node [below] at (0,1.4) {$a_{1g}$};
+                \node [above] at (0,0.05) {$e_g$};
+                \node [below] at (0,-0.05) {$b_{2g}$};
+    
+                \node at (0,-1) {\small$D_{4h}$};
+    
+                \draw
+                    (0,4) -- ++(20:0.5)
+                    (0,4) -- ++(160:0.5)
+                    (0,4) -- ++(-160:0.5)
+                    (0,4) -- ++(-20:0.5)
+                ;
+            \end{scope}
+            \begin{scope}[xshift=9cm]
+                \draw [ultra thick]
+                    (-0.25,1.8)  coordinate (4b1lt) -- ++(0.5,0)
+                    (-0.25,1.2)  coordinate (4a1l)  -- ++(0.5,0)
+                    (-0.25,0.1)  coordinate (4a2l)  -- ++(0.5,0)
+                    (-0.25,0)    coordinate (4b2l)  -- ++(0.5,0)
+                    (-0.25,-0.1) coordinate (4b1lb) -- ++(0.5,0)
+                ;
+                \node [right] at (0.25,1.8)  {$b_1$};
+                \node [right] at (0.25,1.2)  {$a_1$};
+                \node [right] at (0.25,0.3)  {$a_2$};
+                \node [right] at (0.25,0)    {$b_2$};
+                \node [right] at (0.25,-0.3) {$b_1$};
+    
+                \node at (0,-1) {\small$C_{2v}$};
+    
+                \draw
+                    (0,4) -- ++(20:0.5)
+                    (0,4) -- ++(160:0.5)
+                    (0,4) -- ++(-160:0.5)
+                ;
+            \end{scope}
+            \draw [grx,thick,densely dashed]
+                (1egr)  -- (2b1l)
+                (1egr)  -- (2a1l)
+                (1t2gr) -- (2el)
+                (1t2gr) -- (2b2l)
+                (2b1r)  -- (3b1gl)
+                (2a1r)  -- (3a1gl)
+                (2er)   -- (3egl)
+                (2b2r)  -- (3b2gl)
+                (3b1gr) -- (4b1lt)
+                (3a1gr) -- (4a1l)
+                (3egr)  -- (4a2l)
+                (3egr)  -- (4b2l)
+                (3b2gr) -- (4b1lb)
+            ;
+        \end{tikzpicture}
+        \caption{Full descent in symmetry.}
+        \label{fig:descentSymmetry}
+    \end{figure}
+    \begin{itemize}
+        \item Wuttig considers the $\sigma$-only case here.
+        \item $D_{4h}$: Another $z$ $\sigma$-donor gone lowers $a_1\mapsto a_{1g}$ further.
+        \item $C_{2v}$: Fewer $z$ donors means lower $a_1$. Fewer $xy$-donors means lower $b_1$. The nonbonding $t_{2g}$ set is still unchanged.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
