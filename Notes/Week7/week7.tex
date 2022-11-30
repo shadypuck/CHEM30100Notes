@@ -622,5 +622,353 @@
 
 
 
+\section{Metal-Metal Bonding}
+\begin{itemize}
+    \item \marginnote{11/11:}Picking up from last time with Walsh diagrams; we'll get to metal-metal bonding later.
+    \item Last time, we talked about descents in symmetry from one particular point group to another destination point group.
+    \item Today: What about intermediate geometries that don't quite fit any particular point group?
+    \begin{itemize}
+        \item We use \textbf{Walsh diagrams} to treat these cases.
+    \end{itemize}
+    \item \textbf{Walsh diagram}: A plot of orbital energy vs. a measure of distortion, often the angle $\theta$ between some bonds.
+    \item Let's look at an example of a Walsh diagram. We'll break down how and when to build one, and what information we can glean from one.
+    \item Consider a square pyramidal $C_{4v}$ complex.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{../ExtFiles/WalshC4v.png}
+        \caption{Walsh diagram for the distortion of a $C_{4v}$ coordination complex.}
+        \label{fig:WalshC4v}
+    \end{figure}
+    \begin{itemize}
+        \item As we increase the angle between the axial ligand and each equatorial ligand, we remain in the $C_{4v}$ point group, but we have changes among orbital energy, too.
+        \item Derive one side, then the other side, and then draw a line connecting the two analogous orbitals.
+    \end{itemize}
+    \item A benefit of Walsh diagrams: They allow us to predict the distortion as a function of electron count.
+    \item Continuing with the $C_{4v}$ example in Figure \ref{fig:WalshC4v}\dots
+    \begin{itemize}
+        \item For $d^0$-$d^2$, steric pressures imply a distorted pyramid; electronic stability isn't significant.
+        \item For $d^3$-$d^6$, however, we can expect a flat pyramid since the orbitals that are now being filled ($d_{xz},d_{yz}$ of $e$ symmetry) are destabilized in the distorted geometry. In fact, the more electrons we add, the stronger the preference for flat.
+        \item For $d^7$-$d^8$, the equilibrium shifts back toward distortion ($x^2-y^2$ gets stabilized by distortion).
+        \item For $d^9$-$d^{10}$, the distortion grows even more rapidly ($z^2$ also gets stabilized by distortion).
+    \end{itemize}
+    \item What happens when the principal rotation axis is not preserved as a function of descending symmetry?
+    \item Consider the case where we go from distorted $C_{4v}$ to trigonal bipyramidal ($D_{3h}$).
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{../ExtFiles/DistortC4vD3h.png}
+        \caption{Distortion from $C_{4v}$ to $D_{3h}$.}
+        \label{fig:DistortC4vD3h}
+    \end{figure}
+    \begin{itemize}
+        \item In a nutshell, we must derive $d$-orbital manifolds in both point groups and connect them just like before, but we now have the additional challenge of orbital labels changing. Let's begin.
+        \item Note that not only does the point group change here, but we are forced to reorient the axes if we want to keep the $z$-axis as the principal axis.
+        \item Once again, we assume $\sigma$-only interactions.
+        \item Determine what axis maps to what other axis: $x\mapsto x$, $z\mapsto y$, and $y\mapsto z$.
+        \begin{itemize}
+            \item Note that we don't send $y\mapsto -z$ because we are only interested in direction (mapping \emph{axes} to \emph{axes}), not intra-basis orientation.
+        \end{itemize}
+    \end{itemize}
+    \item Drawing a Walsh diagram for the case we've been discussing.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[
+            text height=1.5ex,text depth=0.25ex
+        ]
+            \footnotesize
+            \begin{scope}
+                \draw [ultra thick]
+                    (-0.25,2)     -- node[above]{$d_{x^2-y^2}$} ++(0.5,0) coordinate (1b1r)
+                    (-0.25,1.7)   -- node[below]{$d_{z^2}$} ++(0.5,0) coordinate (1a1r)
+                    (-0.55,0.05)  -- node[above]{$d_{xz}$} ++(0.5,0) ++(0.1,0) -- node[above]{$d_{yz}$} ++(0.5,0) coordinate (1er)
+                    (-0.25,-0.05) -- node[below]{$d_{xy}$} ++(0.5,0) coordinate (1b2r)
+                ;
+                \node [left] at (-0.55,2)    {$b_1$ \ce{M}-\ce{L\sigma^*}};
+                \node [left] at (-0.55,1.7)  {$a_1$ \ce{M}-\ce{L\sigma^*}};
+                \node [left] at (-0.55,0.15)  {$e$ nb};
+                \node [left] at (-0.55,-0.15) {$b_2$ nb};
+    
+                \node at (0,-1) {\small$C_{4v}$};
+            \end{scope}
+            \begin{scope}[xshift=3cm]
+                \draw [ultra thick]
+                    (-0.25,2) coordinate (2a1l)  -- node[above]{$d_{z^2}$} ++(0.5,0)
+                    (-0.55,1) coordinate (2e'l)  -- node[above]{$d_{xy}$}  ++(0.5,0) ++(0.1,0) -- node[above,xshift=1mm]{$d_{x^2-y^2}$} ++(0.5,0)
+                    (-0.55,0) coordinate (2e''l) -- node[above]{$d_{xz}$}  ++(0.5,0) ++(0.1,0) -- node[above]{$d_{yz}$} ++(0.5,0)
+                ;
+                \node [right] at (0.7,2) {\ce{M}-\ce{L\sigma^*} $a_1'$};
+                \node [right] at (0.7,1) {\ce{M}-\ce{L\sigma^*} $e'$};
+                \node [right] at (0.7,0) {nb $e''$};
+    
+                \node at (0,-1) {\small$D_{3h}$};
+            \end{scope}
+            \draw [grx,thick,densely dashed]
+                (1b1r) -- (2a1l)
+                (1a1r) -- (2e'l)
+                (1er)  -- (2e'l)
+                (1er)  -- (2e''l)
+                (1b2r) -- (2e''l)
+            ;
+        \end{tikzpicture}
+        \caption{Walsh diagram when the principal axis is not preserved.}
+        \label{fig:WalshNoPrincipal}
+    \end{figure}
+    \begin{itemize}
+        \item Start with the $C_{4v}$ $d$-orbital manifold on the left and the $D_{3h}$ $d$-orbital manifold on the right.
+        \item Be cognizant of the fact that we have to relabel orbitals because we relabeled axes! Indeed, $d_{xy}\mapsto d_{xz}$, $d_{yz}\mapsto d_{yz}$, and $d_{xz}\mapsto d_{xy}$.
+        \begin{itemize}
+            \item Thus, what we call the $d_{xz}$ orbital on the right (for example) is literally the $d_{xy}$ orbital on the left.
+        \end{itemize}
+        \item Wuttig rationalizes the $D_{3h}$ splitting using the ligand SALCs and their symmetries.
+        \begin{itemize}
+            \item For the $D_{3h}$ molecule, the ligand SALCS transform as
+            \begin{table}[H]
+                \centering
+                \small
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabular}{c|cccccc}
+                    $D_{3h}$ & $E$ & $2C_3$ & $3C_2'$ & $\sigma_h$ & $2S_3$ & $3\sigma_v$\\
+                    \hline
+                    $\Gamma_{\ce{L}\text{-}\sigma}$ & 5 & 2 & 1 & 3 & 0 & 3\\
+                \end{tabular}
+                \caption{Representations for the \ce{L\sigma} orbitals of a $D_{3h}$ complex.}
+                \label{tab:D3hRR}
+            \end{table}
+            i.e.,
+            \begin{equation*}
+                \Gamma_{\ce{L}\text{-}\sigma} = 2a_1'+e'+a_2''
+            \end{equation*}
+            \item The $a_2''$ SALCs are nonbonding, but $e'$ and $a_1'$ both have \ce{M}-\ce{L\sigma^*} interactions.
+            \item How did Wuttig determine which of $d_{x^2-y^2}$ and $d_{z^2}$ went to which product orbitals??
+        \end{itemize}
+        \item Connect like orbitals with lines.
+    \end{itemize}
+    \item Using MO theory to predict if complexes containing \ce{NO} as a ligand prefer bent or linear \ce{NO}.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \chemfig{Ir(-[:-10]PPh_3)(<:[:-70]Cl)(<[:-110]Cl)(-[:-170]Ph_3P)(-[2]N-[:30]O)}
+        \caption{An \ce{NO} complex.}
+        \label{fig:NOcomplex}
+    \end{figure}
+    \item Strategy.
+    \begin{enumerate}
+        \item Pyramidalize $D_{4h}$: Derive the MO diagram for just the \ce{Ir(PPh3)2Cl2} ligands, assuming all ligands are the same.
+        \item Combine with \ce{NO} orbitals.
+        \item Bend \ce{NO}.
+    \end{enumerate}
+    \item Completing the example in Figure \ref{fig:NOcomplex}.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[
+            text height=1.5ex,text depth=0.25ex
+        ]
+            \footnotesize
+            \begin{scope}
+                \draw [ultra thick]
+                    (-0.25,2) -- ++(0.5,0) coordinate (1b1gr)
+                    (-0.25,1) -- ++(0.5,0) coordinate (1a1gr)
+                    (-0.25,0.1) -- ++(0.5,0)
+                    (-0.25,0) -- ++(0.5,0) coordinate (1egb2gr)
+                    (-0.25,-0.1) -- ++(0.5,0)
+                ;
+                \node [above] at (0,2) {$x^2-y^2$};
+                \node [above] at (0,1) {$z^2$};
+                \node [above] at (0,0.1) {$xz,yz$};
+                \node [below] at (0,-0.1) {$xy$};
+    
+                \node [left] at (-0.25,2) {$b_{1g}$};
+                \node [left] at (-0.25,1) {$a_{1g}$};
+                \node [left] at (-0.25,0.2) {$e_g$};
+                \node [left] at (-0.25,-0.2) {$b_{2g}$};
+    
+                \node at (0,-2) {\small$D_{4h}$};
+    
+                \node at (0,4) {
+                    \chemfig{M(-)(<:[1])(-[4])(<[5])}
+                };
+            \end{scope}
+            \begin{scope}[xshift=3cm]
+                \draw [ultra thick]
+                    (-0.25,1.6) coordinate (2x2y2l) -- ++(0.5,0) coordinate (2x2y2r)
+                    (-0.55,0.9) coordinate (2xzyzl) -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (2xzyzr)
+                    (-0.25,0.4) coordinate (2z2l) -- ++(0.5,0) coordinate (2z2r)
+                    (-0.25,0) coordinate (2xyl) -- ++(0.5,0) coordinate (2xyr)
+                ;
+                \node [above] at (0,1.6) {$x^2-y^2$};
+                \node [above] at (-0.3,0.9) {$xz$};
+                \node [above] at (0.3,0.9) {$yz$};
+                \node [above] at (0,0.4) {$z^2$};
+                \node [above] at (0,0) {$xy$};
+    
+                \node at (0,4) {
+                    \chemfig{M(-[:-10])(<:[:-70])(<[:-110])(-[:-170])}
+                };
+            \end{scope}
+            \begin{scope}[xshift=6cm]
+                \draw [ultra thick]
+                    (-0.25,1.6) coordinate (3x2y2l) -- ++(0.5,0) coordinate (3x2y2r)
+                    (-0.55,1.2) coordinate (3xz*l)  -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (3xz*r)
+                    (-0.25,0.7) coordinate (3z2ml)  -- ++(0.5,0) coordinate (3z2mr)
+                    (-0.25,0)   coordinate (3xyl)   -- ++(0.5,0) coordinate (3xyr)
+                    (-0.55,-0.5) coordinate (3xzl)  -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (3xzr)
+                    (-0.25,-1.2) coordinate (3z2pl) -- ++(0.5,0) coordinate (3z2pr)
+                ;
+                \node [above] at (0,1.6) {$x^2-y^2$};
+                \node [above] at (0,1.2) {$xz,y+\pi^*$};
+                \node [above] at (0,0.7) {$z^2-\lambda n$};
+                \node [above] at (0,0)   {$xy$};
+                \node [above] at (0,-0.5) {$xz,y+\pi$};
+                \node [above] at (0,-1.2) {$n+\lambda z^2$};
+    
+                \node at (0,4) {
+                    \chemfig{M(-[:-10])(<:[:-70])(<[:-110])(-[:-170])(-[2]N-[2]O)}
+                };
+            \end{scope}
+            \begin{scope}[xshift=9cm]
+                \draw [ultra thick]
+                    (-0.25,1.1) -- ++(0.5,0)
+                    (-0.25,1) -- ++(0.5,0)
+                    (-0.25,-0.8) coordinate (4sigmal) -- ++(0.5,0)
+                ;
+                \coordinate (4pi*l) at (-0.25,1.05);
+                \node [right] at (0.25,1.05) {$\pi^*$};
+                \node [right] at (0.25,-0.8) {$\sigma$};
+            \end{scope}
+            \draw [grx,thick,densely dashed]
+                (1b1gr) -- (2x2y2l)
+                (1a1gr) -- (2z2l)
+                (1egb2gr) -- (2xzyzl)
+                (1egb2gr) -- (2xyl)
+                (2x2y2r) -- (3x2y2l)
+                (2xzyzr) -- (3xz*l)
+                (2xzyzr) -- (3xzl)
+                (2z2r) -- (3z2ml)
+                (2z2r) -- (3z2pl)
+                (2xyr) -- (3xyl)
+                (3xz*r) -- (4pi*l)
+                (3xzr) -- (4pi*l)
+                (3z2mr) -- (4sigmal)
+                (3z2pr) -- (4sigmal)
+            ;
+
+            \path (6,0) -- ++(0,5.7);
+        \end{tikzpicture}
+        \caption{\ce{Ir(PPh3)2Cl2(NO)} MOs.}
+        \label{fig:MOsNOcomplex}
+    \end{figure}
+    \begin{itemize}
+        \item Generalize all ligands to a generic $\pi$-donor (like \ce{Cl-}).
+        \item Pyramidalize the molecular fragment to the $D_{4h}$ molecular geometry.
+        \item Give the $d$-orbital splitting for this point group.
+        \item Bend the molecule and change the orbital energies accordingly: Loss of planar antibonding interactions lowers $d_{x^2-y^2}$ and $d_{z^2}$, loss of $\sigma_h$ increases $d_{xz},d_{yz}$, no change in symmetry about the principal axis means that $d_{xy}$ is unaffected.
+        \item These orbitals can be mixed with the linear \ce{NO} frontier orbitals (a high-lying $\pi^*$ one and a low-lying $\sigma$ one) to generate an initial MO diagram.
+    \end{itemize}
+    \item We can use a Walsh diagram to describe the distortion in the MO diagram in Figure \ref{fig:MOsNOcomplex} as we bend the \ce{NO} ligand.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.23\linewidth]{../ExtFiles/WalshNOcomplex.png}
+        \caption{Walsh diagram for varying \ce{Ir}-\ce{N}-\ce{O} bond angles.}
+        \label{fig:WalshNOcomplex}
+    \end{figure}
+    \item Do $d^6$, $d^7$, and $d^8$ prefer linear or bent geometries?
+    \begin{itemize}
+        \item $d^6$ prefers linear since those orbitals lie lower in energy.
+        \item $d^7$ prefers bent for the same reason (we now have an electron in the drastically changing $z^2-\lambda n$).
+        \item $d^8$ prefers an intermediate angle, even though we would expect fully bent based on the Walsh diagram.
+    \end{itemize}
+    \item We now move to metal-metal bonding.
+    \item Metal-metal bonding involves $\delta$ bonds.
+    \begin{itemize}
+        \item Different types of $d$-$d$ molecular orbitals are shown (see Figure III.8 of \textcite{bib:CHEM20100Notes}).
+    \end{itemize}
+    \item Seminal work of Al Cotton, a giant of inorganic chemistry: One of the first quadruple-bonded complexes, \ce{[Re2Cl8]^2-}.
+    \item Investigating the bond-order for the \ce{Re-Re} bond.
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[
+            yscale=1.5
+        ]
+            \footnotesize
+            \draw [gry,ultra thick]
+                (-2,3) coordinate (x2y2r) -- ++(-0.5,0)
+                (-2,2) coordinate (z2r)   -- ++(-0.5,0)
+                (-2,1) coordinate (xyr)   -- ++(-0.5,0)
+                (-2,0.033)                 -- ++(-0.5,0)
+                (-2,-0.033)                -- ++(-0.5,0)
+            ;
+            \coordinate (xzyzr) at (-2,0);
+            \node [left] at (-2.5,3) {$x^2-y^2$};
+            \node [left] at (-2.5,2) {$z^2$};
+            \node [left] at (-2.5,1) {$xy$};
+            \node [left] at (-2.5,0) {$xz,yz$};
+    
+            \draw [gry,ultra thick]
+                (2,3) coordinate (x2y2l) -- ++(0.5,0)
+                (2,2) coordinate (z2l)   -- ++(0.5,0)
+                (2,1) coordinate (xyl)   -- ++(0.5,0)
+                (2,0.033)                 -- ++(0.5,0)
+                (2,-0.033)                -- ++(0.5,0)
+            ;
+            \coordinate (xzyzl) at (2,0);
+            \node [right] at (2.5,3) {$x^2-y^2$};
+            \node [right] at (2.5,2) {$z^2$};
+            \node [right] at (2.5,1) {$xy$};
+            \node [right] at (2.5,0) {$xz,yz$};
+    
+            \draw [ultra thick]
+                (-0.25,3.8)  coordinate (s*l)  -- ++(0.5,0) coordinate (s*r)
+                (-0.25,3.1)  coordinate (d*2l) -- ++(0.5,0) coordinate (d*2r)
+                (-0.25,2.2)  coordinate (d2l)  -- ++(0.5,0) coordinate (d2r)
+                (-0.55,1.5)  coordinate (p*l)  -- ++(0.5,0) ++(0.1,0) -- ++(0.5,0) coordinate (p*r)
+                (-0.25,1.1)  coordinate (d*l)  -- ++(0.5,0) coordinate (d*r)
+                (-0.25,0.2)    coordinate (dl)   -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0) coordinate (dr)
+                (-0.25,-0.6) coordinate (sl)   -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0) coordinate (sr)
+                (-0.55,-1.5) coordinate (pl)   -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0) ++(0.1,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0) coordinate (pr)
+            ;
+            \node [below]     at (0,3.8)  {$\sigma^*$};
+            \node [below]     at (0,3.1)  {$\delta^*$};
+            \node [below]     at (0,2.2)  {$\delta$};
+            \node [below]     at (0,1.5)  {$\pi^*$};
+            \node [below]     at (0,1.1)  {$\delta^*$};
+            \node [below=2mm] at (0,0.2)  {$\delta$};
+            \node [below=2mm] at (0,-0.6) {$\sigma$};
+            \node [below=2mm] at (0,-1.5) {$\pi$};
+            
+            \draw [grx,thick,densely dashed]
+                (x2y2r) -- (d*2l)
+                (x2y2r) -- (d2l)
+                (z2r) -- (s*l)
+                (z2r) -- (sl)
+                (xyr) -- (d*l)
+                (xyr) -- (dl)
+                (xzyzr) -- (p*l)
+                (xzyzr) -- (pl)
+                (x2y2l) -- (d*2r)
+                (x2y2l) -- (d2r)
+                (z2l) -- (s*r)
+                (z2l) -- (sr)
+                (xyl) -- (d*r)
+                (xyl) -- (dr)
+                (xzyzl) -- (p*r)
+                (xzyzl) -- (pr)
+            ;
+        \end{tikzpicture}
+        \caption{\ce{[Re2Cl8]^2-} MOs.}
+        \label{fig:MOsRe2Cl8}
+    \end{figure}
+    \begin{itemize}
+        \item Denote the \ce{Re-Re} axis as the $z$-axis.
+        \item We form two $C_{4v}$ \ce{ReCl4} fragments. Their $d$-orbital splitting (we only care about the $d$-orbitals of the metal centers since we're trying to investigate the \ce{Re-Re} bond) mirrors that in Figure \ref{fig:dOrbsNbCl5O}.
+        \begin{itemize}
+            \item Note that since the $d_{xy},d_{xz},d_{yz}$ orbitals are \ce{M-L\pi^*}, they are less antibonding than in the octahedral case because we no longer have the $\pi^*$ contribution from the orbitals along the $z$-axis??
+        \end{itemize}
+        \item We then mix their identical orbitals.
+        \item Filling in the $d$-electrons on the two \ce{Re^3+} species, we see that $\text{B.O.}=4$.
+    \end{itemize}
+    \item $\sigma>\pi>\delta$ in terms of bond strength and MO splitting.
+\end{itemize}
+
+
+
 
 \end{document}
