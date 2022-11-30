@@ -202,5 +202,107 @@
 
 
 
+\section{Electronic Spectroscopy II}
+\begin{itemize}
+    \item \marginnote{11/16:}No in-person lecture on Friday; a video will be posted. Watch before Monday's lecture (last lecture of the class). Wednesday is the review session, Friday is the second exam, no final.
+    \item Last problem set has been posted; due the review session day. Submit virtually (as a PDF).
+    \item Goal: Understand and derive term symbols in the context of electron configuration. Free ions $\to$ weak field $\to$ strong field. It's important to understand where these things come from because that allows us to use the tools in the literature in a more informed fashion.
+    \item Terms allow us to predict the energy of the electronic transition. But where do they come from? How do they vary for ground and excited states?
+    \item \textbf{Term}: Energy level of a spectrum.
+    \item Free ion term: $d$-orbital manifold in the absence of any other geometry. We have 5 $d$ orbitals and, suppose, a $d^2$ system. We can fill electrons however we want as long as we satisfy the Pauli exclusion principle. But different fillings have different energies.
+    \emph{picture}
+    \item Multi-electron transition metal ions have multiple energy levels even when $d$-orbital degeneracy is not lifted by a ligand field.
+    \item \textbf{Configuration}: The assignment of a given set of electrons to a certain set of orbitals.
+    \begin{itemize}
+        \item Applies to $d$ orbital setups that are \emph{not} free ion, i.e., degeneracy has been lifted.
+        \item Each configuration gives rise to a number of energy levels and the number of energy levels have to have an even number of terms.
+    \end{itemize}
+    \item Example:
+    \begin{itemize}
+        \item 2 electrons in $d$ orbitals. $({t_{2g}}^2)$, for instance, implies that we have 2 electrons in 2 $t_{2g}$ orbitals.
+        \item 4 electrons in $d$ orbitals. ${t_{2g}}^4$, for instance, implies that all electrons are in the $t_{2g}$ set. $({t_{2g}}^2)({t_{2g}}^2)$, for instance, implies that electrons are in different orbitals; this describes an excited state.
+    \end{itemize}
+    \item Energy ordering of the terms.
+    \begin{itemize}
+        \item To construct suitable energy level diagrams for various states in a transition metal ion, we consider the last three terms (IER -- interelectronic repulsion, SOC -- spin-orbit coupling, and LFI -- ligand field interaction).
+        \item The interaction between these three terms determines whether we're in a weak or strong field.
+        \item Case 1: $\text{IER}>\text{LFI}>\text{SOC}$ gives rise to the weak field approximation (ligand field induces only a small perturbation of the energy levels).
+        \item Case 2: $\text{LFI}>\text{IER}>\text{SOC}$ gives rise to the strong field approximation (implies more low spin configurations).
+    \end{itemize}
+    \item We've now started understanding the underlying principles that change the energy ordering.
+    \item Consider only weak field approximation. We first approximate the weakest field possible: Where there is no field. World's most boring electronic structure, but helps us understand how to build correlation diagrams. Let's determine the number of microstates or the ways we can put a single electron into $d$ orbitals.
+    \begin{itemize}
+        \item $d^1$ case: No effects from other electrons, yet there are still numerous microstates.
+        \item A $d$ orbital can be described by $\ell=2$ (the angular momentum quantum number), $m_\ell\in\{-2,-1,0,1,2\}$ (the magnetic quantum number; takes integer values that span $-\ell$ to $\ell$), and $m_s=\pm 1/2$ (the spin quantum number).
+        \item Thus, there are 5 degenerate $d$ orbitals (one for each $m_\ell$; these labels can be though of as alternatives to $z^2,x^2-y^2,\dots$).
+        \item The one electron can occupy any $d$ orbital and take spin $\pm 1/2$ for 10 total degenerate sets of microstates.
+        \item We can designate the collection of microstates with a term symbol.
+    \end{itemize}
+    \item \textbf{Term symbol}: An abbreviation describing a selection of microstates.
+    \item How do I know that I need to get 10 microstates?
+    \begin{itemize}
+        \item The number $\ell^q$ of microstates for a given configuration, where $\ell$ is the angular momentum quantum number and $q$ is the number of electrons, can be calculated for a number of equivalent electrons. The formula is
+        \begin{equation*}
+            n = \frac{(4\ell+2)!}{q!(4\ell+2-q)!}\footnotemark
+        \end{equation*}
+        \footnotetext{Wuttig puts $4\ell-2$ in the denominator.}
+        \item If we do this for $\ell=2$, $q=1$, we get
+        \begin{equation*}
+            n = \frac{10!}{9!} = 10
+        \end{equation*}
+    \end{itemize}
+    \item How do I know what the term symbol is?
+    \begin{itemize}
+        \item Term symbols have the form ${}^{2S+1}L_J$.
+        \item $M_L=\sum m_\ell$ for a given microstate.
+        \item $M_S=\sum m_s$ for a given microstate.
+        \item $S$, the spin multiplicity, is the total spin angular momentum (values $0,1/2,1,3/2,2,5/2$) or the maximum $M_S$ value.
+        \item $L$, the total orbital angular momentum, is the maximum $M_L$ value.
+        \item $J$, the L-S/Russell-Saunders/spin-orbit coupling, is only relevant for multielectron systems where the presence of an electron in the same shell diminishes the coupling of another. $J$ is the total angular momentum. $J=L+S,L+S-1,L+S-2,\dots,L-S-1,L-S$\footnote{This is probably wrong, too; should iterate down to $|L-S|$.}.
+    \end{itemize}
+    \item Example: Term symbol for $d^1$.
+    \begin{itemize}
+        \item We must have $S=1/2$ (the smallest possible value of $S$, and the only one achievable by one electron) and $L=2$ (degenerate set of orbitals that span $-2$ to 2). Thus, ${}^2D$.
+        \item No spin-orbit coupling to worry about because there's only one electron in the system (coupling inherently requires two or more electrons).
+    \end{itemize}
+    \item Multielectron atom procedure.
+    \begin{enumerate}
+        \item Determine the total number of microstates ($m_\ell$, $m_s$ values).
+        \item Determine the possible values of $M_L=\sum m_\ell$ and $M_S=\sum m_s$.
+        \item Construct a Pauli-allowed chart of microstates.
+        \item Group microstates into terms.
+        \item Assign ground state term symbol.
+    \end{enumerate}
+    \item Let's tackle $d^2$.
+    \begin{itemize}
+        \item By the formula, there are 45 microstates.
+        \item Goes through the microstate table and rectangles (we won't be asked to derive this, though).
+        \item The maximum value of $L$ is 4. This means the two electrons are in the same orbital, so we have $S=0$. Thus, we get ${}^1G$ for our term symbol. We now slash off all microstates for which $L=4$ and $S=0$, i.e., microstates for which $M_L=0,\pm 1,\pm 2,\pm 3,\pm 4$ and $M_S=0$.
+        \item Next up is $L=3$ for maximum possible $L$. Maximum possible $S$ in this case is 1. Thus, we slash off all states for which $M_L=0,\pm 1,\pm 2,\pm 3$ and $M_S=0,\pm 1$ except the ones we've already counted\footnote{Note that since there are $7=2L+1$ possible $M_L$ values and $3=2S+1$ possible $M_S$ values, we will have $7\cdot 3=21$ microstates of this type. This is where Talapin's $(2L+1)(2S+1)$ formula comes from!}. Now that we have $L=3$, the electrons can be in different orbitals, so $S=1$.
+        \item My big question: What do the microstates that we group together into one term symbol have in common??
+    \end{itemize}
+    \item Takeaway: We have multiple term symbols/energy levels for free ion states.
+    \item For $d^2$, we show in handout that we have 5 terms:
+    \begin{align*}
+        {}^1S&&
+        {}^3P&&
+        {}^1D&&
+        {}^3F&&
+        {}^1G
+    \end{align*}
+    \item But how do we order the energy? Use Hund's rules:
+    \begin{enumerate}
+        \item Maximize the spin multiplicity (i.e., terms with higher multiplicity will have lower energy).
+        \item Maximize the total angular momentum (i.e., terms with higher $L$ will have lower energy).
+    \end{enumerate}
+    \item Thus, the energy ordering is ${}^3F,{}^3P,{}^1G,{}^1D,{}^1S$.
+    \item Electron hole formalism: $d^n$ and $d^{10-n}$ have equivalent weak field energy orderings.
+    \begin{itemize}
+        \item Will be asked about in our homework.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
