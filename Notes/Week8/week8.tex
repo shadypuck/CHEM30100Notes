@@ -304,5 +304,287 @@
 
 
 
+\section{Electronic Spectroscopy III and TS Diagrams}
+\begin{itemize}
+    \item \marginnote{11/18:}Goals:
+    \begin{itemize}
+        \item Building Tanabe-Sugano diagrams from scratch.
+        \item More about term symbols (deriving and ordering them; ground states v. excited states).
+    \end{itemize}
+    \item Last time: We derived the term symbols and ordering for $d^1,d^9$ and $d^2,d^8$. These term symbols have different energies; these must be spectroscopically determined.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\linewidth]{../ExtFiles/weakSplitD.png}
+        \caption{$d$-orbital weak field splittings.}
+        \label{fig:weakSplitD}
+    \end{figure}
+    \begin{itemize}
+        \item The weak field energy orderings are shown without spin-orbit coupling (the $J$ term).
+    \end{itemize}
+    \item But recall that S-O coupling can exist.
+    \item Example: ${}^3F$ S-O coupling for $d^2$.
+    \begin{itemize}
+        \item ${}^3F$ means $L=3$ and $S=1$.
+        \item We can split it into $(L+S)-(L-S)+1=2S+1=3$ terms\footnote{This is the spin multiplicity, as expected.}, namely those with $L+S=4$, $L+S-1=3$, and $L-S=2$. Thus, we get ${}^3F_4$ as the highest energy of these terms, ${}^3F_3$ in the middle, and ${}^3F_2$ at the bottom.
+    \end{itemize}
+    \item Additional energy ordering rule: If the free ion term is less than half-filled, the lowest $J$ has the lowest energy; if the free ion term is more than half-filled, the highest $J$ has the lowest energy!
+    \item We now start to include a ligand field.
+    \item Splitting of energy levels can be described by the character table.
+    \item Example: Consider the ${}^1D$ term in the free ion for $d^2$ in an $O_h$ field.
+    \begin{itemize}
+        \item In a similar fashion to the $d$ orbitals in an $O_h$ field, the $D$ states arising from groups of electrons have the same 5-fold degeneracy, so splitting will be the same.
+        \item Thus, we split ${}^1D$ into ${}^1E_g$ and ${}^1T_{2g}$.
+        \item Notice that the spin multiplicity is conserved under splitting. This is because the chemical environment does not directly interact with spin, so all the states into which a particular term is split have the same spin multiplicity as the parent term.
+    \end{itemize}
+    \item Example: Consider the ${}^3F$ term in the free ion for $d^2$ in an $O_h$ field (without S-O coupling).
+    \begin{itemize}
+        \item $f$ orbitals transform as the cubic functions, i.e., as $a_{2u},t_{1u},t_{2u}$ (see Table \ref{tab:charTableOh}).
+        \item However, since this is a $d^n$ configuration and all $d$ orbitals have a center of symmetry, we change the $u$ to a $g$.
+        \item Thus, the splitting is ${}^3A_{2g}$, ${}^3T_{1g}$, and ${}^3T_{2g}$.
+    \end{itemize}
+    \item We can now undertake the full construction of energy level diagrams.
+    \item Continue with the $d^2$ example.
+    \begin{itemize}
+        \item At this point, we know how to get the weak field energy ordering and split each free ion term into its relative weak field splitting. This latter splitting gives the \textbf{weak free ion}.
+        \item Thus, we can now derive the left (weak field) side of the correlation diagram for $d^2$ in an $O_h$ environment.
+    \end{itemize}
+    \item \textbf{Weak free ion}: The interaction with the $O_h$ chemical environment by assuming that the electron in the $d$-orbital manifold is repulsed by the negative charge around it.
+    \begin{itemize}
+        \item This is essentially CFT.
+    \end{itemize}
+    \item Next task: Strong field terms.
+    \begin{itemize}
+        \item Given a large splitting of $d^2$ in $O_h$, the following configurations are possible: ${t_{2g}}^2,t_{2g}e_g,{e_g}^2$.
+        \begin{itemize}
+            \item The latter two are excited states.
+            \item These are analogous to the initial term symbols, in that these states only exist in an infinitely strong ligand field.
+        \end{itemize}
+        \item As the ligand field weakens\dots
+        \begin{enumerate}
+            \item The electrons will feel each other's presence and start to couple.
+            \item The symmetry properties of these states can be determined by taking the direct products of the representation of a single electron.
+        \end{enumerate}
+        \item Example:
+        \begin{gather*}
+            {t_{2g}}^2 = t_{2g}\times t_{2g} = A_{1g}+E_g+T_{1g}+T_{2g}\\
+            t_{2g}\times e_g = T_{1g}+T_{2g}\\
+            e_g\times e_g = A_{1g}+A_{2g}+E_g
+        \end{gather*}
+        \begin{itemize}
+            \item Remember that both explicit computation and a direct product table can lead to the right answer in computations such as these.
+        \end{itemize}
+    \end{itemize}
+    \item Full correlation diagram.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{../ExtFiles/correlationDiagramd2.png}
+        \caption{Correlation diagram for a $d^2$ configuration.}
+        \label{fig:correlationDiagramd2}
+    \end{figure}
+    \begin{itemize}
+        \item Axioms:
+        \begin{enumerate}
+            \item There must exist a 1-to-1 correspondence between the states at the 2 extremes of the abscissa.
+            \item As the strength of the interaction changes, states of the same spin degeneracy do not cross.
+        \end{enumerate}
+        \item The multiplicities of the strong field splitting terms are difficult to determine using the principles of \emph{this} course. Determined by descent in symmetry to reveal population and split degenerate states. Beyond the scope of this course. The multiplicities will always be given to us.
+    \end{itemize}
+    \item This concludes the construction of correlation diagrams.
+    \item \textbf{Tanabe-Sugano diagrams}: Correlation diagrams that are useful in interpretation of electronic spectra of coordination compounds.
+    \begin{itemize}
+        \item Answer the question of the precise scaling of the energies of these states with the ligand field strength.
+        \item Dreamt up by two physicists in 1954.
+    \end{itemize}
+    \item Example: $d^1$ case (simplest; e.g., \ce{Ti^3+} in an $O_h$ field).
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.33\linewidth]{../ExtFiles/TSd1.png}
+        \caption{Tanabe-Sugano diagram for a $d^1$ configuration.}
+        \label{fig:TSd1}
+    \end{figure}
+    \begin{itemize}
+        \item We have one free ion term ${}^2D$.
+        \item Our strong field terms are ${}^2T_{2g}$ and ${}^2E_g$ (possible one electron configurations are ${t_{2g}}^1,{e_g}^1$).
+        \begin{itemize}
+            \item ${}^2E_g$ is the excited state in the octahedron.
+            \item ${}^2T_{2g}$ is the lowest energy on the horizontal, so the vertical distance between the $x$-axis and the sloping line is a measure of the energy of the excited state above the ground state (and hence is directly proportional to $\Delta_o$).
+        \end{itemize}
+        \item $E$ describes the energy of the optical transition.
+        \item $B$ is the \textbf{Racah parameter}.
+        \item Interpretation, a $d^1$ TM complex (such as a \ce{Ti^{3+}} complex) should have one absorption.
+    \end{itemize}
+    \item \textbf{Racah parameter}: A measure of the repulsion between terms of the same multiplicity. \emph{Denoted by} $\bm{B}$. \emph{Given by}
+    \begin{equation*}
+        B = \frac{e^2}{r_{ij}}
+    \end{equation*}
+    \begin{itemize}
+        \item Directly correlated to the degree of electron repulsion (see its definition).
+        \item Originally defined as a purely free ion parameter, but does change upon coordination (\textbf{nephelauxetic effect}).
+        \item Important trends:
+        \begin{itemize}
+            \item Complexes have smaller $B$ than free ions.
+            \item More covalent \ce{M-L} bonds implies lower $B$.
+        \end{itemize}
+    \end{itemize}
+    \item Example (continued): Does the spectrum for \ce{Ti(OH2)6^3+} reflect our intuition that there should only be one absorption?
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.35\linewidth]{../ExtFiles/spectrumTi3.png}
+        \caption{Spectrum for \ce{Ti(OH2)6^3+}.}
+        \label{fig:spectrumTi3}
+    \end{figure}
+    \begin{itemize}
+        \item The spectrum for the titanium complex does (mostly) reflect this intuition.
+        \item There is a slight shoulder ($\pH$ dependent) due to deprotonation of an aqua group resulting in some \ce{Ti(OH2)5(OH)^2+} in solution.
+        \item The \textbf{molar extinction coefficient} $\varepsilon$ is very low ($\varepsilon\approx\SI{4}{\per\molar\per\centi\meter}$).
+        \begin{itemize}
+            \item The transition is weak because it is Laporte forbidden ($g\to g$).
+            \item Selection rules will be covered in greater detail on Monday.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Electron hole formalism}: A $d^{10-n}$ configuration will behave in the same way, at all points along the abscissa of the energy level diagram, as the corresponding $d^n$ configuration except that all energies of the interaction with the environment will have the opposite sign.
+    \begin{itemize}
+        \item $n$ holes in a $d$ shell can be treated like $n$ positrons. $n$ positrons interact with each other the same way as electrons with each other, but with the environment, they will behave as attractive forces because these positive entities are now interacting with a negative ligand field.
+    \end{itemize}
+    \item An application of the electron hole formalism.
+    \begin{itemize}
+        \item The TS diagram in Figure \ref{fig:TSd1} also treats the $d^9$ case!
+    \end{itemize}
+    \item Example: Does the spectrum for \ce{Cu(OH2)6^2+} reflect our intuition that there should only be one absorption?
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.35\linewidth]{../ExtFiles/spectrumCu2.png}
+        \caption{Spectrum for \ce{Cu(OH2)6^2+}.}
+        \label{fig:spectrumCu2}
+    \end{figure}
+    \begin{itemize}
+        \item Mostly yes, and we have the same shoulder again.
+        \item This shoulder can also come from a Jahn-Teller distortion, yielding transitions from the the bottom two $d$ orbitals to the top one. (Why isn't there a transition from the third from the bottom to the top??)
+        \item Note that J-T is not seen in $d^1$ because the $t_{2g}$ set is primarily nonbonding for the $\sigma$-only aquo ligands.
+        \begin{itemize}
+            \item Review J-T distortion!!
+        \end{itemize}
+        \item Similarly small $\varepsilon$. Owing to Laporte forbiddenness again.
+        \item Note that since we're in the hole formalism, the TS diagram labels need to be switched since the hole is moving up.
+        \begin{itemize}
+            \item Overall same TS diagram as Figure \ref{fig:TSd1}, but the ${}^2T_{2g}$ and ${}^2E_g$ labels are flipped.
+        \end{itemize}
+    \end{itemize}
+    \item Example: $d^2$ case (increasingly complex).
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.48\linewidth]{../ExtFiles/TSd2.png}
+        \caption{Tanabe-Sugano diagram for a $d^2$ configuration.}
+        \label{fig:TSd2}
+    \end{figure}
+    \begin{itemize}
+        \item Once again, free ion terms on the left and strong field terms on the right.
+        \begin{itemize}
+            \item Note that sometimes, $g$ labels are left out (see the strong field terms).
+        \end{itemize}
+        \item Red lines: ${t_{2g}}^2\to t_{2g}e_g$ transitions.
+        \item Blue lines: ${t_{2g}}^2\to{t_{2g}}^2$ transitions (e.g., spin flip).
+        \item Green lines: ${t_{2g}}^2\to{e_g}^2$ transitions (two photon transitions have a low probability).
+        \item Curvature: Caused by mixing of states of the same symmetry.
+        \item Spin-allowed transitions include ${}^3T_1\to{}^3T_2$ and ${}^3T_1\to{}^3T_1$ (both red-line transitions). These should be particularly noticeable.
+    \end{itemize}
+    \item Example (continued): Assigning transitions to peaks in a \ce{V^3+} ($d^2$) complex's spectrum.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.35\linewidth]{../ExtFiles/spectrumV3.png}
+        \caption{Spectrum for a \ce{V^3+} ($d^2$) complex.}
+        \label{fig:spectrumV3}
+    \end{figure}
+    \begin{itemize}
+        \item We assign the lower energy transition (${}^3T_1\to{}^3T_2$) to the peak at a lower wavenumber, and the higher energy transition (${}^3T_1\to{}^3T_1$) to the peak at the higher wavenumber.
+    \end{itemize}
+    \item Example (continued): Estimating $B$ and $Dq$.
+    \begin{itemize}
+        \item Take the ratio of the two transitions' wavenumbers in Figure \ref{fig:spectrumV3}.
+        \begin{equation*}
+            \frac{\SI{25600}{\per\centi\meter}}{\SI{17200}{\per\centi\meter}} = 1.49
+        \end{equation*}
+        \item Looking at the $d^2$ TS diagram (Figure \ref{fig:TSd2}), we can see that if we draw a vertical line at $Dq/B=2.8$, then $E/B=25.9$ for the lower transition and $E/B=38.7$ for the higher transition. These energy values also have a ratio of about 1.49\footnote{We can see that moving to the left would increase the ratio, diverging to $+\infty$, and moving to the right would decrease the ratio, converging to 1. Thus, 1.49 is the sweet spot. Note that given linear equations for these two essentially parallel lines, we could also explicitly calculate the sweet spot.}.
+        \item Use the equations $E/B_1=25.9=17200/B_1$ and $E/B_2=38.7=25600/B_2$ to solve for two values of $B$ that we can average to get a decent estimate for $B$. Indeed,
+        \begin{align*}
+            B_1 &= \frac{\SI{17200}{\per\centi\meter}}{25.9} = \SI{664}{\per\centi\meter}&
+            B_1 &= \frac{\SI{25600}{\per\centi\meter}}{38.7} = \SI{661}{\per\centi\meter}
+        \end{align*}
+        so
+        \begin{equation*}
+            B = \frac{\SI{664}{\per\centi\meter}+\SI{661}{\per\centi\meter}}{2}
+            = \SI{663}{\per\centi\meter}
+        \end{equation*}
+        \item We can take this one step further now and estimate the crystal field splitting parameter $Dq$:
+        \begin{align*}
+            \frac{Dq}{B} &= 2.8\\
+            Dq &= 2.8\cdot\SI{663}{\per\centi\meter}\\
+            &= \SI{1860}{\per\centi\meter}
+        \end{align*}
+    \end{itemize}
+    \item Some $d$-electron counts have high- and low-spin cases.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{../ExtFiles/TSd7.png}
+        \caption{Tanabe-Sugano diagram for a $d^7$ configuration.}
+        \label{fig:TSd7}
+    \end{figure}
+    \begin{itemize}
+        \item As the field gets stronger, we will eventually have a sharp transition from high spin to low spin.
+        \begin{itemize}
+            \item Essentially two different TS diagrams on the two sides of the divide.
+        \end{itemize}
+        \item The HS-LS transition is directly proportional to $10Dq=e^2/r_{ij}$.
+        \item In the HS case, we have a negatively sloped line representing a transition from the $e_g$ set to the $t_{2g}$ set that technically forms an excited state since the complex is high spin.
+        \begin{figure}[h!]
+            \centering
+            \begin{tikzpicture}
+                \begin{scope}
+                    \Large
+                    \draw [ultra thick]
+                        (-0.55,1) -- node{$\upharpoonleft$} ++(0.5,0) ++(0.1,0) -- node{$\upharpoonleft$} ++(0.5,0)
+                        (-0.85,0) -- node{$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0) ++(0.1,0) -- node{$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0) ++(0.1,0) -- node{$\upharpoonleft$} ++(0.5,0)
+                    ;
+        
+                    \footnotesize
+                    \node [left] at (-1,1) {$e_g$};
+                    \node [left] at (-1,0) {$t_{2g}$};
+        
+                    \node at (0,-0.5) {HS};
+                \end{scope}
+                \draw [semithick,-stealth] (2,0.5) -- ++(1,0);
+                \begin{scope}[xshift=5cm]
+                    \Large
+                    \draw [ultra thick]
+                        (-0.55,1) -- node{$\upharpoonleft$} ++(0.5,0) ++(0.1,0) -- ++(0.5,0)
+                        (-0.85,0) -- node{$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0) ++(0.1,0) -- node{$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0) ++(0.1,0) -- node{$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+                    ;
+        
+                    \footnotesize
+                    \node [right] at (1,1) {$e_g$};
+                    \node [right] at (1,0) {$t_{2g}$};
+        
+                    \node at (0,-0.5) {LS};
+                \end{scope}
+            \end{tikzpicture}
+            \caption{Explaining the negatively sloped transition.}
+            \label{fig:transNegSlope}
+        \end{figure}
+        \begin{itemize}
+            \item In particular, the transition requires energy because it involves spin pairing, which is costly in a weak field.
+        \end{itemize}
+    \end{itemize}
+    \item All of the lines on the TS diagram informs us of possible transitions. But are they probable?
+    \begin{itemize}
+        \item We've started to make some loose conclusions about what is allowed: Transitions between terms of the same spin multiplicity are spin-allowed, two-photon transitions have low probability, $g\to g$ transitions have low probability.
+        \item We will discuss these selection rules next time!
+        \item The probability of a transition is correlated to its intensity and directly proportional to oscillator strength.
+        \item We will discuss some applications of high-probability transitions, e.g., photovoltaic cells.
+    \end{itemize}
+    \item Conclude the class on Wednesday with a review of bonding and electronic spectroscopy.
+\end{itemize}
+
+
+
 
 \end{document}
