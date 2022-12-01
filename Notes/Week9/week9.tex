@@ -382,5 +382,172 @@
 
 
 
+\section{Second Exam Review}
+\begin{itemize}
+    \item \marginnote{11/30:}Wuttig interpreted everyone's GForm questions as, "we need to go over PSet 4."
+    \item Problem 1 is a descent in symmetry problem.
+    \item First thing to note: You have a \ce{Re-Re} center with octahedral geometry about each \ce{Re} atom.
+    \item We want to build the MO diagram to convince ourselves that $\text{B.O.}=1$.
+    \item Descend in symmetry from \ce{Re(CO)6} $O_h$ to square pyramidal \ce{Re(CO)5}, which is $C_{4v}$. What happens to the orbitals?
+    \begin{itemize}
+        \item \ce{CO} is a $\pi$-acceptor.
+        \item Thus, the $e_g$ set has \ce{M-L\sigma^*} parentage, and the $t_{2g}$ set has \ce{M-L\pi} parentage.
+        \item Labeling the orbitals allows you to investigate them individually. In particular, $d_{z^2}$ decreases in energy and $d_{x^2-y^2}$ stays the same; get their Mulliken symbols from the $C_{4v}$ character table. Less $\pi$-backbonding gives you a raised $e$ set ($d_{xz,yz}$) and a conserved $b_2$ $d_{xy}$.
+    \end{itemize}
+    \item We assume that we are engaging this fragment with itself.
+    \begin{itemize}
+        \item Thus, we write the MO hierarchy on both sides of our MO diagram, and then we mix these orbitals similarly to Figure \ref{fig:MOsRe2Cl8}.
+        \item Based on the parentage, we can now determine what's $\sigma$, $\pi$, and $\delta$.
+        \item We now fill in 14 electrons, corresponding to two neutral $d^7$ \ce{Re} atoms.
+    \end{itemize}
+    \item Descent in symmetry: Start from a molecule you understand, and then do systematic distortions on it.
+    \item Outside of some Mulliken symbol errors, it looks like I got the question right!
+    \item Can we scale this differently like I did?
+    \begin{itemize}
+        \item We can scale this any way we want, as long as we get a bond order of 1 and a splitting ordering of $\sigma>\pi>\delta$.
+    \end{itemize}
+    \item So antibonding orbitals can be lower in energy than bonding orbitals?
+    \begin{itemize}
+        \item Yes.
+    \end{itemize}
+    \item Problem 2 asks us to consider a $d^4$ $O_h$ compound and a $d^6$ $T_d$ diagram. In sum, it asks us to draw a correlation diagram and walks you through how to do that.
+    \item 1. Determine the ground state free ion term.
+    \item We can do so by maximizing spin $M_S=\sum m_s$ and $M_L=\sum m_\ell$.
+    \item Label a free ion set of 5 $d$-orbitals with their $m_\ell$ values and fill in electrons.
+    \begin{itemize}
+        \item This gives $L=2+1+0-1=2$ and $S=\frac{1}{2}+\frac{1}{2}+\frac{1}{2}+\frac{1}{2}=2$, yielding ${}^5D$ as our free ion term.
+        \item Doing this for the other case actually also gets us the same answer.
+    \end{itemize}
+    \item 2. What is the splitting of the ground state free ion term in a weak ligand field?
+    \begin{itemize}
+        \item We want to determine how ${}^5D$ splits in a weak (octahedral) field. Take $L=2$ and know that the representation can be approximated by the quadratic functions ($P$ is linear functions, $S$ is totally symmetric, $F$ is cubic). Thus, from the $O_h$ character table, we have $T_{2g}$ and $E_g$. The spin multiplicity of 5 carries over.
+        \item Very similar to the above, but from the $T_d$ character table, we get $T_2$ and $E$.
+    \end{itemize}
+    \item We don't know the placement/relative energies of the split terms; we just want to know that it splits.
+    \begin{itemize}
+        \item In terms of energy ranking, we just need to be able to find the ground state of the free ion term (i.e., by knowing that it is the lowest in energy according to Hund's rules).
+    \end{itemize}
+    \item 3. The ground state strong-field electron configuration.
+    \item Strong field means we want to minimize spin multiplicity across the two levels. Our electron configuration for $d^4$ is is ${t_{2g}}^4$. For $d^6$ $T_d$, we have $e^4{t_2}^2$.
+    \begin{itemize}
+        \item Wuttig says we want to minimize spin multiplicity??
+    \end{itemize}
+    \item 4. Split the ground state strong-field electron configuration into strong-field terms.
+    \item We can take the direct product of the electrons in the unpaired set because the interaction between them will split the energetics of the strong field term.
+    \item Take the direct product of $t_{2g}\times t_{2g}$ and know that the characters are
+    \begin{table}[h!]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{c|cccccccccc}
+            $O_h$ & $E$ & $8C_3$ & $6C_2$ & $6C_4$ & $3C_2$ & $i$ & $6S_4$ & $8S_6$ & $3\sigma_h$ & $6\sigma_d$\\
+            \hline
+            $T_{2g}$ & 3 & 0 & 1 & $-1$ & $-1$ & 3 & $-1$ & 0 & $-1$ & 1\\
+            $t_{2g}\times t_{2g}$ & 9 & 0 & 1 & 1 & 1 & 9 & 1 & 0 & 1 & 1
+        \end{tabular}
+        \caption{Representation for the unpaired electrons of an $O_h$ $d^4$ complex.}
+        \label{tab:Ohd4RR}
+    \end{table}
+    \item Reduce to
+    \begin{equation*}
+        \Gamma = A_{1g}+E_g+T_{1g}+T_{2g}
+    \end{equation*}
+    \begin{itemize}
+        \item Thus, the strong field ${t_{2g}}^4$ can be split into the above states.
+    \end{itemize}
+    \item We don't need to put spin multiplicities on the Mulliken symbols because doing so requires additional descent in symmetry analysis beyond we did not do in class.
+    \item ${t_{2g}}^4$ splits into four terms; are these excited states?
+    \begin{itemize}
+        \item These are not excited states per se, it's just that there is finer structure within the strong field electron configuration.
+    \end{itemize}
+    \item With these four splittings, we don't necessarily need to fill the electrons into the splitting levels? Do different ones of these levels have varying occupations?
+    \begin{itemize}
+        \item Think about these as being electronic energy levels that are useful for TS diagrams, but not for MO diagrams.
+    \end{itemize}
+    \item Are the terms we came up with in Problem 2(3) the ground state strong field terms?
+    \begin{itemize}
+        \item Yes.
+        \item This is still related to ${}^4F$ and the associated weak field things, but we do this correlation at the very end.
+        \item We do the correlation using the two axioms (1-to-1 correlation and same spin modes [??]).
+    \end{itemize}
+    \item If we have an excited state $t_{2g}\to e_g$ transition, could we take the direct product $t_{2g}\times e_g$?
+    \begin{itemize}
+        \item Yes.
+        \item Not intuitive, though, because there are more possibilities.
+    \end{itemize}
+    \item Why do we take a two-fold direct product instead of a four-fold direct product for ${t_{2g}}^4$?
+    \begin{itemize}
+        \item We must consider the physical origin of this mathematical calculation; we are determining the ways those two \emph{unpaired} electrons can couple.
+        \item To reiterate, even though we have more electrons (four), we take the direct product twice to describe the two electrons that are standing alone in the strong field splitting.
+        \item We assume that all paired electrons cancel.
+    \end{itemize}
+    \item Where did we find for the $T_d$ geometry that the $e$ orbitals are lower in energy than the $t_2$ orbitals (inverse of $O_h$ case)?
+    \begin{itemize}
+        \item That comes from crystal field splitting; four ligands on the corners of the tetrahedra shows that the $e$ orbitals are more effective at overlapping than $t_2$, and hence are more raised.
+    \end{itemize}
+    \item Same schenanigans on $t_2\times t_2$. We get
+    \begin{table}[H]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{c|ccccc}
+            $O_h$ & $E$ & $8C_3$ & $3C_2$ & $6S_4$ & $6\sigma_d$\\
+            \hline
+            $T_2$ & 3 & 0 & $-1$ & $-1$ & 1\\
+            $t_2\times t_2$ & 9 & 0 & 1 & 1 & 1\\
+        \end{tabular}
+        \caption{Representation for the unpaired electrons of a $T_d$ $d^6$ complex.}
+        \label{tab:Tdd6RR}
+    \end{table}
+    \item Reduce to
+    \begin{equation*}
+        \Gamma = A_1+E+T_1+T_2
+    \end{equation*}
+    \item For the reduction, why do we multiply $t_2\times t_2$?
+    \begin{itemize}
+        \item Remember the electron hole formalism. $6-4$ electrons gives 2 holes.
+        \item We will not have to do more that 2 electrons ever in this class. It's beyond the scope, and we can leave that to the physicists. 2 electrons is possible, though.
+    \end{itemize}
+    \item 5. Determine if any weak ligand field term to strong-field term exhibit correlation for terms derived for the ground state.
+    \item Draw out the $x$-axis for the correlation diagram. Left to right, it reads free ions, weak field, strong field terms, and strong field.
+    \item Make sure to indicate that your solution works analogously for both the $d^4$ in $O_h$ case and the $d^6$ in $T_d$ case. The only difference between the $O_h$ and $T_d$ labels is the presence or absence of $g$, so we can indicate this in our single correlation diagram by putting parentheses around each subscript $g$.
+    \item But if we wanted to correlate anything, we would need a spin multiplicity of 5 on the strong field terms.
+    \item 6. Indicate why we can use the same energy correlation diagram to describe $d^4$ in $O_h$ and $d^6$ in $T_d$ ligand field.
+    \item Comes directly from the electron hole formalism. $T_d$ inverts the energies of the $E,T_2$ sets; changes the number of electrons and positrons while keeping the environment mostly the same.
+    \item Now to Question 3.
+    \item 1. Ground state term symbol.
+    \item ${}^4F$ is derived much the same way as in problem 2.
+    \item Similar to the above, we get a certain configuration. from which we derive a term symbol, specifically ${}^4F$ for a $d^7$ complex. This makes sense since we have a ${}^4F$ label at the bottom-left corner.
+    \item 2. What are the predicted spectral bands based on selection rules?
+    \item We can get
+    \begin{align*}
+        {}^4F({}^4T_1) &\to {}^4T_2\\
+        &\to {}^4A_2\\
+        &\to {}^4T_1({}^4P)
+    \end{align*}
+    \item We got this by reading the lines off of the TS diagram and looking for ones with the same spin (spin selection rule \emph{must} be satisfied, unlike the Laporte selection rule).
+    \begin{itemize}
+        \item This is purely theoretical; there are no experiments.
+        \item You don't know if you're high-spin or low-spin; you don't know anything. But you should start your transitions with the free ion term (${}^4F$ in this case), regardless!
+    \end{itemize}
+    \item 3. Calculate the $\Delta_o$'s.
+    \item You need to treat the Tanabe-Sugano diagram as a working curve. If it's a working curve, then you can take a ratio of the two energy transitions, namely
+    \begin{equation*}
+        \frac{v_2}{v_1} = \frac{22,000}{11,300}
+        = 1.95
+    \end{equation*}
+    \item We do indeed assume that the top two transitions listed above are $v_1,v_2$.
+    \item You need to do a sliding scale and figure out where you slide to get the right ratio.
+    \item Note: We're wildly guessing here; there will be huge errors in the numbers we get. Using a system of equations, if applicable, is slightly more elegant.
+    \item Take $E/B=17$ for the lower energy. Then we have $E/B=28$ for the higher energy by following vertical and horizontal lines on the graph. Since we know the energies, we can calculate the Racah parameter at this point. The two values for the Racah parameter should be the same; if they're not, take the average.
+    \item It turns out that the bipy ligand is not as strong as we think it is.
+    \item Will there be a definition matching question again?
+    \begin{itemize}
+        \item There will be some gimme points and some thinking points.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
